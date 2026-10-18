@@ -5,15 +5,19 @@ on:
     branches: [main]
   workflow_dispatch:
 
-concurrency:
-  group: apk-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   apk:
     name: Build Android APK
     runs-on: ubuntu-latest
     timeout-minutes: 30
+
+    # NB: the secrets context is not available inside `steps.*.if`, so the
+    # signing material is exposed as job level env and checked with `env`.
+    env:
+      KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+      KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+      KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
     steps:
       - name: Checkout
@@ -48,18 +52,19 @@ jobs:
         run: node scripts/patch-android.mjs
 
       # --------------------------------------------------------- keystore
-      # Only used when the signing secrets exist. Without them the workflow
+      # Runs only when the signing secrets exist. Without them the workflow
       # still produces an installable debug APK, so the first build never fails.
       - name: Write the release keystore
-        if: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+        if: env.KEYSTORE_B64 != ''
         run: |
-          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > android/release.keystore
-          cat > android/keystore.properties <<EOF
-          storeFile=release.keystore
-          storePassword=${{ secrets.STORE_PASSWORD }}
-          keyAlias=${{ secrets.KEY_ALIAS }}
-          keyPassword=${{ secrets.KEY_PASSWORD }}
-          EOF
+          printf '%s' "$KEYSTORE_B64" | base64 -d > android/release.keystore
+          {
+            echo "storeFile=release.keystore"
+            echo "storePassword=$STORE_PASSWORD"
+            echo "keyAlias=$KEY_ALIAS"
+            echo "keyPassword=$KEY_PASSWORD"
+          } > android/keystore.properties
+          echo "keystore.properties written"
 
       # ------------------------------------------------------------- build
       - name: Build debug APK
@@ -67,7 +72,7 @@ jobs:
         run: ./gradlew assembleDebug --no-daemon
 
       - name: Build release APK
-        if: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+        if: env.KEYSTORE_B64 != ''
         working-directory: android
         run: ./gradlew assembleRelease --no-daemon
 
@@ -81,7 +86,7 @@ jobs:
           retention-days: 90
 
       - name: Upload release APK
-        if: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+        if: env.KEYSTORE_B64 != ''
         uses: actions/upload-artifact@v4
         with:
           name: bca-sem-v-release-apk
