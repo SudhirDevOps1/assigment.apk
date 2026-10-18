@@ -158,6 +158,13 @@ jobs:
           | Rotate | portrait and landscape, scroll position is kept |
           | Print | Android print dialog → Save as PDF gives the same 60 A4 pages |
 
+          **Printed type is sized for handwriting.** Each printed A4 page now
+          carries about 250 words — roughly what one sheet of A4 holds when
+          written by hand — in 12 pt type with 11 mm margins, so copying one
+          printed page needs one sheet, not one and a half. All 60 pages still
+          fit their sheet exactly: nothing is cut off and nothing spills onto a
+          61st page.
+
           > This is a debug-signed build. Add the four signing secrets
           > (ANDROID_KEYSTORE_BASE64, STORE_PASSWORD, KEY_ALIAS, KEY_PASSWORD)
           > and push a new tag to get a release-signed APK as well.
