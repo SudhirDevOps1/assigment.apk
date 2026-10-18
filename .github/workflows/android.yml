@@ -160,12 +160,21 @@ jobs:
           MD
           )
 
-          if gh release view "$TAG" >/dev/null 2>&1; then
+          # This job does not check the sources out, so gh is told which
+          # repository to work on explicitly instead of guessing from git.
+          REPO="${GITHUB_REPOSITORY}"
+
+          if gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1; then
             echo "Release $TAG already exists - replacing the assets"
-            gh release upload "$TAG" dist/*.apk --clobber
-            gh release edit "$TAG" --title "BCA Sem V — $TAG" --notes "$NOTES"
+            gh release upload "$TAG" dist/*.apk --repo "$REPO" --clobber
+            gh release edit "$TAG" --repo "$REPO" \
+              --title "BCA Sem V — $TAG" --notes "$NOTES"
           else
-            gh release create "$TAG" --title "BCA Sem V — $TAG" --notes "$NOTES" dist/*.apk
+            gh release create "$TAG" --repo "$REPO" \
+              --title "BCA Sem V — $TAG" --notes "$NOTES" dist/*.apk
           fi
+
+          gh release view "$TAG" --repo "$REPO" --json url,assets \
+            --jq '"release: \(.url)  assets: \([.assets[].name] | join(", "))"'
 
           echo "Release $TAG published"
