@@ -491,7 +491,7 @@ Anjali   Commerce</code></pre>
           <tr><td>Refers to</td><td>Itself</td><td>Another table's key</td><td>Itself</td></tr>
         </tbody>
       </table>
-      <p>All three keys work together: the primary key gives a row its identity, the unique key stops a second person sharing the same email, and the foreign key stops an order belonging to a customer who does not exist. Together they keep the data correct in every direction.</p>
+      <p>One more case completes the picture. When one customer places many orders <i>and</i> one order contains many products, neither table can carry the other \u2014s foreign key cleanly. The usual answer is a <b>junction table</b> that holds only the two keys, each as a <b>composite key</b> of the pair, with a row for every link.</p>
       <h4>How the Keys Are Used Together</h4>
       <p>Consider a small shop with two tables.</p>
       <p><code class="inl">CUSTOMER</code> holds <code class="inl">Cust_Id</code> as its <b>primary key</b> and <code class="inl">Email</code> as a <b>unique key</b>, so no customer can be stored twice and no two customers can share one address.</p>
