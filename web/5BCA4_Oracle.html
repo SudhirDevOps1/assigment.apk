@@ -6,9 +6,9 @@
 <meta name="description" content="BCA Semester V Internal Assignment — Oracle RDBMS (5BCA4). Four questions, each planned across exactly four A4 pages.">
 <meta name="theme-color" content="#08080a">
 <title>5BCA4 · Oracle RDBMS — Assignment</title>
-<link href="assets/fonts.css?v=5" rel="stylesheet">
-<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=5">
-<link rel="stylesheet" href="assets/monolith.css?v=5">
+<link href="assets/fonts.css?v=9" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=9">
+<link rel="stylesheet" href="assets/monolith.css?v=9">
 </head>
 <body id="top">
 
@@ -136,7 +136,7 @@
       <p>An important part inside a DBMS is the <b>Data Dictionary</b>, also called the system catalog. It stores <b>metadata</b> — that is, data about data. It keeps a record of every table name, column name, data type, constraint and user permission. Whenever a query is run, the DBMS first looks in the data dictionary to understand the shape of the table, and only then does it fetch the data. Without the data dictionary the DBMS would not know which tables exist at all.</p>
       <p>All of these parts together make a DBMS a complete system rather than a mere store of files — which is why it is used in every field, from a college's student records to a bank's transactions.</p>
       <h3>Users of a DBMS</h3>
-      <p>A DBMS is used by three kinds of people, and each one needs a different level of access. The <b>Database Administrator (DBA)</b> is the most powerful user. He creates the database, decides its structure, grants permissions, takes backups and repairs the system if it fails. The <b>application programmers</b> write the programs that ordinary users work with; they use the database through the DBMS and are given only the access their program needs. The <b>end-users</b> are the people who finally use those programs — a clerk entering a form, a teller checking a balance, or a student viewing marks. They never touch the database directly; they only see the screen in front of them, and the DBMS works quietly behind it. This separation of roles is one of the greatest strengths of a DBMS, because it keeps the sensitive data away from careless hands.</p>
+      <p>A DBMS is used by three kinds of people, each needing a different level of access. The <b>Database Administrator (DBA)</b> is the most powerful: he creates the database, decides its structure, grants permissions, takes backups and repairs the system if it fails. The <b>application programmers</b> write the programs that ordinary users work with, and are given only the access their program needs. The <b>end-users</b> finally use those programs — a clerk entering a form, a teller checking a balance — and never touch the database directly; they see only the screen in front of them. This separation of roles is one of the greatest strengths of a DBMS, because it keeps sensitive data away from careless hands.</p>
 
       <figure class="diagram">
         <svg viewBox="0 0 640 252" role="img" aria-label="The layered architecture of a DBMS">
@@ -639,8 +639,8 @@ FROM   orders o JOIN customer c ON o.cust_id = c.cust_id;</code></pre>
       <!-- PAGE 2 -->
       <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 4 · RDBMS</span></div>
       <h3>What is an RDBMS?</h3>
-      <p>An <b>RDBMS (Relational Database Management System)</b> is a special form of DBMS in which the data is stored in <b>relations</b> — that is, in structured tables of rows and columns — and the tables are connected to one another through common keys. An RDBMS is based on the <b>relational model</b> proposed by <b>E. F. Codd</b>, and it is queried using <b>SQL (Structured Query Language)</b>. Its greatest feature is that related tables can be combined with the <b>JOIN</b> operation, so information spread across many tables can be retrieved as one result.</p>
-      <p>Examples of RDBMS include <b>Oracle, MySQL, Microsoft SQL Server, PostgreSQL</b> and <b>SQLite</b>. An RDBMS is best for large and complex applications where there is a great deal of data and where the relationships between tables are essential. It fully supports the <b>ACID properties</b> — Atomicity, Consistency, Isolation and Durability — because of which transactions remain safe even if the system fails in the middle of one.</p>
+      <p>An <b>RDBMS (Relational Database Management System)</b> is a special form of DBMS in which data is stored in <b>relations</b> — structured tables of rows and columns — connected to one another through common keys. It is based on the <b>relational model</b> proposed by <b>E. F. Codd</b> and queried using <b>SQL (Structured Query Language)</b>. Its greatest feature is the <b>JOIN</b> operation, which combines related tables so information spread across many tables is retrieved as one result.</p>
+      <p>Examples include <b>Oracle, MySQL, Microsoft SQL Server, PostgreSQL</b> and <b>SQLite</b>. An RDBMS is best for large, complex applications where there is a great deal of data and where the relationships between tables are essential. It fully supports the <b>ACID properties</b> — Atomicity, Consistency, Isolation and Durability — because of which transactions remain safe even if the system fails midway through one.</p>
       <h4>Characteristics of an RDBMS</h4>
       <ul>
         <li>Data is stored in structured tables of rows and columns.</li>
@@ -651,7 +651,7 @@ FROM   orders o JOIN customer c ON o.cust_id = c.cust_id;</code></pre>
         <li>ACID properties are fully supported, so transactions are safe.</li>
         <li>It supports many users and large volumes of data at once.</li>
       </ul>
-      <p>Beyond the table structure, the greatest strength of an RDBMS is that it protects the data even when many users are working on it at the very same moment. Suppose one clerk is transferring money from one account to another while another clerk is preparing a report on the same accounts. The RDBMS uses its <b>transaction</b> and <b>locking</b> rules to make sure that the report never sees a half-finished transfer, in which money has left one account but has not yet reached the other. This ability to keep the data correct under simultaneous use is called <b>concurrency control</b>, and it is the main reason banks and large organizations insist on an RDBMS rather than a simple DBMS.</p>
+      <p>Beyond the table structure, the greatest strength of an RDBMS is that it protects the data even when many users are working on it at the same moment. Suppose one clerk is transferring money from one account to another while another is preparing a report on the same accounts. The RDBMS uses its <b>transaction</b> and <b>locking</b> rules to make sure the report never sees a half-finished transfer. This ability to keep data correct under simultaneous use is called <b>concurrency control</b>, and it is why banks and large organizations insist on an RDBMS rather than a simple DBMS.</p>
 
       <figure class="diagram">
         <svg viewBox="0 0 640 182" role="img" aria-label="The vocabulary of a relation: tuple, attribute, degree and cardinality">
@@ -759,7 +759,7 @@ ORDER  BY s.roll_no;</code></pre>
 </div>
 
 <a href="#top" class="totop" title="Back to top">&#9650;</a>
-<script src="assets/vendor/highlight.min.js?v=5"></script>
-<script src="assets/monolith.js?v=5"></script>
+<script src="assets/vendor/highlight.min.js?v=9"></script>
+<script src="assets/monolith.js?v=9"></script>
 </body>
 </html>

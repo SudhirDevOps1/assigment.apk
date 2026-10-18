@@ -6,9 +6,9 @@
 <meta name="description" content="BCA Semester V Internal Assignment — Programming in JAVA (5BCA3). Three questions, each planned across exactly four A4 pages.">
 <meta name="theme-color" content="#08080a">
 <title>5BCA3 · Programming in JAVA — Assignment</title>
-<link href="assets/fonts.css?v=5" rel="stylesheet">
-<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=5">
-<link rel="stylesheet" href="assets/monolith.css?v=5">
+<link href="assets/fonts.css?v=9" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=9">
+<link rel="stylesheet" href="assets/monolith.css?v=9">
 </head>
 <body id="top">
 
@@ -66,11 +66,11 @@
       <!-- PAGE 1 -->
       <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 1 · Java + features</span></div>
       <h3>What is Java?</h3>
-      <p><b>Java</b> is a high-level, object-oriented, robust and platform-independent programming language that is used to build a very wide range of software, from small desktop utilities to large enterprise systems. It was developed by <b>James Gosling</b> and first released by <b>Sun Microsystems in 1995</b>. While designing the language, Gosling wanted a language that could be written once and then run on any machine, and this idea became Java's famous motto — <b>“Write Once, Run Anywhere” (WORA)</b>. The project was originally named <b>“Oak”</b> after the tree outside Gosling's office, and it was later renamed Java after a popular brand of coffee.</p>
-      <p>The most important thing about Java is what happens after the code is compiled. Java source code is not compiled straight into machine language; instead the compiler produces a special file called <b>bytecode</b>, which can run on any operating system that has a Java environment installed. Because of this single feature, Java became one of the most widely used languages in the world. Today it runs banking systems, Android mobile apps, web applications, scientific software and embedded devices.</p>
+      <p><b>Java</b> is a high-level, object-oriented, robust and platform-independent programming language used to build everything from small desktop utilities to large enterprise systems. It was developed by <b>James Gosling</b> and first released by <b>Sun Microsystems in 1995</b>. Gosling wanted a language that could be written once and then run on any machine, and this became Java's famous motto — <b>“Write Once, Run Anywhere” (WORA)</b>. The project was originally named <b>“Oak”</b> after the tree outside Gosling's office, and was later renamed Java after a popular brand of coffee.</p>
+      <p>The most important thing about Java is what happens after the code is compiled. Source code is not compiled straight into machine language; the compiler produces a special file called <b>bytecode</b>, which runs on any operating system that has a Java environment installed. Because of this single feature Java became one of the most widely used languages in the world — it runs banking systems, Android apps, web applications, scientific software and embedded devices.</p>
       <h4>Main Features of Java</h4>
       <ul>
-        <li><b>Simple:</b> the syntax is close to C and C++, but difficult features such as pointers, operator overloading and multiple inheritance were left out, which makes the language easier to learn.</li>
+        <li><b>Simple:</b> the syntax is close to C and C++, but difficult features such as pointers, operator overloading and multiple inheritance were left out, which makes it easier to learn.</li>
         <li><b>Object-Oriented:</b> everything is organised around objects, and both the data and the methods that work on that data live together inside them.</li>
         <li><b>Platform Independent:</b> the same bytecode runs on Windows, Linux or macOS — the basis of “Write Once, Run Anywhere”.</li>
         <li><b>Robust and Secure:</b> automatic memory management, exception handling and bytecode verification stop the program from crashing or being attacked easily.</li>
@@ -88,7 +88,7 @@
    │ Portable        │ High            │ Distributed     │
    │                 │ Performance     │                 │
    └─────────────────┴─────────────────┴─────────────────┘</pre>
-        <figcaption>Fig. 1 — The qualities Java is known for, set out as a grid. The three qualities in the middle row are the ones a programmer feels every day: the program does not crash easily, the bytecode is verified before it runs, and several tasks can run together.</figcaption>
+        <figcaption>Fig. 1 — The qualities Java is known for, set out as a grid. The middle row holds the ones a programmer feels every day: the program does not crash, the bytecode is verified before it runs, and several tasks can run together.</figcaption>
       </figure>
 
       <!-- PAGE 2 -->
@@ -97,7 +97,7 @@
       <p>Before learning Java it is essential to understand three terms that actually make a Java program run. The <b>JVM (Java Virtual Machine)</b> is the engine that executes Java bytecode. Every operating system has its own JVM, and this is exactly why the same bytecode can run everywhere. The JVM also manages memory and performs <b>garbage collection</b>, which means automatically removing objects that are no longer needed.</p>
       <p>The <b>JRE (Java Runtime Environment)</b> provides the JVM together with the libraries and files required to run a Java program. If you only need to run an existing program and not write a new one, installing the JRE is enough. The <b>JDK (Java Development Kit)</b> includes the JRE along with the tools needed to develop programs, such as <code class="inl">javac</code> (the compiler that turns source code into bytecode) and <code class="inl">java</code> (the launcher that runs the bytecode). In short, <b>JDK = JRE + Development Tools</b>.</p>
       <h4>How Platform Independence Works</h4>
-      <p>When you write a program you create a source file (<code class="inl">.java</code>). When you compile it, the compiler converts it into a bytecode file (<code class="inl">.class</code>). That bytecode file is then executed by the JVM of whatever machine the program is running on — Windows, Linux or macOS — without any change to the code. The JVM acts as a translator standing between the bytecode and the real machine. Because the program never talks to the operating system directly, it stays independent of it, and this is the reason large organisations prefer Java for systems that must run on many different machines at once.</p>
+      <p>When you write a program you create a source file (<code class="inl">.java</code>). Compiling it converts that into a bytecode file (<code class="inl">.class</code>), which is then executed by the JVM of whatever machine the program runs on — Windows, Linux or macOS — without any change to the code. The JVM acts as a translator standing between the bytecode and the real machine. Because the program never talks to the operating system directly, it stays independent of it, and this is why large organisations prefer Java for systems that must run on many machines at once.</p>
 
       <figure class="diagram">
         <svg viewBox="0 0 640 192" role="img" aria-label="Java source compiled to bytecode and run by the JVM on every platform">
@@ -138,12 +138,12 @@
       </figure>
 
       <h4>Inside the JVM</h4>
-      <p>The JVM itself is made of three main parts. The <b>class loader</b> finds the <code class="inl">.class</code> file and loads the bytecode into memory. The <b>memory areas</b> — the heap, where objects live, and the stack, where method calls are kept — hold the data while the program runs. The <b>execution engine</b> then runs the bytecode instruction by instruction and, where the same code runs again and again (a “hot spot”), it uses a <b>Just-In-Time (JIT) compiler</b> to convert that part into fast machine code. This is why a Java program may start a little slowly but then runs almost as fast as a program written directly in C. The same idea explains why Java is called “compiled and interpreted” rather than belonging to only one of the two groups.</p>
+      <p>The JVM itself is made of three main parts. The <b>class loader</b> finds the <code class="inl">.class</code> file and loads the bytecode into memory. The <b>memory areas</b> — the heap, where objects live, and the stack, where method calls are kept — hold the data while the program runs. The <b>execution engine</b> then runs the bytecode instruction by instruction and, where the same code runs again and again (a “hot spot”), uses a <b>Just-In-Time (JIT) compiler</b> to convert that part into fast machine code. This is why a Java program may start a little slowly but then runs almost as fast as one written directly in C, and why Java is called “compiled and interpreted” rather than belonging to only one group.</p>
 
       <!-- PAGE 3 -->
       <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 1 · The four OOPs pillars</span></div>
       <h3>Concepts of OOPS Used in Java</h3>
-      <p>Java is an <b>object-oriented programming language (OOPS)</b>, which means that problems are solved by organising the code into objects. OOPS has four main concepts, often called the four pillars — <b>Encapsulation, Inheritance, Polymorphism and Abstraction</b>. Each of them is explained below.</p>
+      <p>Java is an <b>object-oriented programming language (OOPS)</b>, which means problems are solved by organising code into objects. OOPS has four main concepts, often called the four pillars — <b>Encapsulation, Inheritance, Polymorphism and Abstraction</b>.</p>
       <h4>1. Encapsulation (Data Hiding)</h4>
       <p>Encapsulation means binding the data (variables) and the methods that work on that data into a single unit, which is a class, and then preventing the data from being changed directly from outside. A useful way to picture it is an ATM machine: all the internal work — checking the balance, dispensing cash — happens inside the machine, and the user can only use the buttons on the outside. In Java we declare the variables as <code class="inl">private</code> and provide <code class="inl">public</code> getter and setter methods to reach them.</p>
       <h4>2. Inheritance</h4>
@@ -254,7 +254,7 @@ Marks: 85</code></pre>
       <!-- PAGE 1 -->
       <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 2 · Encapsulation explained</span></div>
       <h3>What is Encapsulation?</h3>
-      <p><b>Encapsulation</b> is one of the pillars of OOPS in which we bind the <b>data</b> (variables) and the <b>functions</b> (methods) that operate on that data together into a single unit — that is, into a class — and then prevent the data from being reached directly from outside. A simple way to remember it is to think of a capsule of medicine: the medicine is sealed inside the capsule and cannot be touched from the outside. This is exactly why the technique is called encapsulation.</p>
+      <p><b>Encapsulation</b> is one of the pillars of OOPS in which we bind the <b>data</b> (variables) and the <b>functions</b> (methods) that operate on that data together into a single unit — that is, into a class — and then prevent the data from being reached directly from outside. A simple way to remember it is a capsule of medicine: the medicine is sealed inside and cannot be touched from outside. This is exactly why the technique is called encapsulation.</p>
       <p>Encapsulation is needed because if the data of an object stays open, anyone can change it in a wrong way and errors begin to appear in the program. For example, if the <i>balance</i> of a bank account were public, a careless line of code could set it to a negative value. Through encapsulation we make the data <b>private</b>, and to reach it we provide <b>public</b> methods known as getters and setters. These methods can check the value before allowing it. This controlled access is called <b>Data Hiding</b> — the data stays hidden, yet safe access is always available.</p>
       <h4>Advantages of Encapsulation</h4>
       <ul>
@@ -579,7 +579,7 @@ Helper cannot be used from here</code></pre>
 </div>
 
 <a href="#top" class="totop" title="Back to top">&#9650;</a>
-<script src="assets/vendor/highlight.min.js?v=5"></script>
-<script src="assets/monolith.js?v=5"></script>
+<script src="assets/vendor/highlight.min.js?v=9"></script>
+<script src="assets/monolith.js?v=9"></script>
 </body>
 </html>

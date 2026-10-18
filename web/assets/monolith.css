@@ -531,7 +531,7 @@ table.tbl td b{color:var(--bone);}
    own sheet, so each question prints as exactly FOUR A4 pages and
    the whole assignment prints as 15 x 4 = 60 pages.
    ============================================================ */
-@page{size:A4;margin:13mm 13mm 13mm;}
+@page{size:A4;margin:11mm 11mm 11mm;}
 @media print{
   :root{
     --void:#fff;--deep:#fff;--basalt:#fff;--raised:#fff;--concrete:#fff;
@@ -561,7 +561,7 @@ table.tbl td b{color:var(--bone);}
   table.tbl{display:table;table-layout:auto;width:100%;}
   .marks{display:block;}
   img,svg{max-width:100%;}
-  html,body{background:#fff!important;background-image:none!important;color:#1a1815;font-size:10.8pt;line-height:1.47;}
+  html,body{background:#fff!important;background-image:none!important;color:#1a1815;font-size:12pt;line-height:1.5;}
 
   /* on-screen chrome must never appear on paper */
   .topbar,.totop,.progress,.noprint,.monument,.contents,.foot{display:none!important;}
@@ -580,35 +580,35 @@ table.tbl td b{color:var(--bone);}
   .ans>.page-sec:first-child{break-before:auto;page-break-before:auto;}
 
   /* ---- question header ---- */
-  .qblock .qhead{padding:0 0 8px;border-bottom:2px solid #b39a5e;break-after:avoid;page-break-after:avoid;}
-  .qblock .qnum{font-size:29px;}
-  .qblock .qtext{font-size:14.5pt;}
-  .qblock .qtag{font-size:8.5pt;}
-  .pagemeter{margin-top:7px;padding:5px 10px;}
-  .pagemeter .big{font-size:19px;}
+  .qblock .qhead{padding:0 0 5px;border-bottom:2px solid #b39a5e;break-after:avoid;page-break-after:avoid;}
+  .qblock .qnum{font-size:22px;}
+  .qblock .qtext{font-size:13.5pt;}
+  .qblock .qtag{font-size:8.8pt;}
+  .pagemeter{margin-top:3px;padding:3px 8px;}
+  .pagemeter .big{font-size:15px;}
 
   /* ---- body text ---- */
   .ans{padding:0;}
-  .ans h3{font-size:11.2pt;margin:9px 0 3px;}
-  .ans h4{font-size:11pt;margin:7px 0 2px;}
+  .ans h3{font-size:12.4pt;margin:7px 0 2px;}
+  .ans h4{font-size:12.2pt;margin:5px 0 1px;}
   .ans h3,.ans h4{break-after:avoid;page-break-after:avoid;}
-  .ans p{margin:0 0 4px;color:#2a2820;text-align:left;}
-  .ans ul,.ans ol{margin:3px 0 5px;padding-left:20px;}
+  .ans p{margin:0 0 2px;color:#2a2820;text-align:left;}
+  .ans ul,.ans ol{margin:2px 0 4px;padding-left:20px;}
   .ans li{margin:0 0 2px;color:#2a2820;}
 
   /* ---- page marker ---- */
-  .page-sec{margin:0 0 7px;padding-top:6px;border-top:2px solid #b39a5e;break-after:avoid;page-break-after:avoid;}
-  .page-sec .pnum{background:#7a5c1e;color:#fff;box-shadow:none;padding:3px 10px;font-size:10.5pt;}
-  .page-sec .ptitle{font-size:9.5pt;letter-spacing:1.5px;}
+  .page-sec{margin:0 0 5px;padding-top:4px;border-top:2px solid #b39a5e;break-after:avoid;page-break-after:avoid;}
+  .page-sec .pnum{background:#7a5c1e;color:#fff;box-shadow:none;padding:3px 10px;font-size:11pt;}
+  .page-sec .ptitle{font-size:10.5pt;letter-spacing:1.5px;}
   .divider{margin:12px 0 6px;}
 
   /* ---- keep blocks whole ---- */
   .codeframe,.callout,table.tbl{break-inside:avoid;page-break-inside:avoid;}
-  table.tbl{font-size:9pt;margin:7px 0;}
+  table.tbl{font-size:10pt;margin:7px 0;}
   table.tbl th,table.tbl td{padding:4px 6px;}
 
   /* ---- code: wrap long lines, no horizontal cut-off ---- */
-  .codeframe{border:1px solid #b9b3a3;background:#f7f5ef;margin:8px 0;}
+  .codeframe{border:1px solid #b9b3a3;background:#f7f5ef;margin:6px 0;}
   .codeframe .bar{background:#eceade;border-bottom:1px solid #d6d0c0;padding:4px 9px;}
   .codeframe .bar .dot{background:#c9c4b6;}
   .codeframe .bar .name{color:#5c5e69;font-size:9pt;}
@@ -616,7 +616,7 @@ table.tbl td b{color:var(--bone);}
   .codeframe pre code.hljs{
     display:block;white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere;
     color:#1a1815!important;background:#f7f5ef!important;
-    padding:9px 11px;font-size:8pt;line-height:1.4;
+    padding:9px 11px;font-size:8.8pt;line-height:1.42;
   }
   /* flatten highlight.js syntax colours to print-safe dark tones */
   .hljs-keyword,.hljs-built_in,.hljs-literal{color:#5a3e12!important;}
@@ -629,16 +629,16 @@ table.tbl td b{color:var(--bone);}
   .hljs-section,.hljs-bullet{color:#5a3e12!important;font-weight:600;}
   .hljs-params{color:#33302a!important;}
 
-  code.inl{color:#5a3e12!important;background:#f0ede2!important;border-color:#d6d0c0!important;font-size:9pt;}
+  code.inl{color:#5a3e12!important;background:#f0ede2!important;border-color:#d6d0c0!important;font-size:10pt;}
   .callout{border-left:3px solid #7a5c1e;background:#faf7ef;padding:9px 12px;margin:9px 0;}
-  .callout .ct{font-size:10pt;}
-  .callout p{font-size:10pt;margin:0;}
+  .callout .ct{font-size:11pt;}
+  .callout p{font-size:11pt;margin:0;}
 
   /* ---- diagrams ---- */
-  .diagram{border:1px solid #b9b3a3;background:#faf8f2;padding:6px 9px 4px;margin:6px 0;break-inside:avoid;page-break-inside:avoid;}
+  .diagram{border:1px solid #b9b3a3;background:#faf8f2;padding:4px 8px 2px;margin:4px 0;break-inside:avoid;page-break-inside:avoid;}
   .diagram svg{overflow:visible;}
-  .diagram figcaption{color:#6b6659;font-size:8pt;margin-top:5px;}
-  .diagram pre.ascii{font-size:8pt;line-height:1.34;color:#33302a;white-space:pre;overflow:visible;}
+  .diagram figcaption{color:#6b6659;font-size:8.8pt;margin-top:2px;}
+  .diagram pre.ascii{font-size:8.8pt;line-height:1.36;color:#33302a;white-space:pre;overflow:visible;}
   .diagram pre.ascii b{color:#7a5c1e;}
   .diagram pre.ascii i{color:#6b6659;}
   .diagram .d-box{stroke:#7a5c1e;stroke-width:1.4;}
