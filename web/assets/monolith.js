@@ -17,15 +17,31 @@
                 window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   } catch (e) { reduce = false; }
 
-  /* ---------- 1. Reading progress bar ---------- */
+  /* ---------- 1. Reading progress bar + auto-hiding toolbar ----------
+     A PDF reader hides its toolbar while you scroll down and brings it
+     back the moment you scroll up. That is what makes a long answer
+     comfortable to read on a phone.                               */
   var bar = document.createElement('div');
   bar.className = 'progress';
   document.body.appendChild(bar);
+
+  var topbar = document.querySelector('.topbar');
+  var lastY = window.pageYOffset || 0;
+
   function onScroll() {
     var h = document.documentElement;
-    var scrolled = h.scrollTop || document.body.scrollTop;
+    var y = h.scrollTop || document.body.scrollTop || 0;
     var height = h.scrollHeight - h.clientHeight;
-    bar.style.width = (height > 0 ? (scrolled / height) * 100 : 0) + '%';
+    bar.style.width = (height > 0 ? (y / height) * 100 : 0) + '%';
+
+    if (topbar && !document.body.classList.contains('focus-mode')) {
+      if (y > 260 && y > lastY + 8) {
+        topbar.classList.add('hidden');
+      } else if (y < lastY - 8 || y < 140) {
+        topbar.classList.remove('hidden');
+      }
+    }
+    lastY = y;
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
@@ -201,7 +217,34 @@
     });
   });
 
-  /* ---------- 6. Syntax highlighting ---------- */
+  /* ---------- 7. Focus mode ----------
+     One tap clears every piece of interface so only the answer is left
+     on the screen - the same trick a PDF reader uses. Press again (or
+     Escape) to get the buttons back.                              */
+  var focusBtn = document.getElementById('focusBtn');
+
+  function setFocus(on) {
+    document.body.classList.toggle('focus-mode', on);
+    if (focusBtn) {
+      focusBtn.classList.toggle('focus-on', on);
+      focusBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    }
+    if (topbar) topbar.classList.remove('hidden');
+  }
+
+  if (focusBtn) {
+    focusBtn.addEventListener('click', function () {
+      setFocus(!document.body.classList.contains('focus-mode'));
+    });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && document.body.classList.contains('focus-mode')) {
+      setFocus(false);
+    }
+  });
+  window.__setFocus = setFocus;
+
+  /* ---------- 8. Syntax highlighting ---------- */
   if (window.hljs) {
     [].forEach.call(document.querySelectorAll('pre code[class*="language-"]'), function (b) {
       try { window.hljs.highlightElement(b); } catch (e) {}

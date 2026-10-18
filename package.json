@@ -6,16 +6,18 @@
   "license": "MIT",
   "scripts": {
     "add:android": "cap add android",
+    "assets": "capacitor-assets generate --android --assetPath resources",
     "sync": "cap sync android",
     "patch": "node scripts/patch-android.mjs",
-    "apk:debug": "cap sync android && npm run patch && cd android && ./gradlew assembleDebug",
-    "apk:release": "cap sync android && npm run patch && cd android && ./gradlew assembleRelease"
+    "apk:debug": "npm run assets && cap sync android && npm run patch && cd android && ./gradlew assembleDebug",
+    "apk:release": "npm run assets && cap sync android && npm run patch && cd android && ./gradlew assembleRelease"
   },
   "dependencies": {
     "@capacitor/android": "^7.0.0",
     "@capacitor/core": "^7.0.0"
   },
   "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
     "@capacitor/cli": "^7.0.0"
   },
   "engines": {

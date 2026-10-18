@@ -108,14 +108,40 @@ update the app later.
 
 ## What works inside the app
 
-* **Pinch zoom** in and out, and the page fits the real screen width.
-* **Rotation** in portrait and landscape; the WebView is not recreated on
+* **True full screen.** The status bar and the navigation bar are hidden and
+  the page draws edge to edge. A swipe from the screen edge brings the bars
+  back for a moment, exactly like a video player.
+* **A toolbar that gets out of the way.** Scroll down and the top bar slides
+  away; scroll up and it returns — the behaviour of every good PDF reader.
+  On a phone the whole bar is a single 51 px row.
+* **Focus mode.** One tap on **Focus** clears every piece of interface and
+  leaves only the answer, which is what you want while copying it onto paper.
+  Tap **Focus** again, or press `Esc`, to bring the buttons back.
+* **Pinch zoom** in and out anywhere on the page.
+* **Rotation** in portrait and landscape. The WebView is never recreated on
   rotate, so you never lose your scroll position.
-* **All five subjects, all 35 diagrams, all 5 PDFs** — bundled, so no network
-  is needed at any point.
+* **A real launcher icon.** Adaptive icon, so Android masks it to whatever
+  shape the phone uses, plus the older square icons for old devices.
+* **All five subjects, all 35 diagrams, all 5 PDFs** — bundled in the APK, so
+  no network is needed at any point.
 * **The animated figures** play exactly as they do in a browser.
 * Printing from inside the app still opens Android's own print dialog, where
   "Save as PDF" produces the same 60 A4 pages.
+
+## Icons and splash screen
+
+`resources/` holds the artwork that the build turns into app icons and splash
+screens:
+
+| File | Used for |
+|---|---|
+| `icon.png` | the plain icon for Android 7 and older |
+| `icon-foreground.png` | adaptive icon artwork, kept inside the 66 % safe zone |
+| `icon-background.png` | adaptive icon background layer |
+| `splash.png` | the launch screen |
+
+Replace any of them and push a tag — CI regenerates every density and every
+round and square mask automatically.
 
 ---
 

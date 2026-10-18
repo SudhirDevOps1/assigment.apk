@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="description" content="BCA Semester V Internal Assignment suite — five subjects, fifteen questions, each planned across exactly four A4 pages.">
 <meta name="theme-color" content="#08080a">
 <title>BCA Semester V · Assignment Dashboard — Monolith</title>
-<link href="assets/fonts.css?v=2" rel="stylesheet">
-<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=2">
-<link rel="stylesheet" href="assets/monolith.css?v=2">
+<link href="assets/fonts.css?v=5" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=5">
+<link rel="stylesheet" href="assets/monolith.css?v=5">
 <style>
   /* ---------- stats strip ---------- */
   .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
@@ -79,7 +79,8 @@
   <div class="mark">BCA<span>·</span>SEM V</div>
   <div class="code">DASHBOARD</div>
   <div class="spacer"></div>
-  <button class="btn solid" onclick="window.print()">Print / Save A4</button>
+  <button class="btn" id="focusBtn" aria-pressed="false" title="Hide the interface and read full screen"><span class="lg">Focus</span><span class="sm">Focus</span></button>
+  <button class="btn solid" onclick="window.print()"><span class="lg">Print / Save A4</span><span class="sm">Print</span></button>
 </div>
 
 <div class="wrap">
@@ -230,7 +231,7 @@
 </div>
 
 <a href="#top" class="totop" title="Back to top">&#9650;</a>
-<script src="assets/vendor/highlight.min.js?v=2"></script>
-<script src="assets/monolith.js?v=2"></script>
+<script src="assets/vendor/highlight.min.js?v=5"></script>
+<script src="assets/monolith.js?v=5"></script>
 </body>
 </html>

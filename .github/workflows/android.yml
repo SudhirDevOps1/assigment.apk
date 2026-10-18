@@ -48,6 +48,10 @@ jobs:
       - name: Create the Android project
         run: npx cap add android
 
+      # launcher icon (adaptive, Android 8+) + splash screens from resources/
+      - name: Generate icons and splash screens
+        run: npx capacitor-assets generate --android --assetPath resources
+
       - name: Copy the web app into the APK
         run: npx cap sync android
 

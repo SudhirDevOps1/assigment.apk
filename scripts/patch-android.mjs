@@ -47,49 +47,90 @@ if (javaPath) {
   writeFileSync(javaPath, `package in.bca.sem5.assignment;
 
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import com.getcapacitor.BridgeActivity;
 
 /**
- * The whole assignment is an ordinary web page, so the only native work
- * needed here is to let the page behave like a real document viewer:
- * pinch zoom, fit-to-width, and a stable 100 % text size.
+ * The assignment is an ordinary web page, so the native work is only to make
+ * it behave like a proper document reader:
+ *
+ *   - true edge-to-edge drawing, with the status and navigation bars hidden
+ *     (a swipe from the edge brings them back, and they fade out again)
+ *   - pinch zoom, real screen width, text pinned at 100 %
+ *   - no blue "glow" overscroll that a PDF reader never shows
  */
 public class MainActivity extends BridgeActivity {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    enterImmersiveMode();
+    tuneWebView();
+  }
 
+  @Override
+  public void onResume() {
+    super.onResume();
+    enterImmersiveMode();
+  }
+
+  @Override
+  public void onWindowFocusChanged(boolean hasFocus) {
+    super.onWindowFocusChanged(hasFocus);
+    if (hasFocus) enterImmersiveMode();
+  }
+
+  /** Draw behind the system bars and hide them until the user swipes. */
+  private void enterImmersiveMode() {
+    try {
+      WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+      WindowInsetsControllerCompat controller =
+          WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+      controller.setSystemBarsBehavior(
+          WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+      controller.hide(WindowInsetsCompat.Type.systemBars());
+    } catch (Throwable ignored) {
+      // immersive mode is a nicety, never a reason to fail to start
+    }
+  }
+
+  private void tuneWebView() {
     try {
       WebView webView = getBridge() != null ? getBridge().getWebView() : null;
       if (webView == null) return;
 
       WebSettings s = webView.getSettings();
 
-      // pinch-to-zoom in, built-in zoom control so the on-screen + / - is gone
+      // pinch-to-zoom in, built-in control so the on-screen + / - is gone
       s.setSupportZoom(true);
       s.setBuiltInZoomControls(true);
       s.setDisplayZoomControls(false);
 
-      // let the page use the real screen width and shrink to fit when needed
+      // real screen width, shrink to fit when the page is wider
       s.setUseWideViewPort(true);
       s.setLoadWithOverviewMode(true);
 
-      // keep text at exactly 100 % - the CSS already handles scaling
+      // keep text at exactly 100 % - the CSS handles any scaling
       s.setTextZoom(100);
 
       s.setMediaPlaybackRequiresUserGesture(true);
+
+      // no overscroll glow, like a real document reader
+      webView.setOverScrollMode(View.OVER_SCROLL_NEVER);
     } catch (Throwable ignored) {
       // never let a nicety stop the app from starting
     }
   }
 }
 `);
-  done.push('MainActivity.java   -> pinch zoom, wide viewport, text zoom 100 %');
+  done.push('MainActivity.java   -> immersive full screen, pinch zoom, no overscroll glow');
 } else {
-  console.warn('! MainActivity.java not found - zoom tweaks skipped');
+  console.warn('! MainActivity.java not found - zoom and full screen tweaks skipped');
 }
 
 /* ------------------------------------------------------- 2. AndroidManifest */
