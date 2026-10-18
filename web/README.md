@@ -115,9 +115,21 @@ git push -u origin main
 Then in the repository: **Settings → Pages → Source → Deploy from a branch →
 `main` / `root`**. The site will be live at `https://<your-user>.github.io/<your-repo>/`.
 
-> Google Fonts and highlight.js load from a CDN, so the pages need internet for
-> the premium fonts and code colours. Without internet the layout, print output
-> and code remain fully readable.
+---
+
+## Everything is local — the site works offline
+
+There is **not a single external request** left in this project:
+
+| Was | Now |
+|---|---|
+| `fonts.googleapis.com` + `fonts.gstatic.com` | `assets/fonts.css` + `assets/fonts/*.woff2` (144 KB, latin subset, de-duplicated) |
+| `cdnjs.cloudflare.com` highlight.js | `assets/vendor/highlight.min.js` |
+| `cdnjs.cloudflare.com` highlight.js theme | `assets/vendor/atom-one-dark.min.css` |
+
+The `pdf/` folder is committed too, so the five A4 PDFs are downloadable even
+with no connection. That is also what makes the Capacitor Android app in the
+parent folder work completely offline — see the top-level `README.md`.
 
 ---
 
