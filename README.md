@@ -1,0 +1,116 @@
+# assigment.apk
+
+BCA Semester V assignment suite — turned into an **offline Android app** with
+Capacitor, built automatically by **GitHub Actions**.
+
+| | |
+|---|---|
+| Subjects | 5 |
+| Questions | 15 |
+| A4 pages | 60 (4 per question) |
+| Diagrams / charts | 35 (animated SVG + text-mode figures) |
+| Ready-made PDFs | 5 (bundled inside the app) |
+| Internet needed after install | **No** |
+
+---
+
+## How it works
+
+```
+web/                      the assignment site (plain HTML, CSS, JS)
+  ├── index.html          dashboard
+  ├── 5BCA*.html          the five subjects
+  ├── assets/
+  │   ├── monolith.css    design system + print stylesheet
+  │   ├── monolith.js     reveals + SVG animation
+  │   ├── fonts.css       self-hosted @font-face rules
+  │   ├── fonts/          Fraunces · Inter · JetBrains Mono (woff2, 144 KB)
+  │   └── vendor/         highlight.js engine + theme
+  └── pdf/                the five A4 PDFs, shipped inside the APK
+resources/                app icon + splash screen
+scripts/patch-android.mjs native tweaks (zoom, rotation)
+capacitor.config.json     app id, name, webDir
+.github/workflows/        CI that builds the APK
+```
+
+`android/` is **not** committed. The CI job creates it from scratch on every
+build, so the repository stays small and can never fall out of date.
+
+---
+
+## Turning it on (one time only)
+
+Everything happens in GitHub, nothing is installed on your PC.
+
+### 1. Create the private repository
+
+```bash
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/SudhirDevOps1/assigment.apk.git
+git push -u origin main
+```
+
+### 2. Let the workflow run
+
+Push triggers **Build Android APK** automatically. Open
+**Actions → Build Android APK → Artifacts** and download
+`bca-sem-v-debug-apk`.
+
+That is it — install the APK on the phone and everything works with the
+network switched off.
+
+---
+
+## Optional: a signed release APK
+
+Debug APKs install fine, but Android shows a warning and they cannot be
+updated in place later. For a proper release build, add four secrets under
+**Settings → Secrets and variables → Actions**:
+
+| Secret | Value |
+|---|---|
+| `ANDROID_KEYSTORE_BASE64` | `base64 -w0 my-release.keystore` (Linux/macOS) or `[Convert]::ToBase64String([IO.File]::ReadAllBytes('my-release.keystore'))` (PowerShell) |
+| `STORE_PASSWORD` | keystore password |
+| `KEY_ALIAS` | e.g. `assigment` |
+| `KEY_PASSWORD` | key password |
+
+The workflow then produces **both** APKs. Create the keystore once with
+`keytool -genkeypair -v -keystore my-release.keystore -alias assigment -keyalg RSA -keysize 2048 -validity 10000`
+and keep the `.keystore` file somewhere safe — without it you can never
+update the app later.
+
+---
+
+## What works inside the app
+
+* **Pinch zoom** in and out, and the page fits the real screen width.
+* **Rotation** in portrait and landscape; the WebView is not recreated on
+  rotate, so you never lose your scroll position.
+* **All five subjects, all 35 diagrams, all 5 PDFs** — bundled, so no network
+  is needed at any point.
+* **The animated figures** play exactly as they do in a browser.
+* Printing from inside the app still opens Android's own print dialog, where
+  "Save as PDF" produces the same 60 A4 pages.
+
+---
+
+## Working on the site
+
+```bash
+# preview locally
+python -m http.server 8899 --directory web
+# -> http://localhost:8899/index.html
+
+# push -> CI builds a fresh APK automatically
+git add . && git commit -m "update" && git push
+```
+
+Change anything inside `web/` and just push. The workflow rebuilds the APK with
+the new content.
+
+---
+
+*Internal Assignment · BCA Semester V · Submission 23-10-2026*

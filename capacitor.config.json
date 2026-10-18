@@ -1,0 +1,14 @@
+{
+  "appId": "in.bca.sem5.assignment",
+  "appName": "BCA Sem V",
+  "webDir": "web",
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#08080a",
+    "webContentsDebuggingEnabled": false,
+    "allowNavigation": []
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

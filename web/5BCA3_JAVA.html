@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BCA Semester V Internal Assignment — Programming in JAVA (5BCA3). Three questions, each planned across exactly four A4 pages.">
+<meta name="theme-color" content="#08080a">
+<title>5BCA3 · Programming in JAVA — Assignment</title>
+<link href="assets/fonts.css?v=2" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=2">
+<link rel="stylesheet" href="assets/monolith.css?v=2">
+</head>
+<body id="top">
+
+<div class="topbar">
+  <div class="mark">BCA<span>·</span>SEM V</div>
+  <div class="code">5BCA3</div>
+  <div class="spacer"></div>
+  <a class="btn" href="index.html">All Subjects</a>
+  <a class="btn" href="pdf/5BCA3_JAVA.pdf" download>Download PDF</a>
+  <button class="btn solid" onclick="window.print()">Print / Save A4</button>
+</div>
+
+<div class="wrap">
+
+  <section class="monument">
+    <div class="plinth">
+      <p class="eyebrow">Internal Assignment · Semester V</p>
+      <h1>Programming<br>in JAVA</h1>
+      <p class="sub">Three questions — each one is to be written on exactly four A4 pages. Under every question you will find a <b>PAGE 1 / PAGE 2 / PAGE 3 / PAGE 4</b> breakdown that tells you what to write on each sheet, so the whole paper adds up to <b>12 handwritten pages</b>. Every program is written in Java itself.</p>
+    </div>
+    <div class="slab">
+      <div class="field"><span class="k">Course</span><span class="v">Bachelor of Computer Applications</span></div>
+      <div class="field"><span class="k">Semester</span><span class="v">Fifth Semester &nbsp;·&nbsp; 2026</span></div>
+      <div class="field"><span class="k">Subject Code</span><span class="v">5BCA3</span></div>
+      <div class="field"><span class="k">Submission</span><span class="v">23 · 10 · 2026</span></div>
+      <div class="field"><span class="k">Your Name</span><input data-sync="name" placeholder="Write your name"></div>
+      <div class="field"><span class="k">Roll Number</span><input data-sync="roll" placeholder="Write roll no."></div>
+    </div>
+  </section>
+
+  <nav class="contents">
+    <div class="hd">Contents — 3 Questions · 12 A4 pages total</div>
+    <ol>
+      <li><a href="#q1">What is Java? Write concepts of OOPS which used in Java.</a><span class="pg">— 4 pages</span></li>
+      <li><a href="#q2">Write one example for encapsulation and define each function.</a><span class="pg">— 4 pages</span></li>
+      <li><a href="#q3">What is the difference between private and public class?</a><span class="pg">— 4 pages</span></li>
+    </ol>
+  </nav>
+
+  <div class="callout noprint"><p class="ct">How to save as PDF (clean 4 pages per question)</p><p>Press <b>Print / Save A4</b>, choose <b>Destination → Save as PDF</b>, set <b>Margins → Default</b> and turn <b>Background graphics ON</b>. Each question then saves as exactly <b>four A4 pages</b>, and the whole set prints as <b>60 pages</b> across the five subjects.</p></div>
+
+  <!-- ===== Q1 ===== -->
+  <article class="qblock" id="q1">
+    <div class="qhead">
+      <div class="qnum">01</div>
+      <div class="qmeta">
+        <p class="qtag">Question One · Java &amp; OOPs</p>
+        <h2 class="qtext">What is Java? Write concepts of OOPS which used in Java.</h2>
+        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>Java program on Page 4</b></div></div>
+      </div>
+    </div>
+    <div class="ans">
+
+      <!-- PAGE 1 -->
+      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 1 · Java + features</span></div>
+      <h3>What is Java?</h3>
+      <p><b>Java</b> is a high-level, object-oriented, robust and platform-independent programming language that is used to build a very wide range of software, from small desktop utilities to large enterprise systems. It was developed by <b>James Gosling</b> and first released by <b>Sun Microsystems in 1995</b>. While designing the language, Gosling wanted a language that could be written once and then run on any machine, and this idea became Java's famous motto — <b>“Write Once, Run Anywhere” (WORA)</b>. The project was originally named <b>“Oak”</b> after the tree outside Gosling's office, and it was later renamed Java after a popular brand of coffee.</p>
+      <p>The most important thing about Java is what happens after the code is compiled. Java source code is not compiled straight into machine language; instead the compiler produces a special file called <b>bytecode</b>, which can run on any operating system that has a Java environment installed. Because of this single feature, Java became one of the most widely used languages in the world. Today it runs banking systems, Android mobile apps, web applications, scientific software and embedded devices.</p>
+      <h4>Main Features of Java</h4>
+      <ul>
+        <li><b>Simple:</b> the syntax is close to C and C++, but difficult features such as pointers, operator overloading and multiple inheritance were left out, which makes the language easier to learn.</li>
+        <li><b>Object-Oriented:</b> everything is organised around objects, and both the data and the methods that work on that data live together inside them.</li>
+        <li><b>Platform Independent:</b> the same bytecode runs on Windows, Linux or macOS — the basis of “Write Once, Run Anywhere”.</li>
+        <li><b>Robust and Secure:</b> automatic memory management, exception handling and bytecode verification stop the program from crashing or being attacked easily.</li>
+        <li><b>Multithreaded:</b> several tasks can run at the same time inside one program, which makes it faster and more responsive.</li>
+      </ul>
+
+      <figure class="diagram">
+        <pre class="ascii">   ┌─────────────────┬─────────────────┬─────────────────┐
+   │ Simple          │ Object-Oriented │ Platform-       │
+   │                 │                 │ Independent     │
+   ├─────────────────┼─────────────────┼─────────────────┤
+   │ Robust          │ Secure          │ Multithreaded   │
+   │                 │                 │                 │
+   ├─────────────────┼─────────────────┼─────────────────┤
+   │ Portable        │ High            │ Distributed     │
+   │                 │ Performance     │                 │
+   └─────────────────┴─────────────────┴─────────────────┘</pre>
+        <figcaption>Fig. 1 — The qualities Java is known for, set out as a grid. The three qualities in the middle row are the ones a programmer feels every day: the program does not crash easily, the bytecode is verified before it runs, and several tasks can run together.</figcaption>
+      </figure>
+
+      <!-- PAGE 2 -->
+      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 1 · JVM, JRE, JDK</span></div>
+      <h3>JVM, JRE and JDK</h3>
+      <p>Before learning Java it is essential to understand three terms that actually make a Java program run. The <b>JVM (Java Virtual Machine)</b> is the engine that executes Java bytecode. Every operating system has its own JVM, and this is exactly why the same bytecode can run everywhere. The JVM also manages memory and performs <b>garbage collection</b>, which means automatically removing objects that are no longer needed.</p>
+      <p>The <b>JRE (Java Runtime Environment)</b> provides the JVM together with the libraries and files required to run a Java program. If you only need to run an existing program and not write a new one, installing the JRE is enough. The <b>JDK (Java Development Kit)</b> includes the JRE along with the tools needed to develop programs, such as <code class="inl">javac</code> (the compiler that turns source code into bytecode) and <code class="inl">java</code> (the launcher that runs the bytecode). In short, <b>JDK = JRE + Development Tools</b>.</p>
+      <h4>How Platform Independence Works</h4>
+      <p>When you write a program you create a source file (<code class="inl">.java</code>). When you compile it, the compiler converts it into a bytecode file (<code class="inl">.class</code>). That bytecode file is then executed by the JVM of whatever machine the program is running on — Windows, Linux or macOS — without any change to the code. The JVM acts as a translator standing between the bytecode and the real machine. Because the program never talks to the operating system directly, it stays independent of it, and this is the reason large organisations prefer Java for systems that must run on many different machines at once.</p>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 640 192" role="img" aria-label="Java source compiled to bytecode and run by the JVM on every platform">
+          <text class="d-cap" x="320" y="18" text-anchor="middle">Write once, run anywhere</text>
+
+          <rect class="d-fill" x="20" y="34" width="150" height="60" rx="5"/>
+          <text class="d-t" x="95" y="60" text-anchor="middle">MyProg.java</text>
+          <text class="d-ts" x="95" y="80" text-anchor="middle">source code</text>
+
+          <line class="d-line" x1="170" y1="64" x2="206" y2="64"/>
+          <polygon class="d-ah" points="210,64 200,59 200,69"/>
+
+          <rect class="d-box" x="210" y="34" width="140" height="60" rx="5"/>
+          <text class="d-t" x="280" y="60" text-anchor="middle">javac</text>
+          <text class="d-ts" x="280" y="80" text-anchor="middle">compiler</text>
+
+          <line class="d-line" x1="350" y1="64" x2="386" y2="64"/>
+          <polygon class="d-ah" points="390,64 380,59 380,69"/>
+
+          <rect class="d-fill" x="390" y="34" width="210" height="60" rx="5"/>
+          <text class="d-t" x="495" y="60" text-anchor="middle">MyProg.class</text>
+          <text class="d-ts" x="495" y="80" text-anchor="middle">bytecode (platform-neutral)</text>
+
+          <line class="d-line" x1="490" y1="94" x2="490" y2="116"/>
+          <line class="d-line" x1="150" y1="116" x2="490" y2="116"/>
+          <line class="d-line" x1="150" y1="116" x2="150" y2="140"/>
+          <line class="d-line" x1="320" y1="116" x2="320" y2="140"/>
+          <line class="d-line" x1="490" y1="116" x2="490" y2="140"/>
+
+          <rect class="d-box" x="90" y="140" width="120" height="42" rx="4"/>
+          <text class="d-ts" x="150" y="166" text-anchor="middle">Windows JVM</text>
+          <rect class="d-box" x="260" y="140" width="120" height="42" rx="4"/>
+          <text class="d-ts" x="320" y="166" text-anchor="middle">Linux JVM</text>
+          <rect class="d-box" x="430" y="140" width="120" height="42" rx="4"/>
+          <text class="d-ts" x="490" y="166" text-anchor="middle">macOS JVM</text>
+        </svg>
+        <figcaption>Fig. 2 — The life of a Java program. The same <b>.class</b> bytecode is taken by the JVM of any operating system, so the source has to be written only once.</figcaption>
+      </figure>
+
+      <h4>Inside the JVM</h4>
+      <p>The JVM itself is made of three main parts. The <b>class loader</b> finds the <code class="inl">.class</code> file and loads the bytecode into memory. The <b>memory areas</b> — the heap, where objects live, and the stack, where method calls are kept — hold the data while the program runs. The <b>execution engine</b> then runs the bytecode instruction by instruction and, where the same code runs again and again (a “hot spot”), it uses a <b>Just-In-Time (JIT) compiler</b> to convert that part into fast machine code. This is why a Java program may start a little slowly but then runs almost as fast as a program written directly in C. The same idea explains why Java is called “compiled and interpreted” rather than belonging to only one of the two groups.</p>
+
+      <!-- PAGE 3 -->
+      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 1 · The four OOPs pillars</span></div>
+      <h3>Concepts of OOPS Used in Java</h3>
+      <p>Java is an <b>object-oriented programming language (OOPS)</b>, which means that problems are solved by organising the code into objects. OOPS has four main concepts, often called the four pillars — <b>Encapsulation, Inheritance, Polymorphism and Abstraction</b>. Each of them is explained below.</p>
+      <h4>1. Encapsulation (Data Hiding)</h4>
+      <p>Encapsulation means binding the data (variables) and the methods that work on that data into a single unit, which is a class, and then preventing the data from being changed directly from outside. A useful way to picture it is an ATM machine: all the internal work — checking the balance, dispensing cash — happens inside the machine, and the user can only use the buttons on the outside. In Java we declare the variables as <code class="inl">private</code> and provide <code class="inl">public</code> getter and setter methods to reach them.</p>
+      <h4>2. Inheritance</h4>
+      <p>Inheritance is the mechanism by which a new class acquires the properties and methods of an existing class. The existing class is called the <b>parent class</b> and the new one is called the <b>child class</b>. In Java the keyword <code class="inl">extends</code> is used. Its biggest advantage is <b>code reuse</b> — a piece of code written once does not have to be written again.</p>
+      <h4>3. Polymorphism</h4>
+      <p>Polymorphism literally means “many forms” — the ability of one name to behave in different ways. <b>Compile-time polymorphism</b> (method overloading) happens when a class has more than one method with the same name but different parameters. <b>Run-time polymorphism</b> (method overriding) happens when a child class provides its own version of a method already defined in the parent class.</p>
+      <h4>4. Abstraction</h4>
+      <p>Abstraction means showing only the essential details and hiding the complex internal working. A good example is driving a car — the driver needs only the steering, the brake and the accelerator, and not a knowledge of how the engine works. In Java, abstraction is implemented through <b>abstract classes</b> and <b>interfaces</b>, where only the declaration is written and the actual code is supplied by the child class.</p>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 640 190" role="img" aria-label="The four pillars of object-oriented programming">
+          <polygon class="d-fill" points="20,62 320,14 620,62"/>
+          <text class="d-tb" x="320" y="54" text-anchor="middle">OBJECT-ORIENTED PROGRAMMING</text>
+
+          <rect class="d-soft" x="28" y="68" width="138" height="88" rx="4"/>
+          <text class="d-tb" x="97" y="98" text-anchor="middle">Encapsulation</text>
+          <text class="d-ts" x="97" y="124" text-anchor="middle">private data</text>
+          <text class="d-ts" x="97" y="144" text-anchor="middle">public methods</text>
+
+          <rect class="d-soft" x="174" y="68" width="138" height="88" rx="4"/>
+          <text class="d-tb" x="243" y="98" text-anchor="middle">Inheritance</text>
+          <text class="d-ts" x="243" y="124" text-anchor="middle">parent class</text>
+          <text class="d-ts" x="243" y="144" text-anchor="middle">child extends</text>
+
+          <rect class="d-soft" x="320" y="68" width="138" height="88" rx="4"/>
+          <text class="d-tb" x="389" y="98" text-anchor="middle">Polymorphism</text>
+          <text class="d-ts" x="389" y="124" text-anchor="middle">overloading</text>
+          <text class="d-ts" x="389" y="144" text-anchor="middle">overriding</text>
+
+          <rect class="d-soft" x="466" y="68" width="138" height="88" rx="4"/>
+          <text class="d-tb" x="535" y="98" text-anchor="middle">Abstraction</text>
+          <text class="d-ts" x="535" y="124" text-anchor="middle">abstract class</text>
+          <text class="d-ts" x="535" y="144" text-anchor="middle">interface</text>
+
+          <rect class="d-fill" x="20" y="156" width="584" height="14" rx="2"/>
+          <text class="d-cap" x="320" y="184" text-anchor="middle">all four together make a Java program object-oriented</text>
+        </svg>
+        <figcaption>Fig. 3 — The four pillars, drawn as four pillars. Each one solves a different problem, and a well-written Java class usually shows all four at work at the same time.</figcaption>
+      </figure>
+
+      <!-- PAGE 4 -->
+      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 1 · Java program + output</span></div>
+      <div class="divider">Java Program</div>
+      <p class="codelabel">This one program demonstrates all four OOP concepts together. Copy it on Page 4.</p>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Demo.java</span></div>
+<pre><code class="language-java">// Demo.java - all four OOP concepts in one program
+abstract class Animal {                  // 1) ABSTRACTION
+    String name;
+    Animal(String name) { this.name = name; }
+    abstract void sound();               // declared, no body
+    void sleep() {                       // shared normal method
+        System.out.println(name + " is sleeping");
+    }
+}
+class Dog extends Animal {               // 2) INHERITANCE
+    Dog(String name) { super(name); }
+    @Override
+    void sound() {                       // 3) POLYMORPHISM (overriding)
+        System.out.println(name + " barks: Woof Woof");
+    }
+}
+class Student {                          // 4) ENCAPSULATION
+    private int marks;                   // data hiding
+    Student(int marks) { this.marks = marks; }
+    public int getMarks() { return marks; }
+    public void setMarks(int m) {        // validated setter
+        if (m &gt;= 0 &amp;&amp; m &lt;= 100) marks = m;
+        else System.out.println("Invalid marks");
+    }
+}
+public class Demo {
+    public static void main(String[] args) {
+        Animal a = new Dog("Tommy");     // run-time polymorphism
+        a.sound();
+        a.sleep();
+        Student s = new Student(85);
+        s.setMarks(150);                 // rejected by validation
+        System.out.println("Marks: " + s.getMarks());
+    }
+}</code></pre>
+      </div>
+      <h4>Output of the Program</h4>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
+<pre><code class="language-plaintext">Tommy barks: Woof Woof
+Tommy is sleeping
+Invalid marks
+Marks: 85</code></pre>
+      </div>
+      <div class="callout"><p class="ct">Conclusion</p><p>Java is a platform-independent, object-oriented language in which the abstract class gave us abstraction, <b>extends</b> gave us inheritance, <b>@Override</b> showed polymorphism and the private members gave us encapsulation. These four pillars are the foundation of Java and of all object-oriented programming.</p></div>
+
+    </div>
+  </article>
+
+  <!-- ===== Q2 ===== -->
+  <article class="qblock" id="q2">
+    <div class="qhead">
+      <div class="qnum">02</div>
+      <div class="qmeta">
+        <p class="qtag">Question Two · Encapsulation</p>
+        <h2 class="qtext">Write one example for encapsulation and define each function.</h2>
+        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>Program on Page 3, functions on Page 4</b></div></div>
+      </div>
+    </div>
+    <div class="ans">
+
+      <!-- PAGE 1 -->
+      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 2 · Encapsulation explained</span></div>
+      <h3>What is Encapsulation?</h3>
+      <p><b>Encapsulation</b> is one of the pillars of OOPS in which we bind the <b>data</b> (variables) and the <b>functions</b> (methods) that operate on that data together into a single unit — that is, into a class — and then prevent the data from being reached directly from outside. A simple way to remember it is to think of a capsule of medicine: the medicine is sealed inside the capsule and cannot be touched from the outside. This is exactly why the technique is called encapsulation.</p>
+      <p>Encapsulation is needed because if the data of an object stays open, anyone can change it in a wrong way and errors begin to appear in the program. For example, if the <i>balance</i> of a bank account were public, a careless line of code could set it to a negative value. Through encapsulation we make the data <b>private</b>, and to reach it we provide <b>public</b> methods known as getters and setters. These methods can check the value before allowing it. This controlled access is called <b>Data Hiding</b> — the data stays hidden, yet safe access is always available.</p>
+      <h4>Advantages of Encapsulation</h4>
+      <ul>
+        <li><b>Data Security:</b> since the data is private, it cannot be corrupted directly from outside the class.</li>
+        <li><b>Controlled Access:</b> the data can be reached only through getters and setters, where validation can be performed.</li>
+        <li><b>Flexibility:</b> the internal code can be changed later without disturbing the code that uses the class.</li>
+        <li><b>Reusability and Easy Testing:</b> a fully encapsulated class is self-contained, so it is easy to reuse and easy to test.</li>
+        <li><b>Maintenance:</b> a single owner of the data means the program is easier to understand and to keep correct.</li>
+      </ul>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 640 212" role="img" aria-label="Encapsulation keeps data private and exposes public methods">
+          <rect class="d-box" x="12" y="70" width="128" height="100" rx="5"/>
+          <text class="d-t" x="76" y="112" text-anchor="middle">Outside code</text>
+          <text class="d-ts" x="76" y="134" text-anchor="middle">(another class)</text>
+
+          <rect class="d-box" x="180" y="14" width="300" height="192" rx="5"/>
+          <text class="d-tb" x="330" y="42" text-anchor="middle">class BankAccount</text>
+          <line class="d-line" x1="196" y1="54" x2="464" y2="54"/>
+
+          <rect class="d-fill" x="196" y="62" width="268" height="58" rx="4"/>
+          <text class="d-t" x="330" y="88" text-anchor="middle">private  double balance;</text>
+          <text class="d-ts" x="330" y="108" text-anchor="middle">hidden from the outside world</text>
+
+          <rect class="d-box" x="196" y="138" width="268" height="56" rx="4"/>
+          <text class="d-ts" x="330" y="162" text-anchor="middle">public  deposit()  /  withdraw()</text>
+          <text class="d-ts" x="330" y="182" text-anchor="middle">public  getBalance()</text>
+
+          <line class="d-dash" x1="140" y1="104" x2="176" y2="104"/>
+          <text class="d-cap" x="150" y="94" text-anchor="middle">blocked</text>
+
+          <line class="d-line" x1="140" y1="166" x2="172" y2="166"/>
+          <polygon class="d-ah" points="176,166 166,161 166,171"/>
+          <text class="d-cap" x="150" y="156" text-anchor="middle">allowed</text>
+        </svg>
+        <figcaption>Fig. 1 — Encapsulation. The data stays private and the outside code may reach it only through the public methods, where the values can be checked first.</figcaption>
+      </figure>
+
+      <!-- PAGE 2 -->
+      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 2 · The BankAccount design</span></div>
+      <h3>Example — the BankAccount Class</h3>
+      <p>To see encapsulation in practice we take a real-life example, a <b>BankAccount</b>. In this class the account's <b>balance</b> is important and sensitive data. If anyone could change the balance directly, the whole banking system could be damaged. Therefore we make the balance <b>private</b>, and to reach it we provide public methods such as getBalance, setBalance, deposit and withdraw.</p>
+      <p>Inside this class there are six functions in all. The purpose of each one is listed in the table below; the program is written on Page 3 and a full definition of every function is given on Page 4.</p>
+      <table class="tbl">
+        <thead><tr><th>Member / Function</th><th>Type</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code class="inl">private String owner</code></td><td>Variable</td><td>Name of the account holder (hidden)</td></tr>
+          <tr><td><code class="inl">private double balance</code></td><td>Variable</td><td>Current balance (hidden)</td></tr>
+          <tr><td><code class="inl">BankAccount(...)</code></td><td>Constructor</td><td>Sets the name and opening balance</td></tr>
+          <tr><td><code class="inl">getOwner()</code></td><td>Getter</td><td>Reads the private name</td></tr>
+          <tr><td><code class="inl">getBalance()</code></td><td>Getter</td><td>Reads the private balance</td></tr>
+          <tr><td><code class="inl">deposit(amount)</code></td><td>Method</td><td>Adds money after checking it is positive</td></tr>
+          <tr><td><code class="inl">withdraw(amount)</code></td><td>Method</td><td>Removes money after checking the balance</td></tr>
+          <tr><td><code class="inl">setBalance(newB)</code></td><td>Setter</td><td>Updates the balance only if it is valid</td></tr>
+        </tbody>
+      </table>
+      <p>Notice that the two data members are private while every function that touches them is public. That is encapsulation in one line — private data, public methods.</p>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 640 208" role="img" aria-label="The BankAccount class, its private data and its public methods">
+          <rect class="d-fill" x="40" y="24" width="250" height="38" rx="4"/>
+          <text class="d-tb" x="165" y="49" text-anchor="middle">BankAccount</text>
+          <rect class="d-box" x="40" y="24" width="250" height="168" rx="4"/>
+
+          <line class="d-line" x1="40" y1="62" x2="290" y2="62"/>
+          <line class="d-line" x1="40" y1="118" x2="290" y2="118"/>
+
+          <text class="d-ts" x="52" y="82">private fields</text>
+          <text class="d-mono" x="52" y="104">- owner   : String</text>
+          <text class="d-mono" x="52" y="122">- balance : double</text>
+
+          <text class="d-ts" x="52" y="142">public methods</text>
+          <text class="d-mono" x="52" y="162">+ getBalance() : double</text>
+          <text class="d-mono" x="52" y="180">+ deposit( )  + withdraw( )</text>
+
+          <rect class="d-soft" x="500" y="60" width="120" height="120" rx="5"/>
+          <text class="d-t" x="560" y="112" text-anchor="middle">Other</text>
+          <text class="d-t" x="560" y="132" text-anchor="middle">class</text>
+
+          <line class="d-dash" x1="496" y1="80" x2="318" y2="80"/>
+          <line class="d-line" x1="310" y1="72" x2="294" y2="88"/>
+          <line class="d-line" x1="310" y1="88" x2="294" y2="72"/>
+          <text class="d-cap" x="318" y="70">private - blocked</text>
+
+          <line class="d-line" x1="496" y1="148" x2="296" y2="148"/>
+          <polygon class="d-ah" points="290,148 300,143 300,153"/>
+          <text class="d-cap" x="318" y="140">public methods - allowed</text>
+        </svg>
+        <figcaption>Fig. 2 — The shape of an encapsulated class. The fields sit behind a wall; the only doors in that wall are the public methods, and every visitor — that is, every other class — must enter through them.</figcaption>
+      </figure>
+
+      <!-- PAGE 3 -->
+      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 2 · Java program</span></div>
+      <div class="divider">Java Program</div>
+      <p class="codelabel">An example of encapsulation using a bank account. The balance is private and can be reached only through public methods.</p>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">BankAccount.java</span></div>
+<pre><code class="language-java">// BankAccount.java - encapsulation in action
+class BankAccount {
+    private String owner;               // hidden data
+    private double balance;             // hidden data
+
+    public BankAccount(String owner, double balance) {   // constructor
+        this.owner = owner;
+        this.balance = balance;
+    }
+    public String getOwner() { return owner; }        // getter
+    public double getBalance() { return balance; }    // getter
+
+    public void deposit(double amount) {              // adds money
+        if (amount &gt; 0) {
+            balance = balance + amount;
+            System.out.println("Deposited: Rs." + amount);
+        }
+    }
+    public void withdraw(double amount) {             // removes money
+        if (amount &gt; 0 &amp;&amp; amount &lt;= balance) {
+            balance = balance - amount;
+            System.out.println("Withdrawn: Rs." + amount);
+        } else {
+            System.out.println("Error: insufficient balance");
+        }
+    }
+    public void setBalance(double newBalance) {       // validated setter
+        if (newBalance &gt;= 0) balance = newBalance;
+        else System.out.println("Error: balance cannot be negative");
+    }
+}
+public class Main {
+    public static void main(String[] args) {          // testing
+        BankAccount acc = new BankAccount("Rahul Kumar", 5000);
+        acc.deposit(2500);        // 5000 + 2500 = 7500
+        acc.withdraw(1000);       // 7500 - 1000 = 6500
+        acc.setBalance(-500);     // rejected by validation
+        System.out.println("Owner   : " + acc.getOwner());
+        System.out.println("Balance : Rs." + acc.getBalance());
+    }
+}</code></pre>
+      </div>
+
+      <!-- PAGE 4 -->
+      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 2 · Function definitions + output</span></div>
+      <h4>Definition of Each Function</h4>
+      <p><b>1. Constructor — BankAccount(String owner, double balance):</b> a constructor is a special function that runs automatically when an object is created. Its name is the same as the class and it has no return type. Its job is to set the <code class="inl">owner</code> and the opening <code class="inl">balance</code> as soon as an account is created. Because it lies inside the class, it can reach the private members directly.</p>
+      <p><b>2. getOwner():</b> this is a <b>getter</b> (accessor). Its only job is to return the value of the private variable <code class="inl">owner</code>. It changes nothing — it only reads — and since the variable is private, the name can be read from outside only through this public method.</p>
+      <p><b>3. getBalance():</b> this is also a <b>getter</b>. It returns the current value of the private variable <code class="inl">balance</code>. As the balance is never shown openly, this method provides a safe way to read it.</p>
+      <p><b>4. deposit(double amount):</b> this method adds money to the account. It first checks that <code class="inl">amount</code> is positive, and only then adds it to the balance. Because it lies inside the class, it can update the private balance directly.</p>
+      <p><b>5. withdraw(double amount):</b> this method removes money. It performs two checks — that the amount is positive, and that it is not greater than the current balance. If both pass, the amount is subtracted; otherwise the message “insufficient balance” is printed.</p>
+      <p><b>6. setBalance(double newBalance):</b> this is a <b>setter</b> (mutator). It updates the private balance, but only after checking that the new value is not negative. This validation is the main benefit of encapsulation — because the data is not open, a wrong value is caught before it is stored.</p>
+      <h4>Output of the Program</h4>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
+<pre><code class="language-plaintext">Deposited: Rs.2500.0
+Withdrawn: Rs.1000.0
+Error: balance cannot be negative
+Owner   : Rahul Kumar
+Balance : Rs.6500.0</code></pre>
+      </div>
+      <div class="callout"><p class="ct">Conclusion</p><p>This example shows how encapsulation keeps the balance completely safe. Nobody from outside can set it to a negative value, because the setter validates it first. That is the real benefit of encapsulation — <b>data hiding, controlled access and validation</b> working together.</p></div>
+
+    </div>
+  </article>
+
+  <!-- ===== Q3 ===== -->
+  <article class="qblock" id="q3">
+    <div class="qhead">
+      <div class="qnum">03</div>
+      <div class="qmeta">
+        <p class="qtag">Question Three · Class Access</p>
+        <h2 class="qtext">What is the difference between private and public class?</h2>
+        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>Table + program on Page 4</b></div></div>
+      </div>
+    </div>
+    <div class="ans">
+
+      <!-- PAGE 1 -->
+      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 3 · Class and access modifiers</span></div>
+      <h3>What is a Class and what is an Access Modifier?</h3>
+      <p>In Java a <b>class</b> is a blueprint from which objects are created. A class contains data (variables) and functions (methods), and every object built from it follows the same design. For example, the class <code class="inl">Student</code> describes what every student has — a roll number, a name and marks — and each real student is an object of that class.</p>
+      <p>When a class is declared, it may be given an <b>access modifier</b>. An access modifier decides <b>from where</b> that class can be used. Java provides four of them — <code class="inl">public</code>, <code class="inl">protected</code>, <code class="inl">default</code> (written with no keyword at all) and <code class="inl">private</code>. When we speak about the access modifier of a class itself, the two that matter most in practice are the <b>public class</b> and the <b>private class</b>, and the difference between them decides how far the class will reach.</p>
+      <h4>Why the Difference Matters</h4>
+      <p>If a class is made too open, other parts of the program can depend on it and its internal working becomes difficult to change. If it is made too closed, the rest of the program cannot use it at all. Choosing the right access is therefore a balance between <b>availability</b> and <b>hiding</b>, and that balance is exactly what the public/private decision controls. The two are explained in detail on the following pages, and compared with a table and a program on Page 4.</p>
+      <p>A useful way to think about it is to compare a class with a room. A <b>public class</b> is like a room whose door opens onto the street, so anyone may walk in; such a room must therefore be kept tidy, because whatever lies inside it becomes the business of the whole town. A <b>private class</b> is like an inner room that can be reached only from the house itself; the owner may keep anything in it, in any order, because no stranger ever sees it. Good programmers keep most of their classes as the second kind of room and open only a small, carefully chosen set of doors to the outside world. This habit is what makes a large program manageable, and it is why access modifiers are among the first things a Java programmer must learn to use wisely.</p>
+      <p>It must also be remembered that the access of a class and the access of its members are two separate matters. A class may be public while its variables are private, and this is in fact the usual arrangement — the class itself is open for use, but the data inside it stays hidden. This combination is exactly what encapsulation asks for, and it is why the two ideas are always taught together: the modifier on the class decides who may use the class, and the modifiers on the members decide who may touch the data inside it.</p>
+
+      <!-- PAGE 2 -->
+      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 3 · Public class</span></div>
+      <h3>Public Class</h3>
+      <p>When the keyword <code class="inl">public</code> is written before a class, that class becomes accessible <b>anywhere in the whole project</b>, even from a completely different package. For example, if we write <code class="inl">public class Student</code>, then any other class — in our own package or in another package, after importing it — can create objects of <code class="inl">Student</code> and use its public methods.</p>
+      <p>There is one important rule that goes with a public class: <b>the name of the .java file must be exactly the same as the name of the public class.</b> If the file is named <code class="inl">Student.java</code>, then it may contain only one public class, and that class must be <code class="inl">Student</code>. If a second public class is written in the same file, the compiler reports an error. This rule exists so that the compiler and the JVM can always find the class by its file name.</p>
+      <p>A public class usually contains the <code class="inl">main()</code> method of a program, because the Java launcher looks for <code class="inl">main()</code> inside a class that can be reached from outside. In short, a public class is the <b>face</b> that the program shows to the world.</p>
+      <h4>Characteristics of a Public Class</h4>
+      <ul>
+        <li><b>Accessible everywhere:</b> it can be used from any package and any class.</li>
+        <li><b>File name must match:</b> the name of the public class must match the name of the .java file.</li>
+        <li><b>Used to build interfaces:</b> when we want others to use our class, we make it public.</li>
+        <li><b>One per file:</b> a single .java file may contain only one public class.</li>
+      </ul>
+      <h4>Other Access Modifiers for Reference</h4>
+      <p>Between the two extremes of public and private lie two more modifiers. A <b>default</b> (package-private) class, written with no keyword at all, is visible only inside its own package; this is the most common choice for helper classes that must not be exposed to the world. A <b>protected</b> class is visible inside its package and also to its subclasses in other packages, so it is used where inheritance must reach across packages. A private top-level class is not allowed at all — only a nested class may be private — which is why the choice for a top-level class is really between public and default. Knowing this ladder — public, then default, then private — is what lets a programmer decide exactly how far a class should be allowed to travel.</p>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 640 214" role="img" aria-label="How far a public class and a private class can be reached">
+          <rect class="d-box" x="16" y="12" width="608" height="196" rx="5"/>
+          <text class="d-cap" x="34" y="36">Whole project / package</text>
+
+          <rect class="d-fill" x="40" y="56" width="250" height="126" rx="5"/>
+          <text class="d-t" x="165" y="80" text-anchor="middle">public class AccessDemo</text>
+
+          <rect class="d-box" x="62" y="104" width="206" height="46" rx="4"/>
+          <text class="d-ts" x="165" y="126" text-anchor="middle">private class Helper</text>
+          <text class="d-ts" x="165" y="144" text-anchor="middle">reachable only from inside</text>
+
+          <text class="d-cap" x="165" y="200" text-anchor="middle">the private class never leaves its owner</text>
+
+          <rect class="d-box" x="378" y="92" width="206" height="60" rx="5"/>
+          <text class="d-t" x="481" y="118" text-anchor="middle">class TestRunner</text>
+          <text class="d-ts" x="481" y="138" text-anchor="middle">(another package)</text>
+
+          <line class="d-line" x1="378" y1="104" x2="298" y2="104"/>
+          <polygon class="d-ah" points="292,104 302,99 302,109"/>
+          <text class="d-cap" x="332" y="94" text-anchor="middle">allowed</text>
+
+          <line class="d-dash" x1="378" y1="142" x2="310" y2="142"/>
+          <text class="d-cap" x="344" y="132" text-anchor="middle">blocked</text>
+        </svg>
+        <figcaption>Fig. 1 — How far each class can travel. A public class is open to the whole project; a private class is trapped inside the class that owns it.</figcaption>
+      </figure>
+
+      <!-- PAGE 3 -->
+      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 3 · Private class</span></div>
+      <h3>Private Class</h3>
+      <p>When the keyword <code class="inl">private</code> is written before a class, that class becomes accessible <b>only inside the class in which it is defined</b>, and not from outside at all. In Java such a class works as a <b>nested class</b> (also called an inner class). This means that a private class can be used only inside its <b>enclosing (outer) class</b>, and no class outside it can create an object of it.</p>
+      <p>We use a private class when we want the entire implementation of some part of the program to stay hidden from the outside world. For example, if a class <code class="inl">Outer</code> contains a <code class="inl">private class Helper</code>, then <code class="inl">Helper</code> can be used only inside <code class="inl">Outer</code>. Nothing outside can even name it, let alone create it. The outside world sees only the public face of <code class="inl">Outer</code>, while all the helper work goes on privately behind it.</p>
+      <p>There is one more rule that must be remembered: a <b>top-level class</b> (a class written at the very top of a file) <b>can never be private</b>; it may only be <code class="inl">public</code> or default. <b>Only nested classes can be private.</b> This is a fundamental rule of Java, and it is the reason a private class is always an inner class.</p>
+      <h4>Characteristics of a Private Class</h4>
+      <ul>
+        <li><b>Accessible only in the enclosing class:</b> no class outside can reach it directly.</li>
+        <li><b>Implementation stays hidden:</b> the outside world sees only the interface, not the internal work.</li>
+        <li><b>Can only be a nested class:</b> a top-level class can never be private.</li>
+        <li><b>Improves encapsulation:</b> helper code is kept completely out of sight.</li>
+      </ul>
+      <p>A private class is useful in a very common real situation. Suppose a class must do a small internal calculation — say, format an amount into words, or check a password against a set of rules — and this work is of no interest to anyone else. If the helper class were public, any part of the program could call it, and the helper would slowly become part of the program's official surface, which would make the class hard to change later. By keeping it private, the author is free to rewrite or even remove the helper whenever he wishes, because nothing outside depends on it. This is exactly the principle behind the phrase <b>“hide what can be hidden”</b>: the smaller the public face of a class, the easier the class is to use, to test and to improve.</p>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 640 186" role="img" aria-label="A private nested class sealed inside its enclosing class">
+          <rect class="d-box" x="30" y="24" width="366" height="138" rx="6"/>
+          <text class="d-tb" x="213" y="52" text-anchor="middle">Outer</text>
+
+          <rect class="d-dash" x="58" y="66" width="310" height="70" rx="4"/>
+          <text class="d-t" x="213" y="96" text-anchor="middle">private class Helper</text>
+          <text class="d-ts" x="213" y="118" text-anchor="middle">visible only inside Outer</text>
+
+          <text class="d-ts" x="58" y="154">Outer's own methods may use Helper freely</text>
+
+          <rect class="d-soft" x="470" y="62" width="150" height="84" rx="5"/>
+          <text class="d-t" x="545" y="98" text-anchor="middle">Outside</text>
+          <text class="d-t" x="545" y="118" text-anchor="middle">class</text>
+
+          <line class="d-dash" x1="466" y1="92" x2="452" y2="92"/>
+          <line class="d-line" x1="460" y1="78" x2="436" y2="106"/>
+          <line class="d-line" x1="460" y1="106" x2="436" y2="78"/>
+          <text class="d-cap" x="414" y="74">blocked</text>
+          <text class="d-cap" x="412" y="166">cannot name it, cannot create it</text>
+        </svg>
+        <figcaption>Fig. 2 — A private class inside its enclosing class. The enclosing class keeps the key, its own methods walk straight in, and every class outside the wall is stopped at the door.</figcaption>
+      </figure>
+
+      <!-- PAGE 4 -->
+      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 3 · Table + program + output</span></div>
+      <h4>Difference between Private and Public Class</h4>
+      <table class="tbl">
+        <thead><tr><th>Basis</th><th>public class</th><th>private class</th></tr></thead>
+        <tbody>
+          <tr><td>Accessibility</td><td>Anywhere in the whole project</td><td>Only inside the enclosing class</td></tr>
+          <tr><td>Purpose</td><td>Used when the class must be used from outside</td><td>Used when the implementation must stay hidden</td></tr>
+          <tr><td>Where it is written</td><td>Can be top-level or nested</td><td>Can only be a nested (inner) class</td></tr>
+          <tr><td>File-name rule</td><td>Its name must match the .java file name</td><td>No such rule applies</td></tr>
+          <tr><td>Encapsulation</td><td>Less — the class is open</td><td>More — the class is hidden</td></tr>
+          <tr><td>Example</td><td><code class="inl">public class Student</code></td><td><code class="inl">private class Helper</code></td></tr>
+        </tbody>
+      </table>
+      <div class="divider">Java Program</div>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">AccessDemo.java</span></div>
+<pre><code class="language-java">// AccessDemo.java - public class vs private (nested) class
+public class AccessDemo {                // PUBLIC class
+    private class Helper {               // PRIVATE nested class
+        void show() {
+            System.out.println("Helper works only inside AccessDemo");
+        }
+    }
+    public void startWork() {            // public method
+        Helper h = new Helper();         // allowed: we are inside
+        h.show();
+    }
+}
+class TestRunner {                       // default (non-public) class
+    void tryHelper() {
+        // AccessDemo.Helper h = new AccessDemo.Helper();  // ERROR here
+        System.out.println("Helper cannot be used from here");
+    }
+    public static void main(String[] args) {
+        AccessDemo demo = new AccessDemo();
+        demo.startWork();
+        new TestRunner().tryHelper();
+    }
+}</code></pre>
+      </div>
+      <h4>Output of the Program</h4>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
+<pre><code class="language-plaintext">Helper works only inside AccessDemo
+Helper cannot be used from here</code></pre>
+      </div>
+      <div class="callout"><p class="ct">Conclusion</p><p>A public class is accessible throughout the project and is used to provide an interface, while a private class is accessible only inside its enclosing class and is used to hide the implementation. A private class can only be nested, and a public class must match its file name. That is the real difference between the two.</p></div>
+
+    </div>
+  </article>
+
+  <p class="foot">Internal Assignment · BCA Semester V · <a href="pdf/5BCA3_JAVA.pdf" download>Download the PDF of this subject</a> · <a href="index.html">All subjects</a> · Submission 23-10-2026</p>
+</div>
+
+<a href="#top" class="totop" title="Back to top">&#9650;</a>
+<script src="assets/vendor/highlight.min.js?v=2"></script>
+<script src="assets/monolith.js?v=2"></script>
+</body>
+</html>
