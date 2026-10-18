@@ -8,9 +8,31 @@ Capacitor, built automatically by **GitHub Actions**.
 | Subjects | 5 |
 | Questions | 15 |
 | A4 pages | 60 (4 per question) |
+| Print type size | 12 pt (matches handwriting density) |
 | Diagrams / charts | 35 (animated SVG + text-mode figures) |
 | Ready-made PDFs | 5 (bundled inside the app) |
 | Internet needed after install | **No** |
+
+### Print density is matched to handwriting
+
+The printed page was originally carrying about **319 words** — noticeably more
+than a person can comfortably copy onto one A4 sheet by hand. The print
+typography was rebuilt around a real handwriting sample instead:
+
+| | Before | Now |
+|---|---|---|
+| Print body type | 10.8 pt | **12 pt** |
+| Line height | 1.47 | **1.5** |
+| Page margins | 13 mm | **11 mm** |
+| Content area | 184 × 271 mm | **188 × 275 mm** |
+| Words per printed page | ~319 | **~250** |
+
+`@page` is A4 with an 11 mm margin, so the printable box is 188 × 275 mm. Every
+one of the 60 planned pages is checked against that 275 mm limit — the current
+tallest page is **274.5 mm**, so nothing is ever cut off and nothing spills onto
+a 61st sheet. Redundant prose was condensed on the heaviest pages of all five
+subjects to buy back the space; no topic, figure, table or code sample was
+removed.
 
 ---
 
@@ -126,7 +148,8 @@ update the app later.
   no network is needed at any point.
 * **The animated figures** play exactly as they do in a browser.
 * Printing from inside the app still opens Android's own print dialog, where
-  "Save as PDF" produces the same 60 A4 pages.
+  "Save as PDF" produces the same 60 A4 pages, in the same 12 pt type, with the
+  same 11 mm margins.
 
 ## Icons and splash screen
 
