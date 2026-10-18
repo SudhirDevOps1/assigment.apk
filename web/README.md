@@ -72,6 +72,25 @@ Run one command per subject. If a command silently fails, close any running
 
 ---
 
+## Page planning — how one page = one handwritten A4 sheet
+
+Every question is planned across exactly four A4 pages, and each planned page
+is sized so that it fills **one sheet when written by hand**. The calibration
+comes from a real answer sheet: about 23 handwritten lines, each holding
+roughly 10 words, so **260 words of prose = one A4 page**.
+
+| What the page carries | Ink it uses | Prose budget |
+|---|---|---|
+| plain prose | — | 260 words |
+| one hand-drawn diagram | ~9 lines | 172 words |
+| one text-mode (ASCII) figure | ~11 lines | 150 words |
+| a table | 1 line per row | 260 − 10 words per row |
+| a code program | ~30 lines per page | 40 words + ≤ 26 lines of code |
+
+That is why the code programs are deliberately short — a 36-line program
+would already fill a whole sheet on its own. The figure captions are written
+as instructions ("write this box in your notebook") so nothing is wasted ink.
+
 ## Printing rules used by the stylesheet
 
 * `@page { size: A4; margin: 13mm }` → a printable box of 184 × 271 mm.

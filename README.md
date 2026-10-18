@@ -13,26 +13,44 @@ Capacitor, built automatically by **GitHub Actions**.
 | Ready-made PDFs | 5 (bundled inside the app) |
 | Internet needed after install | **No** |
 
-### Print density is matched to handwriting
+### Page density is matched to handwriting
 
-The printed page was originally carrying about **319 words** — noticeably more
-than a person can comfortably copy onto one A4 sheet by hand. The print
-typography was rebuilt around a real handwriting sample instead:
+The answers were originally carrying about **342 words per planned page** —
+roughly twice what a person can comfortably copy onto one A4 sheet by hand. The
+content has now been rebuilt around a real handwriting sample.
+
+The calibration sample was a filled answer sheet: about **23 handwritten
+lines**, each holding roughly **10 words**. So:
+
+> **260 words of prose = one A4 page written by hand.**
+
+Every planned page is then budgeted by what else has to fit on that same
+sheet:
+
+| What the page carries | Ink it uses | Prose budget |
+|---|---|---|
+| plain prose | — | 260 words |
+| one hand-drawn diagram | ~9 lines | 172 words |
+| one text-mode (ASCII) figure | ~11 lines | 150 words |
+| a table | 1 line per row | 260 − 10 words per row |
+| a code program | ~30 lines per page | 40 words + ≤ 26 lines |
+
+That is why the programs are deliberately short: a 36-line program would
+already fill a whole sheet on its own.
 
 | | Before | Now |
 |---|---|---|
-| Print body type | 10.8 pt | **12 pt** |
-| Line height | 1.47 | **1.5** |
-| Page margins | 13 mm | **11 mm** |
-| Content area | 184 × 271 mm | **188 × 275 mm** |
-| Words per printed page | ~319 | **~250** |
+| Words per planned page | ~342 | **~115** |
+| Average page load (1.0 = one sheet) | 1.95 | **0.82** |
+| Tallest page load | 2.89 | **1.14** |
+| Total prose across 60 pages | 20,527 | **6,872** |
+| Diagrams, tables and programs | 35 / 11 / 15 | **all kept** |
 
-`@page` is A4 with an 11 mm margin, so the printable box is 188 × 275 mm. Every
-one of the 60 planned pages is checked against that 275 mm limit — the current
-tallest page is **274.5 mm**, so nothing is ever cut off and nothing spills onto
-a 61st sheet. Redundant prose was condensed on the heaviest pages of all five
-subjects to buy back the space; no topic, figure, table or code sample was
-removed.
+Nothing was deleted to make room: every figure, table and program survived,
+and only the explanatory prose was condensed. The printed sheets are set at
+**12 pt** so the plan is easy to read while writing, and the tallest printed
+page is about **200 mm** of the available 271 mm — the rest of each sheet
+is left free for your own handwriting and diagrams.
 
 ---
 

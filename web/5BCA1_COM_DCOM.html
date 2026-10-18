@@ -63,13 +63,12 @@
     <div class="ans">
 
       <!-- PAGE 1 -->
-      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 1 · What is COM</span></div>
+      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 1 Â· What is COM</span></div>
       <h3>Introduction to COM</h3>
-      <p><b>COM (Component Object Model)</b> is a Microsoft specification, introduced in <b>1993</b>, describing how software components are built and how they talk to one another. A <i>component</i> is a ready-made piece of software that performs one clear job and can be plugged into different programs without being recompiled. Before COM, reusable code was shared through ordinary DLLs, but this created serious trouble — no fixed way to ask a DLL what it could do, C and C++ compilers mangling function names differently, and a new DLL often breaking an older program. This was nicknamed <b>“DLL Hell”</b>.</p>
-      <p>COM solved this with a <b>binary standard</b>. A component written in C++, Visual Basic or Delphi can be used by a program written in a different language, because the two agree only on the layout of a virtual table, not on the source code. A component exposes its services through <b>interfaces</b>, and every interface derives from <code class="inl">IUnknown</code>, which provides <code class="inl">QueryInterface</code>, <code class="inl">AddRef</code> and <code class="inl">Release</code>. Each component is identified by a globally unique <b>GUID</b> — a CLSID for a class, an IID for an interface — so two programmers anywhere in the world can never clash over a name.</p>
-      <p>Depending on where the component runs, a COM call may be <b>in-process</b> (same program), <b>out-of-process</b> (another program on the same machine) or <b>remote</b> (another machine — this is <b>DCOM</b>). The further apart two components are, the more expensive the call becomes, and this is exactly where the clustering factor matters.</p>
-
-      <figure class="diagram">
+      <p><b>COM (Component Object Model)</b> is a Microsoft specification, introduced in <b>1993</b>, that describes how software components should be built and how they should talk to one another. A <i>component</i> is a ready-made piece of software that performs one clear job and can be plugged into different programs without being recompiled.</p>
+      <p>Before COM, reusable code was shared through ordinary DLLs, but that method created serious trouble â€” there was no fixed way to ask a DLL what it could do, C and C++ compilers mangled function names differently, and installing a new DLL often broke an older program. This problem was so common that it was nicknamed <b>â€œDLL Hellâ€</b>.</p>
+      <p>COM solved this by defining a <b>binary standard</b>. A component written in C++, Visual Basic or Delphi can be used by a program written in a completely different language, because they agree only on the layout of a virtual table and not on the source code.</p>
+<figure class="diagram">
         <svg viewBox="0 0 640 206" role="img" aria-label="The COM call cost ladder">
           <rect class="d-fill" x="24" y="30" width="176" height="76" rx="5"/>
           <text class="d-tb" x="112" y="58" text-anchor="middle">In-process</text>
@@ -101,13 +100,11 @@
       </figure>
 
       <!-- PAGE 2 -->
-      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 1 · The clustering factor</span></div>
+      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 1 Â· The clustering factor</span></div>
       <h3>What is the Clustering Factor?</h3>
-      <p><b>Clustering</b> means keeping related things together so they can work as one group. In COM, the <b>clustering factor</b> measures how well the objects that talk most often have been kept together — in the same process, or at least the same machine — so their calls stay <b>local</b>. A high factor means the communication happens in one place; a low factor means the components are scattered and every call crosses a process or network boundary.</p>
-      <p>The reason this matters is that the cost of a COM call is not the same everywhere. A call inside the same process is a direct jump through a v-table and takes nanoseconds. A call crossing an <b>apartment</b> boundary needs <b>marshalling</b> — a proxy packs the arguments, a stub unpacks them, the call runs, and the result is packed back. A call leaving the process entirely adds context switches, and for DCOM a full network round-trip, so the cost grows from nanoseconds to microseconds to milliseconds as you move outward. Think of a kitchen: if every ingredient for a dish is on the same counter, cooking is fast; if the salt is in the kitchen, the onions in the store-room and the water in the garden, the cook spends more time walking than cooking.</p>
-      <p>A designer therefore improves the factor in two steps. First find the objects that exchange messages most often — the “chatty” parts of the system. Then bring those objects into the same <b>process and the same apartment</b>, so their frequent conversation never leaves one boundary. Rarely-used, very heavy objects are better kept out-of-process so they do not occupy memory in the main program. A second benefit is <b>thread safety</b>: every apartment follows its own threading rule, so related objects sharing one apartment share one rule, removing a whole class of bugs where one thread changes data while another reads it.</p>
-
-      <figure class="diagram">
+      <p><b>Clustering</b> means keeping related things together so that they can work as one group. In COM the <b>clustering factor</b> measures how well the objects that talk most often have been kept together, in the same process or at least on the same machine, so that their calls stay <b>local</b>.</p>
+      <p>The cost of a call is not the same everywhere. A call inside one process is a direct jump through a v-table and takes nanoseconds. A call crossing an <b>apartment</b> boundary needs <b>marshalling</b> â€” a proxy packs the arguments, a stub unpacks them, the call runs and the result is packed back. A call leaving the process adds context switches, and for DCOM a full network round-trip. The cost therefore grows from nanoseconds to microseconds to milliseconds as we move outward.</p>
+<figure class="diagram">
         <svg viewBox="0 0 640 172" role="img" aria-label="Scattered objects compared with clustered objects">
           <!-- LEFT : low factor -->
           <text class="d-cap" x="16" y="14">Low clustering factor</text>
@@ -150,72 +147,53 @@
       </figure>
 
       <!-- PAGE 3 -->
-      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 1 · How it helps — benefits</span></div>
-      <h3>How the Clustering Factor Improves COM Programming</h3>
-      <p>A well-chosen clustering factor improves a COM system in five concrete ways. <b>First, it removes marshalling overhead:</b> objects that exchange data most frequently live in the same process, so the proxy–stub layer is skipped and both CPU cost and call delay fall sharply. <b>Second, it improves throughput and response time:</b> a business object that calls a data object a thousand times per transaction becomes noticeably faster when the two are co-located. <b>Third, it improves CPU cache locality</b>, because the code and data of closely related objects stay warm in the processor cache. <b>Fourth, it simplifies apartment and thread management,</b> since objects sharing a component share one apartment and one threading rule. <b>Fifth, it scales and stays reliable,</b> because a cluster of servers can share the load and keep working even if one node fails.</p>
-      <p>The table below shows the practical difference between a loosely-packed and a tightly-packed COM application.</p>
+      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 1 Â· Benefits</span></div>
+      <h3>How the Clustering Factor Improves COM</h3>
+      <p>A good clustering factor improves a COM system in four clear ways. <b>First</b>, it removes marshalling overhead, so both CPU cost and call delay fall sharply. <b>Second</b>, it improves throughput, because a business object that calls a data object a thousand times per transaction becomes noticeably faster when the two sit together. <b>Third</b>, it improves CPU cache locality, since the code and data of related objects stay warm. <b>Fourth</b>, it simplifies apartment and thread management and scales reliably.</p>
       <table class="tbl">
-        <thead><tr><th>Point of comparison</th><th>Without clustering (low factor)</th><th>With clustering (high factor)</th></tr></thead>
+        <thead><tr><th>Point of comparison</th><th>Low factor</th><th>High factor</th></tr></thead>
         <tbody>
           <tr><td>Call path</td><td>Cross-process / cross-machine</td><td>In-process (direct v-table)</td></tr>
-          <tr><td>Marshalling cost</td><td>High — data packed and copied every call</td><td>Almost zero</td></tr>
+          <tr><td>Marshalling cost</td><td>High â€” packed every call</td><td>Almost zero</td></tr>
           <tr><td>Latency per call</td><td>Microseconds to milliseconds</td><td>A few nanoseconds</td></tr>
-          <tr><td>Failure handling</td><td>One failure stops the chain</td><td>Other cluster nodes take over</td></tr>
-          <tr><td>Load balancing</td><td>Not possible</td><td>Requests spread over nodes</td></tr>
         </tbody>
       </table>
-      <p>In real life, a bank's COM transaction system keeps the account, ledger and validation objects together inside one clustered business tier. Because these three talk on almost every transaction, clustering them means a transaction hits the fast local path many times and only the final write touches the database — quicker and more stable under load.</p>
+      <p>In real life a bank keeps its account, ledger and validation objects together inside one clustered tier, so a transaction hits the fast local path many times.</p>
 
       <!-- PAGE 4 -->
-      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 1 · C++ program + output</span></div>
+      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 1 Â· C++ program + output</span></div>
       <div class="divider">C++ Program</div>
-      <p class="codelabel">The program below builds a small cluster of COM-style components and shows that the calls between them stay in one place (local, no marshalling). Copy this program on Page 4.</p>
       <div class="codeframe">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">cluster_demo.cpp</span></div>
-<pre><code class="language-cpp">// cluster_demo.cpp - grouping related components keeps calls local
+<pre><code class="language-cpp">// cluster_demo.cpp - related components, local calls
 #include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
-
 class IComponent {                       // COM-style interface
-public:
-    virtual void execute(const string&amp; t) = 0;
-    virtual ~IComponent() {}
-};
-class AccountService : public IComponent {          // cluster member 1
-public:
-    void execute(const string&amp; t) override { cout &lt;&lt; "[Account] " &lt;&lt; t &lt;&lt; endl; }
-};
-class LedgerService : public IComponent {           // cluster member 2
-public:
-    void execute(const string&amp; t) override { cout &lt;&lt; "[Ledger ] " &lt;&lt; t &lt;&lt; endl; }
-};
-class Cluster {                          // keeps related objects together
-    AccountService account;              // local member  ->  fast path
-    LedgerService  ledger;               // local member  ->  fast path
+public: virtual void run(string t) = 0; };
+class Account : public IComponent {       // member 1
+public: void run(string t){ cout&lt;&lt;"[Acc] "&lt;&lt;t&lt;&lt;endl; } };
+class Ledger : public IComponent {        // member 2
+public: void run(string t){ cout&lt;&lt;"[Led] "&lt;&lt;t&lt;&lt;endl; } };
+class Cluster {                           // keeps members together
+    Account a; Ledger l;
 public:
     void process() {
-        account.execute("debit Rs.2500");            // stays in-process
-        ledger.execute ("record the debit entry");   // stays in-process
-        cout &lt;&lt; "Done locally - no marshalling." &lt;&lt; endl;
+        a.run("debit Rs.2500");           // stays in-process
+        l.run("record debit entry");      // no marshalling
+        cout &lt;&lt; "Done locally." &lt;&lt; endl;
     }
 };
-int main() {
-    Cluster bank;                        // all objects live together
-    bank.process();
-    return 0;
-}</code></pre>
+int main(){ Cluster b; b.process(); return 0; }</code></pre>
       </div>
-
-      <h4>Output of the Program</h4>
+      <h4>Output</h4>
       <div class="codeframe">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
-<pre><code class="language-plaintext">[Account] debit Rs.2500
-[Ledger ] record the debit entry
-Done locally - no marshalling.</code></pre>
+<pre><code class="language-plaintext">[Acc] debit Rs.2500
+[Led] record debit entry
+Done locally.</code></pre>
       </div>
-
-      <div class="callout"><p class="ct">Conclusion</p><p>The clustering factor is a way of measuring how tightly the related components of a COM application are packed together. When the objects that talk most often share a process, their calls stay local, marshalling disappears, and both speed and reliability improve. In short, a good clustering factor is one of the simplest and cheapest ways to make a COM system faster and stronger.</p></div>
+      <div class="callout"><p class="ct">Conclusion</p><p>A good clustering factor keeps the objects that talk most often inside one boundary, so marshalling disappears and both speed and reliability improve.</p></div>
 
     </div>
   </article>
@@ -233,13 +211,11 @@ Done locally - no marshalling.</code></pre>
     <div class="ans">
 
       <!-- PAGE 1 -->
-      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 2 · Meaning of persistence</span></div>
+      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 2 Â· Meaning of persistence</span></div>
       <h3>Meaning of Persistence in COM / DCOM</h3>
-      <p><b>Persistence</b> means the ability of an object to save its <b>state</b> into a permanent store and restore it later, even after the program has closed or the computer been switched off. The <i>state</i> of an object is simply the values held in its data members — for a bank object, the account number, the holder's name and the current balance. Memory (RAM) is <b>volatile</b>: the moment a process ends, everything it held is wiped out. Persistence is what lets an object survive that moment.</p>
-      <p>In COM, such an object can write itself into a <b>stream</b> or a <b>storage</b> — a place where bytes are kept safely — and read itself back later. Turning a live object into bytes is called <b>serialisation</b>; rebuilding it from those bytes is called <b>deserialisation</b>. A video game shows this clearly: while you play, the game keeps your score and level only in memory, so a power cut loses everything. <i>Save Game</i> writes exactly those values to a file on disk, and <i>Load Game</i> reads them back so you continue where you left off — which is precisely what a persistent COM object does.</p>
-      <p>Persistence is not the same as storage or serialisation, though all three are related. <b>Storage</b> is the place where bytes are kept. <b>Serialisation</b> is the act of converting between the object and those bytes. <b>Persistence</b> is the larger promise that the state will still be there tomorrow — possible only when the two work together. A COM object with persistence can be saved today, its process closed, the machine restarted, and the very same object brought back to life with all its data intact.</p>
-
-      <figure class="diagram">
+      <p><b>Persistence</b> is the ability of an object to save its <b>state</b> in a permanent store and restore it later, even after the program has closed or the machine been switched off. The <i>state</i> is simply the values held in its data members â€” for a bank object, the account number, the holder's name and the balance. RAM is <b>volatile</b>, so the moment the process ends everything it held is wiped out. Persistence is what lets an object survive that moment.</p>
+      <p>A COM object writes itself into a <b>stream</b> or a <b>storage</b> and reads itself back later. Turning a live object into bytes is <b>serialisation</b>; rebuilding it is <b>deserialisation</b>. A video game shows this clearly: while you play, your score and level stay only in memory, so a power cut loses everything. <i>Save Game</i> writes those values to a disk file and <i>Load Game</i> reads them back â€” which is exactly what a persistent COM object does.</p>
+<figure class="diagram">
         <svg viewBox="0 0 640 172" role="img" aria-label="Volatile memory compared with persistent disk storage">
           <!-- LEFT -->
           <text class="d-cap" x="24" y="18">In memory — volatile</text>
@@ -276,14 +252,13 @@ Done locally - no marshalling.</code></pre>
       </figure>
 
       <!-- PAGE 2 -->
-      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 2 · Why needed + COM model</span></div>
+      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 2 Â· Why needed + COM model</span></div>
       <h3>Why Persistence is Needed</h3>
-      <p>Persistence is needed for the most practical of reasons. A program is not expected to run for ever — the user closes it, the machine restarts, and sometimes a crash occurs. Without persistence every useful object would vanish on each shutdown. Persistence lets a document, a customer record, a user's preferences or a partly-finished transaction live safely between runs. It also allows data to be <b>shared</b> (one program saves an object, another opens it later) and lets a system <b>recover</b> after a failure, because the last saved state is still on the disk.</p>
+      <p>No program is expected to run for ever â€” the user closes it, the machine restarts, and sometimes a crash occurs. Without persistence every useful object would vanish on each shutdown. Persistence lets a document, a customer record, a user's preferences or a partly-finished transaction live safely between runs. It also allows data to be <b>shared</b>, because one program can save an object and another open it later, and it lets a system <b>recover</b> after a failure, because the last saved state is still on the disk.</p>
       <h3>How COM Supports Persistence</h3>
-      <p>COM offers two approaches. In <b>data-centric persistence</b> the component saves only its plain data and must know a fixed file layout. In <b>object-centric persistence</b> the object saves and restores its own internal state through standard interfaces, so the client need not know how the object is built. The second is cleaner, and COM supports it through <code class="inl">IPersistStream</code> and <code class="inl">IPersistStorage</code>.</p>
-      <p>The storage itself comes from <b>Structured Storage</b>, a “file system inside a single file”, better known as a <b>compound file</b>. Inside it, <b>storages</b> work like folders and <b>streams</b> like files, managed through <code class="inl">IStorage</code> and <code class="inl">IStream</code>. A <b>moniker</b> is a special name that identifies a persisted object and lets any client find and re-activate it later, which is what allows a saved object to be linked rather than merely copied. The two interfaces are chosen by size: a small object needs only a flat <code class="inl">IStream</code>, while a large object made of many parts uses <code class="inl">IStorage</code>, which holds one stream per part so a client can open one part of the file without reading the whole thing.</p>
-
-      <figure class="diagram">
+      <p>In <b>data-centric persistence</b> the component saves only its plain data and must know a fixed file layout. In <b>object-centric persistence</b> the object saves its own state through standard interfaces, so the client need not know how it is built; COM supports it through <code class="inl">IPersistStream</code> and <code class="inl">IPersistStorage</code>.</p>
+      <p>The store comes from <b>Structured Storage</b> — a file system inside a single file, better known as a <b>compound file</b>. Inside it, <b>storages</b> work like folders and <b>streams</b> like files. A <b>moniker</b> is a name that finds the object again, so a saved object can be linked rather than merely copied.</p>
+<figure class="diagram">
         <svg viewBox="0 0 640 214" role="img" aria-label="Compound file with storages and streams">
           <rect class="d-fill" x="200" y="14" width="240" height="44" rx="5"/>
           <text class="d-tb" x="320" y="41" text-anchor="middle">Compound File (.doc)</text>
@@ -317,23 +292,20 @@ Done locally - no marshalling.</code></pre>
       </figure>
 
       <!-- PAGE 3 -->
-      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 2 · DCOM + real-world use</span></div>
-      <h3>Persistence in DCOM (Distributed COM)</h3>
-      <p><b>DCOM</b> is COM extended across a network, so a component running on one machine can be used by a program on another. Here persistence takes on an extra duty: not only must the object save its state, its <b>location</b> must survive too. When a client wants a remote object that is not currently running, DCOM uses the persisted reference to start it on the correct machine (remote activation) and then reconnect. This lets an idle server object be “put to sleep” and brought back when needed, saving a great deal of memory across a large network. In practice this is achieved through a handful of well-known mechanisms, summarised below.</p>
+      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 2 Â· DCOM + table</span></div>
+      <h3>Persistence in DCOM</h3>
+      <p>In DCOM the object lives on a remote machine, so persistence also decides <b>where</b> the work resumes. The server keeps the object alive only while a client is using it; when the client disconnects the object is unloaded and its state is written back to the server's disk. The next time a client asks for that object by name, the server <b>activates</b> it again and rebuilds it from the saved state. Nothing is lost, and the client never has to know that the process died in between.</p>
       <table class="tbl">
-        <thead><tr><th>Mechanism</th><th>What is stored</th><th>Typical example</th></tr></thead>
+        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
         <tbody>
-          <tr><td>Stream (<code class="inl">IStream</code>)</td><td>A flat sequence of bytes</td><td>An image or a small record</td></tr>
-          <tr><td>Storage (<code class="inl">IStorage</code>)</td><td>Storages and streams (compound file)</td><td>A Word document (.doc)</td></tr>
-          <tr><td>Moniker</td><td>A name that locates an object</td><td>A linked spreadsheet cell</td></tr>
-          <tr><td>Registry</td><td>Configuration and class registration</td><td>Component settings</td></tr>
-          <tr><td>Database</td><td>Business data fetched on demand</td><td>An ADO recordset</td></tr>
+          <tr><td>Storage</td><td>The place where bytes are kept</td></tr>
+          <tr><td>Serialisation</td><td>Converting an object into those bytes</td></tr>
+          <tr><td>Persistence</td><td>The promise that the state survives</td></tr>
+          <tr><td>Moniker</td><td>A name that finds the object again</td></tr>
         </tbody>
       </table>
-      <p>Everyday software shows persistence constantly. Saving a Microsoft Word file writes its document object into a compound file. Changing a setting makes Windows store it in the registry. A web application keeping your session on the server is persisting a COM object between requests.</p>
-      <p>In a DCOM system persistence is worth even more, because the objects are spread over many machines. If a remote object had to stay alive for ever, each server would slowly fill with idle objects and the network would become slow. Persistence lets an idle object be shut down and, when a client asks for it again, rebuilt from its saved state on the correct server. Large systems also use it for fault tolerance: if a server stops mid-operation, the last saved state is still available, so the work resumes on another machine from the point where it stopped.</p>
-
-      <figure class="diagram">
+      <p>A student result project is a simple example: the object is saved, the program closes, and reopening the project activates the very same object with the marks intact.</p>
+<figure class="diagram">
         <pre class="ascii">   CLIENT                                SERVER  (DCOM)
    ┌────────────┐                        ┌───────────────────┐
    │  client    │  1. ask by CLSID ────▶ │  object started   │
@@ -346,54 +318,42 @@ Done locally - no marshalling.</code></pre>
       </figure>
 
       <!-- PAGE 4 -->
-      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 2 · C++ program + output</span></div>
+      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 2 Â· C++ program + output</span></div>
       <div class="divider">C++ Program</div>
-      <p class="codelabel">The program below shows the core idea of persistence — an object writes its state to a file, the object is then replaced, and the saved state is loaded back. Copy this program on Page 4.</p>
       <div class="codeframe">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">persist_demo.cpp</span></div>
-<pre><code class="language-cpp">// persist_demo.cpp - saving and restoring an object's state
+<pre><code class="language-cpp">// persist_demo.cpp - save state, restore it later
 #include &lt;iostream&gt;
 #include &lt;fstream&gt;
 #include &lt;string&gt;
 using namespace std;
-
-class Account {                          // a persistable component
-    int    id;
-    string holder;
-    double balance;
+class Account {                      // a persistent COM-style object
+    int id; string holder; double bal;
 public:
-    Account(int i, string h, double b) : id(i), holder(h), balance(b) {}
-    void save(const string&amp; file) {      // ---- persist to disk ----
-        ofstream out(file);
-        out &lt;&lt; id &lt;&lt; "\n" &lt;&lt; holder &lt;&lt; "\n" &lt;&lt; balance &lt;&lt; "\n";
-        out.close();
-        cout &lt;&lt; "State saved to " &lt;&lt; file &lt;&lt; endl;
+    Account(int i,string h,double b):id(i),holder(h),bal(b){}
+    void save() {                     // serialise into a stream
+        ofstream f("account.dat");
+        f &lt;&lt; id &lt;&lt; "|" &lt;&lt; holder &lt;&lt; "|" &lt;&lt; bal;
     }
-    void load(const string&amp; file) {      // ---- restore from disk ----
-        ifstream in(file);
-        in &gt;&gt; id &gt;&gt; holder &gt;&gt; balance;
-        in.close();
-        cout &lt;&lt; "Restored -&gt; id=" &lt;&lt; id &lt;&lt; " holder=" &lt;&lt; holder
-             &lt;&lt; " balance=" &lt;&lt; balance &lt;&lt; endl;
+    void load() {                     // deserialise from the same file
+        ifstream f("account.dat");
+        f &gt;&gt; id &gt;&gt; holder &gt;&gt; bal;
     }
+    void show(){ cout &lt;&lt; id &lt;&lt; " " &lt;&lt; holder &lt;&lt; " " &lt;&lt; bal &lt;&lt; endl; }
 };
-int main() {
-    Account acc(101, "Rahul", 5000.0);   // live object in memory
-    acc.save("account.dat");             // state written to the disk
-    Account fresh(0, "-", 0.0);          // a brand-new empty object
-    fresh.load("account.dat");           // state comes back from disk
+int main(){
+    Account a(101,"Rahul",5000); a.save(); cout &lt;&lt; "saved" &lt;&lt; endl;
+    Account b(0,"",0);          b.load(); b.show();   // rebuilt
     return 0;
 }</code></pre>
       </div>
-
-      <h4>Output of the Program</h4>
+      <h4>Output</h4>
       <div class="codeframe">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
-<pre><code class="language-plaintext">State saved to account.dat
-Restored -&gt; id=101 holder=Rahul balance=5000</code></pre>
+<pre><code class="language-plaintext">saved
+101 Rahul 5000</code></pre>
       </div>
-
-      <div class="callout"><p class="ct">Conclusion</p><p>Persistence in COM and DCOM is the ability of an object to write its state into a permanent store and to bring that state back later through serialisation and deserialisation. Structured Storage provides the streams and storages that hold the data, monikers locate the saved objects, and DCOM even keeps the object's location alive so that remote objects can be re-activated. Without persistence, every COM object would die with its process; with persistence, objects outlive the program that created them.</p></div>
+      <div class="callout"><p class="ct">Conclusion</p><p>Persistence lets a COM object outlive the process that made it, so its state is available again on any later run.</p></div>
 
     </div>
   </article>
