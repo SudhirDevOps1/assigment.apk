@@ -62,6 +62,28 @@ Push triggers **Build Android APK** automatically. Open
 That is it — install the APK on the phone and everything works with the
 network switched off.
 
+### 3. Want the APK on the Releases page instead?
+
+Push a **tag**. The same build then also lands on the repository front page
+under **Releases**, where it can be downloaded without logging into Actions and
+without the 90-day artifact expiry:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Wait two or three minutes, then open
+<https://github.com/SudhirDevOps1/assigment.apk/releases> and download
+`app-debug.apk`.
+
+To ship a new version later, bump the number and push again:
+
+```bash
+git tag v1.0.1
+git push origin v1.0.1
+```
+
 ---
 
 ## Optional: a signed release APK

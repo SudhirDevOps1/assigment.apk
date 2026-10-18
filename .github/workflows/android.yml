@@ -3,7 +3,11 @@ name: Build Android APK
 on:
   push:
     branches: [main]
+    tags: ['v*']
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   apk:
@@ -109,3 +113,59 @@ jobs:
             echo ""
             echo "Open **Actions -> Artifacts** of this run to download it."
           } >> "$GITHUB_STEP_SUMMARY"
+
+  # =======================================================================
+  # Pushing a tag such as v1.0.0 turns the APK into a real GitHub Release,
+  # so it can be downloaded from the repository front page - no expiry.
+  # =======================================================================
+  release:
+    name: Publish GitHub Release
+    needs: apk
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download the built APKs
+        uses: actions/download-artifact@v5
+        with:
+          name: bca-sem-v-debug-apk
+          path: dist
+
+      - name: Create or update the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF#refs/tags/}"
+
+          NOTES=$(cat <<'MD'
+          ### BCA Semester V — Assignment Suite (offline Android app)
+
+          Five subjects · fifteen questions · **60 A4 pages** · 35 diagrams.
+          Every PDF and every font is bundled inside the app, so the network is
+          never needed.
+
+          | | |
+          |---|---|
+          | Install | download `app-debug.apk`, allow "install unknown apps", tap it |
+          | Zoom | pinch in and out anywhere on the page |
+          | Rotate | portrait and landscape, scroll position is kept |
+          | Print | Android print dialog → Save as PDF gives the same 60 A4 pages |
+
+          > This is a debug-signed build. Add the four signing secrets
+          > (ANDROID_KEYSTORE_BASE64, STORE_PASSWORD, KEY_ALIAS, KEY_PASSWORD)
+          > and push a new tag to get a release-signed APK as well.
+          MD
+          )
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists - replacing the assets"
+            gh release upload "$TAG" dist/*.apk --clobber
+            gh release edit "$TAG" --title "BCA Sem V — $TAG" --notes "$NOTES"
+          else
+            gh release create "$TAG" --title "BCA Sem V — $TAG" --notes "$NOTES" dist/*.apk
+          fi
+
+          echo "Release $TAG published"
