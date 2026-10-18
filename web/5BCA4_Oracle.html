@@ -116,6 +116,7 @@
       <p><b>6. To take a backup.</b> The DBMS can copy the whole database to another device, so the data survives a crash, a theft or a fault.</p>
       <p><b>7. To provide an easy interface.</b> The user does not have to understand where the bytes are kept; he only has to ask in SQL.</p>
       <p><b>8. To keep standards.</b> One common format for data makes it easy to exchange information between different departments and programmes.</p>
+      <p><b>9. To handle large data.</b> Using an <b>index</b>, a small extra structure that lets the DBMS jump straight to the rows it needs, a question over millions of records is answered in seconds. <b>10. To enforce rules.</b> A rule such as "this roll number can never repeat" is written once into the table, and the DBMS refuses any entry that breaks it, whatever program sends it.</p>
 
       <!-- PAGE 3 -->
       <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 1 · Components</span></div>
@@ -218,7 +219,7 @@ DELETE FROM STUDENT WHERE ROLL_NO = 102;</code></pre>
       <h3>What is Normalization?</h3>
       <p><b>Normalization</b> is the process of organising the columns and tables of a relational database so that each fact is stored exactly once. A table is said to be in a <b>normal form</b> when it obeys a stated rule.</p>
       <p>Normalization removes three kinds of defect that make a database behave badly: <b>update anomaly</b>, where one change has to be repeated in several rows; <b>insert anomaly</b>, where a row cannot be added because some information is not yet known; and <b>delete anomaly</b>, where deleting one fact accidentally removes another.</p>
-      <p>The three forms are studied in order.</p>
+      <p>The three forms are studied in order, and each removes a different defect: <b>1NF</b> deals with a cell holding several values, <b>2NF</b> with a column that depends on only half the key, and <b>3NF</b> with a column that depends on another non-key column. Normalisation is judged by reading the table, not by a formula, and a table reaches the next form only after obeying the earlier one.</p>
 <figure class="diagram">
         <svg viewBox="0 0 640 190" role="img" aria-label="A DBMS stands between the users and the database">
           <rect class="d-box" x="16" y="24" width="140" height="42" rx="4"/>
@@ -258,7 +259,9 @@ DELETE FROM STUDENT WHERE ROLL_NO = 102;</code></pre>
       <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 2 · First Normal Form</span></div>
       <h3>First Normal Form (1NF)</h3>
       <p>A table is in <b>1NF</b> when every cell contains a <b>single atomic value</b> — one indivisible item — and there is no repeating group of columns.</p>
-      <p>Suppose a student is stored with his courses in one cell. That cell holds “BCA, BBA”, which is really two values, so the table breaks 1NF. The cure is simple: break the cell open and give each value a row of its own.</p>
+      <p>Suppose a student is stored with his courses in one cell. That cell holds “BCA, BBA”, which is really two values, so the table breaks 1NF.</p>
+      <p>The cure is simple: break the cell open and give each value a row of its own. The two courses of one student then occupy two rows, both carrying the same roll number, so the student is still counted once. This is shown in the figure below.</p>
+      <p>A set of columns that all repeat together — <code class="inl">SUB1</code>, <code class="inl">SUB2</code>, <code class="inl">SUB3</code> and so on, one pair for every possible subject — is a <b>repeating group</b>, and 1NF rejects it for the same reason.</p>
 <figure class="diagram">
         <svg viewBox="0 0 640 252" role="img" aria-label="The layered architecture of a DBMS">
           <rect class="d-box" x="20" y="18" width="150" height="28" rx="4"/>
@@ -303,6 +306,8 @@ DELETE FROM STUDENT WHERE ROLL_NO = 102;</code></pre>
       <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 2 · 2NF and 3NF</span></div>
       <h3>Second Normal Form (2NF)</h3>
       <p>A table is in <b>2NF</b> when it is already in 1NF and it has <b>no partial dependency</b>. A partial dependency occurs when a non-key column depends on only <b>part</b> of a composite primary key.</p>
+      <p>A <b>composite key</b> is built from more than one column, and the trouble appears only then. If the key is <code class="inl">(Roll_No, Subject)</code> and <code class="inl">Subject_Name</code> depends only on the subject, the table is in 1NF but not in 2NF, because the subject name is stored again for every student taking it.</p>
+      <p>The cure is to move that column into a table of its own, keyed only by the subject; after the split the dependency is no longer partial. A table whose key is a <b>single</b> column cannot fail this test at all, which is why 2NF matters most in many-to-many relationships.</p>
 <figure class="diagram">
         <svg viewBox="0 0 640 290" role="img" aria-label="The normalization ladder from un-normalised table to third normal form">
           <rect class="d-box" x="110" y="12" width="260" height="38" rx="4"/>
@@ -346,8 +351,6 @@ CREATE TABLE STUDENT (
   DEPT_ID NUMBER(3),
   DEPT_NAME VARCHAR2(20)
 );
-
--- 3NF is reached by splitting it in two
 CREATE TABLE DEPARTMENT (
   DEPT_ID   NUMBER(3) PRIMARY KEY,
   DEPT_NAME VARCHAR2(20)
@@ -435,6 +438,7 @@ Anjali   Commerce</code></pre>
       <p>A <b>Foreign Key</b> is a column in one table that refers to the <b>primary key of another table</b>. Its job is to create a <b>relationship</b> between two tables and to enforce <b>referential integrity</b> — a value may exist in one table only if it already exists in the other. An order from an unknown customer simply cannot be entered.</p>
       <h3>3. Unique Key</h3>
       <p>A <b>Unique Key</b> is a column, or group of columns, whose values must never repeat. It guarantees that no two rows carry the same value, but unlike a primary key it may allow <code class="inl">NULL</code>. A table may have <b>only one</b> primary key but <b>many</b> unique keys.</p>
+      <p><b>4. Candidate and Composite Keys.</b> A <b>candidate key</b> is any column, or set of columns, that could serve as the primary key because no value repeats; one is finally chosen as the primary key and the rest become unique keys. A <b>composite key</b> is made from two or more columns together.</p>
 <figure class="diagram">
         <svg viewBox="0 0 640 252" role="img" aria-label="The layered architecture of a DBMS">
           <rect class="d-box" x="20" y="18" width="150" height="28" rx="4"/>
@@ -488,6 +492,11 @@ Anjali   Commerce</code></pre>
         </tbody>
       </table>
       <p>All three keys work together: the primary key gives a row its identity, the unique key stops a second person sharing the same email, and the foreign key stops an order belonging to a customer who does not exist. Together they keep the data correct in every direction.</p>
+      <h4>How the Keys Are Used Together</h4>
+      <p>Consider a small shop with two tables.</p>
+      <p><code class="inl">CUSTOMER</code> holds <code class="inl">Cust_Id</code> as its <b>primary key</b> and <code class="inl">Email</code> as a <b>unique key</b>, so no customer can be stored twice and no two customers can share one address.</p>
+      <p><code class="inl">ORDERS</code> holds <code class="inl">Order_Id</code> as its <b>primary key</b>, and its <code class="inl">Cust_Id</code> is a <b>foreign key</b> that points at <code class="inl">CUSTOMER.Cust_Id</code>.</p>
+      <p>The three keys then work as a team: the <b>primary key</b> gives every row an identity that never changes, the <b>unique key</b> stops the same person appearing twice under different ids, and the <b>foreign key</b> stops a fact existing where its own reason has vanished.</p>
 
       <!-- PAGE 4 -->
       <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 3 · SQL program + output</span></div>
@@ -544,6 +553,7 @@ Rahul   900</code></pre>
       <!-- PAGE 1 -->
       <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 4 · DBMS vs RDBMS</span></div>
       <h3>Difference Between DBMS and RDBMS</h3>
+      <p>An ordinary DBMS keeps data in separate files, and the links between those files — a customer with his orders, a student with his marks — are written by the programmer by hand. An RDBMS keeps data in <b>related tables</b> and lets the keys do the linking, so the same questions can be asked across many tables at once. This is the single change that turns a collection of files into a database.</p>
       <table class="tbl">
         <thead><tr><th>Point</th><th>DBMS</th><th>RDBMS</th></tr></thead>
         <tbody>
@@ -594,6 +604,7 @@ Rahul   900</code></pre>
       <h3>What is an RDBMS?</h3>
       <p>An <b>RDBMS (Relational Database Management System)</b> is a special form of DBMS in which the data is stored in <b>relations</b> — structured tables of rows and columns — and the tables are connected through common keys. It is based on the <b>relational model</b> of <b>E. F. Codd</b> and is queried using <b>SQL</b>.</p>
       <p>Its greatest feature is <b>JOIN</b>, which combines related tables and returns the result as one answer, so information spread across many tables can be read together.</p>
+      <p>In a relation the rows are called <b>tuples</b> and the columns <b>attributes</b>. Two <b>integrity rules</b> hold in every relation: <b>entity integrity</b>, meaning no key may be <code class="inl">NULL</code>, and <b>referential integrity</b>, meaning a foreign key value must already exist as a key somewhere else.</p>
 <figure class="diagram">
         <svg viewBox="0 0 640 252" role="img" aria-label="The layered architecture of a DBMS">
           <rect class="d-box" x="20" y="18" width="150" height="28" rx="4"/>
@@ -643,6 +654,8 @@ Rahul   900</code></pre>
       <p><b>Reliability:</b> an RDBMS supports the <b>ACID properties</b> — <b>Atomicity</b> (a transaction is all or nothing), <b>Consistency</b>, <b>Isolation</b> and <b>Durability</b> — so data remains safe even if the machine stops halfway through a change.</p>
       <p><b>Security:</b> permissions are given table by table, so every user sees exactly what he should see.</p>
       <p>Examples are <b>Oracle, MySQL, Microsoft SQL Server, PostgreSQL</b> and <b>SQLite</b>. An RDBMS is best where the data is large and complex and where the relationships between tables really matter, which is why banks and large organisations insist on one.</p>
+      <p><b>Shared use:</b> many users may work on the same data at once, each seeing a consistent view even while another is changing it. <b>Standard language:</b> almost every RDBMS understands <b>SQL</b>, so a query written for one runs on another with little change. <b>Recovery:</b> if the machine stops halfway through a transaction, the log on disk returns the system to the last completed state rather than a half-written one.</p>
+      <p>An RDBMS is best where the data is large and complex and where the relationships between tables really matter, which is why banks, airlines and large organisations insist on one.</p>
 
       <!-- PAGE 4 -->
       <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 4 · SQL program + output</span></div>

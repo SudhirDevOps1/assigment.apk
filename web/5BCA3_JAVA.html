@@ -170,6 +170,7 @@
       <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 1 · Java program + output</span></div>
       <div class="divider">Java Program</div>
       <p class="codelabel">One program that uses all four OOP concepts together.</p>
+      <p class="codelabel"><code class="inl">Animal</code> shows abstraction, because it declares <code class="inl">sound()</code> without giving it a body. <code class="inl">Dog</code> shows inheritance with <code class="inl">extends</code>, and it shows polymorphism because <code class="inl">@Override</code> gives the inherited method its own body. The variable <code class="inl">ref</code> is declared as an <code class="inl">Animal</code> yet holds a <code class="inl">Dog</code>, and Java calls the right version at run time. The private field <code class="inl">name</code> is the encapsulated data, reached only through <code class="inl">getName()</code>.</p>
       <div class="codeframe">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">OopsDemo.java</span></div>
 <pre><code class="language-java">class Animal {                    // abstraction
@@ -290,6 +291,7 @@ Rex</code></pre>
       <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 2 · Java program</span></div>
       <div class="divider">Java Program</div>
       <p class="codelabel">The balance is private and can be reached only through public methods.</p>
+      <p class="codelabel">Notice that no class outside this one can write to <code class="inl">balance</code> directly, even from the same file, because it is declared <code class="inl">private</code>. Every change must pass through a method, and each method checks its own argument first, so an impossible value can never reach the data.</p>
       <div class="codeframe">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">BankAccount.java</span></div>
 <pre><code class="language-java">class BankAccount {
@@ -323,6 +325,8 @@ Rex</code></pre>
       <b>setBalance(b)</b> accepts a new balance only if it is not negative.<br>
       <b>deposit(a)</b> adds money only when the amount is positive.<br>
       <b>withdraw(a)</b> removes money only when it is available, otherwise it prints a warning.</p>
+      <p><b>show()</b> prints the holder — name and the balance together, and is the only method allowed to display them.</p>
+      <p>Running the program shows encapsulation doing its job. A deposit of 1500 is accepted and a withdrawal of 2000 succeeds, but the attempt to take out 9000 is refused with a printed warning, because 9000 is more than the balance. If the balance had been a public field, any line of code could have set it to a wrong or negative value, and nothing would have complained.</p>
       <div class="codeframe">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">main</span></div>
 <pre><code class="language-java">public static void main(String[] args) {
@@ -371,6 +375,8 @@ Rahul : 4500</code></pre>
         </tbody>
       </table>
       <p><b>Why the difference matters:</b> a public class can be used by any program that has the file, while a private class is locked inside its own file. The modifier decides how far a class can travel.</p>
+      <p>The keywords also control what a <b>subclass</b> may do. A <code class="inl">protected</code> member is open to the class that declares it, to every class in the same package, and to any subclass living anywhere, but to nobody else. This is why a protected field is usually the one a parent class wants its children to use and its children alone.</p>
+      <p>Two rules complete the picture. A member declared <code class="inl">public</code> in one class is certainly usable from another. But a member with <i>no</i> keyword is not automatically public; it is <b>package-private</b>, which is why the words <i>public member</i> must be used carefully.</p>
 
       <!-- PAGE 2 -->
       <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 3 · Public class</span></div>
@@ -450,6 +456,7 @@ Rahul : 4500</code></pre>
       <div class="divider">Java Program</div>
       <div class="codeframe">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Demo.java</span></div>
+      <p>The table above shows the whole difference in two lines: a public class is reached from anywhere, and a private class is reached from nowhere except the class that holds it.</p>
 <pre><code class="language-java">public class Demo {                 // public class
     private class Helper {          // private, locked inside
         void work() { System.out.println("helping"); }
@@ -465,6 +472,7 @@ Rahul : 4500</code></pre>
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
 <pre><code class="language-plaintext">helping</code></pre>
       </div>
+      <p class="codelabel">The outer class is declared <code class="inl">public</code>, so <code class="inl">Demo</code> may be used by any other program. The inner class is declared <code class="inl">private</code>, so <code class="inl">Helper</code> cannot be named, let alone created, by anything outside <code class="inl">Demo</code>. Because an inner class is tied to one object of the outer class, it is reached as <code class="inl">d.new Helper()</code> — the instance <code class="inl">d</code> first, and then a new <code class="inl">Helper</code> belonging to it.</p>
 
     </div>
   </article>

@@ -91,6 +91,16 @@ That is why the code programs are deliberately short — a 36-line program
 would already fill a whole sheet on its own. The figure captions are written
 as instructions ("write this box in your notebook") so nothing is wasted ink.
 
+The measured result across all 60 pages: **average load 0.96, and every single
+page falls between 0.80 and 1.10.** The original pages averaged 1.95, which
+meant two sheets of handwriting each; the heaviest reached 2.89.
+
+Reaching that took two passes. The over-full pages were condensed and the
+programs shortened. The half-empty pages were then **filled with real extra
+explanation** rather than left blank, so the total answer grew by roughly 2,100
+words while every page still fits one sheet. No figure, table or program was
+removed at any stage.
+
 ## Printing rules used by the stylesheet
 
 * `@page { size: A4; margin: 13mm }` → a printable box of 184 × 271 mm.

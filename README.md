@@ -38,19 +38,27 @@ sheet:
 That is why the programs are deliberately short: a 36-line program would
 already fill a whole sheet on its own.
 
-| | Before | Now |
+| | Before | After rebalancing |
 |---|---|---|
-| Words per planned page | ~342 | **~115** |
-| Average page load (1.0 = one sheet) | 1.95 | **0.82** |
-| Tallest page load | 2.89 | **1.14** |
-| Total prose across 60 pages | 20,527 | **6,872** |
-| Diagrams, tables and programs | 35 / 11 / 15 | **all kept** |
+| Words per planned page | ~342 | **~150** |
+| Average page load (1.0 = one sheet) | 1.95 | **0.96** |
+| Tallest page load | 2.89 | **1.10** |
+| Lightest page load | 0.40 | **0.80** |
+| Total prose across 60 pages | 20,527 | **9,023** |
+| Diagrams, tables and programs | 35 / 11 / 15 | **all 35 kept** |
 
-Nothing was deleted to make room: every figure, table and program survived,
-and only the explanatory prose was condensed. The printed sheets are set at
-**12 pt** so the plan is easy to read while writing, and the tallest printed
-page is about **200 mm** of the available 271 mm — the rest of each sheet
-is left free for your own handwriting and diagrams.
+The work was done in two passes. First the over-full pages were condensed and
+the programs shortened. Then, instead of simply cutting, the material was
+**redistributed**: pages that had been left half empty were given real extra
+explanation, so the total answer grew by about 2,100 words while every single
+page still lands inside one A4 sheet. **All 60 pages now sit between 0.80 and
+1.10** — no page is over-full and no page is half empty.
+
+Nothing was deleted to make room: every figure, table and program survived.
+The printed sheets are set at **12 pt** so the plan is easy to read while
+writing, and the tallest printed page is about **213 mm** of the available
+271 mm — the rest of each sheet is left free for your own handwriting and
+diagrams.
 
 ---
 

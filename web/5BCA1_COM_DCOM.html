@@ -149,7 +149,11 @@
       <!-- PAGE 3 -->
       <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 1 Â· Benefits</span></div>
       <h3>How the Clustering Factor Improves COM</h3>
-      <p>A good clustering factor improves a COM system in four clear ways. <b>First</b>, it removes marshalling overhead, so both CPU cost and call delay fall sharply. <b>Second</b>, it improves throughput, because a business object that calls a data object a thousand times per transaction becomes noticeably faster when the two sit together. <b>Third</b>, it improves CPU cache locality, since the code and data of related objects stay warm. <b>Fourth</b>, it simplifies apartment and thread management and scales reliably.</p>
+      <p>A good clustering factor improves a COM system in four clear ways.</p>
+      <p><b>First, it removes marshalling overhead.</b> When two objects sit inside one process, no proxy and no stub have to be built, so the arguments are passed straight through the v-table. Both CPU cost and call delay then fall sharply.</p>
+      <p><b>Second, it improves throughput.</b> A business object that calls a data object a thousand times in a single transaction becomes noticeably faster when the two are clustered, because a thousand marshalled calls become a thousand direct calls.</p>
+      <p><b>Third, it improves cache locality.</b> The code and data of related objects stay close together in memory, so the processor finds them without going out to the main memory.</p>
+      <p><b>Fourth, it simplifies apartment and thread management</b> and scales reliably, because the objects that must not share a thread are exactly the ones that were never put across a boundary.</p>
       <table class="tbl">
         <thead><tr><th>Point of comparison</th><th>Low factor</th><th>High factor</th></tr></thead>
         <tbody>
@@ -158,7 +162,7 @@
           <tr><td>Latency per call</td><td>Microseconds to milliseconds</td><td>A few nanoseconds</td></tr>
         </tbody>
       </table>
-      <p>In real life a bank keeps its account, ledger and validation objects together inside one clustered tier, so a transaction hits the fast local path many times.</p>
+      <p>To raise the clustering factor in practice, an application should declare every set of components that are always used together inside the <b>same apartment</b>, should avoid needless interfaces between objects of the same tier, and should think carefully before splitting a program across the network. A bank, for instance, keeps its account, ledger and validation objects together in one clustered tier, so a transaction hits the fast local path many times.</p>
 
       <!-- PAGE 4 -->
       <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 1 Â· C++ program + output</span></div>
@@ -256,8 +260,8 @@ Done locally.</code></pre>
       <h3>Why Persistence is Needed</h3>
       <p>No program is expected to run for ever â€” the user closes it, the machine restarts, and sometimes a crash occurs. Without persistence every useful object would vanish on each shutdown. Persistence lets a document, a customer record, a user's preferences or a partly-finished transaction live safely between runs. It also allows data to be <b>shared</b>, because one program can save an object and another open it later, and it lets a system <b>recover</b> after a failure, because the last saved state is still on the disk.</p>
       <h3>How COM Supports Persistence</h3>
-      <p>In <b>data-centric persistence</b> the component saves only its plain data and must know a fixed file layout. In <b>object-centric persistence</b> the object saves its own state through standard interfaces, so the client need not know how it is built; COM supports it through <code class="inl">IPersistStream</code> and <code class="inl">IPersistStorage</code>.</p>
-      <p>The store comes from <b>Structured Storage</b> — a file system inside a single file, better known as a <b>compound file</b>. Inside it, <b>storages</b> work like folders and <b>streams</b> like files. A <b>moniker</b> is a name that finds the object again, so a saved object can be linked rather than merely copied.</p>
+      <p>In <b>data-centric persistence</b> the component saves only its plain data and must know a fixed file layout. In <b>object-centric persistence</b> the object saves its own state through standard interfaces, so COM supports it with <code class="inl">IPersistStream</code> and <code class="inl">IPersistStorage</code>.</p>
+      <p>The store comes from <b>Structured Storage</b>, a small file system living inside one file. Inside it, <b>storages</b> work like folders and <b>streams</b> like files. A <b>moniker</b> is a name that finds the object again, so a saved object is linked rather than merely copied.</p>
 <figure class="diagram">
         <svg viewBox="0 0 640 214" role="img" aria-label="Compound file with storages and streams">
           <rect class="d-fill" x="200" y="14" width="240" height="44" rx="5"/>
@@ -304,7 +308,7 @@ Done locally.</code></pre>
           <tr><td>Moniker</td><td>A name that finds the object again</td></tr>
         </tbody>
       </table>
-      <p>A student result project is a simple example: the object is saved, the program closes, and reopening the project activates the very same object with the marks intact.</p>
+      <p>A student result project shows this: the object is saved, the program closes, and reopening it activates the same object with the marks intact.</p>
 <figure class="diagram">
         <pre class="ascii">   CLIENT                                SERVER  (DCOM)
    ┌────────────┐                        ┌───────────────────┐

@@ -115,6 +115,8 @@
       <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 1 · Components of multimedia</span></div>
       <h3>Components of Multimedia</h3>
       <p>Every multimedia system is built from six components, each doing one job.</p>
+      <h4>How the Components Work Together</h4>
+      <p>None of these components is useful alone. <b>Text</b> gives the facts and instructions, <b>graphics</b> and <b>images</b> give the picture, <b>sound</b> and <b>video</b> give the movement and the voice, and <b>animation</b> joins them into one controlled flow. A single piece of educational software may show a written lesson, an animated diagram of the heart, a recorded explanation and a short test at the end — and the user moves between them at will. Hardware makes this possible, because a computer can store and play sound and moving pictures as easily as it stores text.</p>
       <table class="tbl">
         <thead><tr><th>Component</th><th>Work it does</th></tr></thead>
         <tbody>
@@ -171,11 +173,13 @@
       <p><b>(f) Engineering:</b> a design is walked through as a virtual walkthrough before it is built.</p>
       <p><b>(g) Government:</b> citizens learn and apply for services through a single screen.</p>
       <p><b>(h) Virtual reality and gaming:</b> the user walks inside a computer-built world and every movement is answered instantly.</p>
+      <p>From these eight uses one conclusion follows. Multimedia earns its place only where the subject itself is better understood when it can be <b>seen and heard</b>. Where a list of names or a table of figures would do just as well, adding sound and motion only wastes time and confuses the message. That is why the same subject may need no multimedia at all in one lesson and a great deal of it in the next.</p>
 
       <!-- PAGE 4 -->
       <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 1 · HTML example</span></div>
       <div class="divider">HTML Example</div>
       <p class="codelabel">Text, image, audio and video together in one page — the whole idea of multimedia in a single file.</p>
+      <p class="codelabel">The same file without a video tag still works on a computer that cannot play it, because the <code class="inl">controls</code> attribute gives the user a play and pause button and the <code class="inl">width</code> keeps the picture inside the page. The <code class="inl">source</code> tag names the file and its type, so the browser knows how to play it.</p>
       <div class="codeframe">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">multimedia.html</span></div>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
@@ -305,7 +309,8 @@
       <!-- PAGE 3 -->
       <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 2 · Differences</span></div>
       <h3>Differences Between the Image Formats</h3>
-      <p>Formats are compared on two separate axes. The first asks <b>how the picture is built</b>: a <b>raster</b> image is a grid of coloured dots and goes blocky when enlarged, while a <b>vector</b> image is made of lines and shapes and stays sharp at any size. The second asks <b>how the file is squeezed</b>: <b>lossy</b> compression throws detail away to save space, while <b>lossless</b> compression only squeezes the pattern and keeps every pixel.</p>
+      <p>Formats are compared on two separate axes.
+       The first asks <b>how the picture is built</b>: a <b>raster</b> image is a grid of coloured dots and goes blocky when enlarged, while a <b>vector</b> image is made of lines and shapes and stays sharp at any size. The second asks <b>how the file is squeezed</b>: <b>lossy</b> compression throws detail away to save space, while <b>lossless</b> compression only squeezes the pattern and keeps every pixel.</p>
       <table class="tbl">
         <thead><tr><th>Format</th><th>Type</th><th>Best for</th></tr></thead>
         <tbody>
@@ -330,6 +335,7 @@
       <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 2 · Python program</span></div>
       <div class="divider">Python Program</div>
       <p class="codelabel">One picture saved in three formats — using the Pillow (PIL) library.</p>
+      <p class="codelabel"><code class="inl">Image.open</code> reads the picture once and keeps it in memory, so the same image can be written out several times without being loaded again. The <code class="inl">quality</code> argument is the only setting that matters for JPEG: a lower number gives a much smaller file and a visibly softer picture. PNG and BMP take no such argument, because neither throws anything away. The last loop simply prints the name of every file that has now been written to the folder.</p>
       <div class="codeframe">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">formats.py</span></div>
 <pre><code class="language-python"># store one picture in three different formats
@@ -382,7 +388,11 @@ copy.bmp saved</code></pre>
       <!-- PAGE 2 -->
       <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 3 · Types of animation</span></div>
       <h3>Types of Animation</h3>
-      <p><b>Traditional 2-D</b> is drawn frame by frame by hand on celluloid. <b>Computer 2-D</b> is drawn once on a screen and then moved by the computer. <b>3-D CGI</b> builds a model in three dimensions and renders every frame. <b>Stop-motion</b> photographs real objects that have been moved a little each time. <b>Motion graphics</b> animates text and logos. <b>Procedural</b> animation is produced entirely by code, with no artist drawing anything.</p>
+      <p><b>Traditional 2-D</b> animation is drawn frame by frame by hand on transparent celluloid, so an animator may produce thousands of drawings for a few minutes of film.</p>
+      <p><b>Computer 2-D</b> animation is drawn once on a screen and then moved by the computer, so only the moving parts have to be redrawn and the same material can be reused many times.</p>
+      <p><b>3-D CGI</b> builds a complete model in three dimensions and renders a fresh frame from it for every moment, which is why the camera can move freely around the object.</p>
+      <p><b>Stop-motion</b> photography photographs real objects that have been moved a very small amount each time, and the movement appears when the pictures are joined.</p>
+      <p><b>Motion graphics</b> animation works on text, logos and shapes, and <b>procedural</b> animation is produced entirely by code, with no artist drawing anything at all.</p>
 <figure class="diagram">
         <svg viewBox="0 0 640 156" role="img" aria-label="Linear multimedia compared with non-linear interactive multimedia">
           <!-- LEFT : linear -->
@@ -434,6 +444,7 @@ copy.bmp saved</code></pre>
       <b>Sprite:</b> one small image that is moved around a background.</p>
       <h3>Uses and Applications of Animation</h3>
       <p>Animation is used in films and cartoons, in video games, in advertisements and in educational software, and it is the base of virtual reality, where the user moves inside a computer-built world and the picture answers every movement at once.</p>
+      <p>Animation earns its keep in teaching because it shows a change that a still picture cannot show. A plant growing, a current flowing, a cylinder turning into a cone and a light ray bending — each of these is understood in seconds when it moves, and may take a whole paragraph when it is only described. This is why animation is used to explain physics, mathematics, chemistry and the working of machines.</p>
 <figure class="diagram">
         <svg viewBox="0 0 640 230" role="img" aria-label="The six components of multimedia">
           <rect class="d-fill" x="254" y="6" width="132" height="30" rx="4"/>
@@ -494,7 +505,7 @@ copy.bmp saved</code></pre>
 &lt;/html&gt;</code></pre>
       </div>
       <h4>How the Example Works</h4>
-      <p><code class="inl">@keyframes slide</code> names the movement and describes its start and end state. The <code class="inl">animation</code> property plays it for 3 seconds, linearly, and repeats it for ever.</p>
+      <p><code class="inl">@keyframes slide</code> names the movement and describes its starting state with <code class="inl">from</code> and its ending state with <code class="inl">to</code>. The <code class="inl">.box</code> rule then plays it: <code class="inl">animation: slide 3s linear infinite</code> means run the movement once every three seconds, at an even speed, and never stop. Because the box is placed with <code class="inl">position: relative</code>, the <code class="inl">left</code> value in the keyframes moves it away from the left edge of the page.</p>
 
     </div>
   </article>
