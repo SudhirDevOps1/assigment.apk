@@ -88,6 +88,29 @@ jobs:
           TAG="${GITHUB_REF#refs/tags/}"
           REPO="${GITHUB_REPOSITORY}"
 
+          NOTES=$(cat <<'MD'
+          ### BCA Semester V — Assignment Suite (offline Android + desktop)
+
+          Five subjects · thirteen questions · **39 A4 pages** (3 per question) ·
+          19 diagrams. Every font and every diagram is bundled, so the network
+          is never needed.
+
+          | Asset | Platform |
+          |---|---|
+          | `BCA-Sem-V-*-x64.exe` | Windows installer |
+          | `BCA-Sem-V-*-portable.exe` | Windows portable, no install |
+          | `BCA-Sem-V-*-x64.AppImage` | Linux, single file |
+          | `app-debug.apk` | Android (from the Android workflow) |
+
+          **Printed type is sized for handwriting.** Each answer is planned across
+          exactly three A4 pages at about 260 words per sheet, in 12 pt type with
+          11 mm margins. Nothing is cut off and nothing spills onto a fourth page.
+
+          > The desktop builds are unsigned. On Windows, choose "More info →
+          > Run anyway"; on Linux, `chmod +x` the AppImage first.
+          MD
+          )
+
           # The Android workflow publishes to the same tag. The release may
           # already exist, may be created at the same moment, or not exist yet.
           for attempt in 1 2 3 4 5; do
@@ -95,8 +118,7 @@ jobs:
               break
             fi
             gh release create "$TAG" --repo "$REPO" \
-              --title "BCA Sem V — $TAG" \
-              --notes "BCA Semester V assignment suite — Android APK and desktop installers." || true
+              --title "BCA Sem V — $TAG" --notes "$NOTES" || true
             sleep 4
           done
 
