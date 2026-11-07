@@ -1,64 +1,66 @@
 # assigment.apk
 
-BCA Semester V assignment suite — turned into an **offline Android app** with
-Capacitor, built automatically by **GitHub Actions**.
+BCA Semester V internal assignment — one offline content set, shipped as an
+**Android app (Capacitor)** and a **desktop app (Electron)**, both built by
+**GitHub Actions**. No PDFs, no network requirement, no server.
 
 | | |
 |---|---|
 | Subjects | 5 |
-| Questions | 15 |
-| A4 pages | 60 (4 per question) |
-| Print type size | 12 pt (matches handwriting density) |
-| Diagrams / charts | 35 (animated SVG + text-mode figures) |
-| Ready-made PDFs | 5 (bundled inside the app) |
+| Questions | 13 |
+| A4 pages | 39 (**3 per question**) |
+| Diagrams & charts | 19 (SVG + text-mode) |
+| Tables | 17 |
+| Code samples | 2 Java programs + SQL examples |
 | Internet needed after install | **No** |
+| Submission | 18-11-2026 |
 
-### Page density is matched to handwriting
+---
 
-The answers were originally carrying about **342 words per planned page** —
-roughly twice what a person can comfortably copy onto one A4 sheet by hand. The
-content has now been rebuilt around a real handwriting sample.
+## The paper this follows
 
-The calibration sample was a filled answer sheet: about **23 handwritten
-lines**, each holding roughly **10 words**. So:
+S.V.P. College Bhabua (Kaimur), V.K.S.U. Ara — Internal Assignment, All Subjects.
 
-> **260 words of prose = one A4 page written by hand.**
+| Subject | Q | Question | Pages |
+|---|---|---|---|
+| COM / DCOM (5BCA1) | 3 | Explain scalability of DCOM | 3 |
+| | 4 | Describe security of COM / DCOM | 3 |
+| Multimedia (5BCA2) | 4 | Multimedia input and output technologies | 3 |
+| | 5 | How audio and video are used for multimedia | 3 |
+| | 6 | Difference between Hypertext and Hypermedia | 3 |
+| Java (5BCA3) | 4 | What do you understand by AWT | 3 |
+| | 5 | One program for inheritance | 3 |
+| | 6 | Java program using init / start / stop (Applet) | 3 |
+| Oracle RDBMS (5BCA4) | 5 | Explain Codd's law for RDBMS | 3 |
+| | 6 | Joins and types of join | 3 |
+| | 7 | Draw an ER diagram of E-Learning | 3 |
+| Computer Centre Mgmt (5BCA5) | 4 | Group — characteristics and types | 3 |
+| | 5 | Organizational design and its advantages | 3 |
 
-Every planned page is then budgeted by what else has to fit on that same
-sheet:
+---
 
-| What the page carries | Ink it uses | Prose budget |
-|---|---|---|
-| plain prose | — | 260 words |
-| one hand-drawn diagram | ~9 lines | 172 words |
-| one text-mode (ASCII) figure | ~11 lines | 150 words |
-| a table | 1 line per row | 260 − 10 words per row |
-| a code program | ~30 lines per page | 40 words + ≤ 26 lines |
+## Page density is matched to handwriting
 
-That is why the programs are deliberately short: a 36-line program would
-already fill a whole sheet on its own.
+One filled A4 sheet written by hand is about **260 words**. Every planned page
+is budgeted by what else sits on the same sheet:
 
-| | Before | After rebalancing |
-|---|---|---|
-| Words per planned page | ~342 | **~150** |
-| Average page load (1.0 = one sheet) | 1.95 | **0.96** |
-| Tallest page load | 2.89 | **1.10** |
-| Lightest page load | 0.40 | **0.80** |
-| Total prose across 60 pages | 20,527 | **9,023** |
-| Diagrams, tables and programs | 35 / 11 / 15 | **all 35 kept** |
+| What the page carries | Prose budget |
+|---|---|
+| plain prose | 260 words |
+| one hand-drawn diagram | 172 words |
+| one text-mode (ASCII) figure | 150 words |
+| a table | 260 words − 10 per row |
+| a code program | 40 words + at most 26 lines |
 
-The work was done in two passes. First the over-full pages were condensed and
-the programs shortened. Then, instead of simply cutting, the material was
-**redistributed**: pages that had been left half empty were given real extra
-explanation, so the total answer grew by about 2,100 words while every single
-page still lands inside one A4 sheet. **All 60 pages now sit between 0.80 and
-1.10** — no page is over-full and no page is half empty.
+That is why every answer is exactly **three planned pages**: page 1 introduces
+the concept with a figure, page 2 explains the mechanism with a table, page 3
+covers limits, examples and the conclusion. The printed type is **12 pt** with
+**11 mm** margins, so one printed page is one sheet of handwriting.
 
-Nothing was deleted to make room: every figure, table and program survived.
-The printed sheets are set at **12 pt** so the plan is easy to read while
-writing, and the tallest printed page is about **213 mm** of the available
-271 mm — the rest of each sheet is left free for your own handwriting and
-diagrams.
+`npm run check:pages` proves it: the script prints each subject into a
+throw-away file in the OS temp folder, counts the sheets, then deletes it. If a
+question overflows onto a fourth page the check fails. Nothing is ever shipped
+as a PDF.
 
 ---
 
@@ -68,21 +70,21 @@ diagrams.
 web/                      the assignment site (plain HTML, CSS, JS)
   ├── index.html          dashboard
   ├── 5BCA*.html          the five subjects
-  ├── assets/
-  │   ├── monolith.css    design system + print stylesheet
-  │   ├── monolith.js     reveals + SVG animation
-  │   ├── fonts.css       self-hosted @font-face rules
-  │   ├── fonts/          Fraunces · Inter · JetBrains Mono (woff2, 144 KB)
-  │   └── vendor/         highlight.js engine + theme
-  └── pdf/                the five A4 PDFs, shipped inside the APK
+  └── assets/             design system, fonts, highlight.js
+desktop/                  Electron shell around the same web/ folder
+  ├── main.js             window, menu, print, focus mode, state memory
+  ├── preload.js          read-only marker for the page
+  ├── electron-builder.yml
+  └── package.json
 resources/                app icon + splash screen
-scripts/patch-android.mjs native tweaks (zoom, rotation)
+scripts/                  android patcher + page-budget check
 capacitor.config.json     app id, name, webDir
-.github/workflows/        CI that builds the APK
+.github/workflows/        android.yml (APK) · desktop.yml (EXE / AppImage)
 ```
 
-`android/` is **not** committed. The CI job creates it from scratch on every
-build, so the repository stays small and can never fall out of date.
+`android/` is **not** committed: CI creates it from scratch on every build.
+The desktop app copies `web/` at package time, so both apps always show the
+same content.
 
 ---
 
@@ -101,43 +103,35 @@ git remote add origin https://github.com/SudhirDevOps1/assigment.apk.git
 git push -u origin main
 ```
 
-### 2. Let the workflow run
+### 2. Let the workflows run
 
-Push triggers **Build Android APK** automatically. Open
-**Actions → Build Android APK → Artifacts** and download
-`bca-sem-v-debug-apk`.
+A push triggers both builds:
 
-That is it — install the APK on the phone and everything works with the
-network switched off.
+| Workflow | Produces | Where |
+|---|---|---|
+| **Build Android APK** | `bca-sem-v-debug-apk` | Actions → Artifacts |
+| **Build Desktop App** | Windows EXE + portable, Linux AppImage | Actions → Artifacts |
 
-### 3. Want the APK on the Releases page instead?
+### 3. Want everything on the Releases page?
 
-Push a **tag**. The same build then also lands on the repository front page
-under **Releases**, where it can be downloaded without logging into Actions and
-without the 90-day artifact expiry:
+Push a **tag**:
 
 ```bash
-git tag v1.0.0
-git push origin v1.0.0
+git tag v1.5.0
+git push origin v1.5.0
 ```
 
-Wait two or three minutes, then open
-<https://github.com/SudhirDevOps1/assigment.apk/releases> and download
-`app-debug.apk`.
+Both workflows attach their files to the same release, so the front page then
+offers the APK and the desktop installers together — no 90-day expiry:
 
-To ship a new version later, bump the number and push again:
-
-```bash
-git tag v1.0.1
-git push origin v1.0.1
-```
+<https://github.com/SudhirDevOps1/assigment.apk/releases>
 
 ---
 
 ## Optional: a signed release APK
 
 Debug APKs install fine, but Android shows a warning and they cannot be
-updated in place later. For a proper release build, add four secrets under
+updated in place later. Add four secrets under
 **Settings → Secrets and variables → Actions**:
 
 | Secret | Value |
@@ -147,67 +141,81 @@ updated in place later. For a proper release build, add four secrets under
 | `KEY_ALIAS` | e.g. `assigment` |
 | `KEY_PASSWORD` | key password |
 
-The workflow then produces **both** APKs. Create the keystore once with
+Create the keystore once with
 `keytool -genkeypair -v -keystore my-release.keystore -alias assigment -keyalg RSA -keysize 2048 -validity 10000`
-and keep the `.keystore` file somewhere safe — without it you can never
-update the app later.
+and keep the `.keystore` file somewhere safe — without it you can never update
+the app later.
+
+The workflow then produces **both** APKs.
 
 ---
 
-## What works inside the app
+## What works in the Android app
 
-* **True full screen.** The status bar and the navigation bar are hidden and
-  the page draws edge to edge. A swipe from the screen edge brings the bars
-  back for a moment, exactly like a video player.
-* **A toolbar that gets out of the way.** Scroll down and the top bar slides
-  away; scroll up and it returns — the behaviour of every good PDF reader.
-  On a phone the whole bar is a single 51 px row.
-* **Focus mode.** One tap on **Focus** clears every piece of interface and
-  leaves only the answer, which is what you want while copying it onto paper.
-  Tap **Focus** again, or press `Esc`, to bring the buttons back.
-* **Pinch zoom** in and out anywhere on the page.
-* **Rotation** in portrait and landscape. The WebView is never recreated on
-  rotate, so you never lose your scroll position.
-* **A real launcher icon.** Adaptive icon, so Android masks it to whatever
-  shape the phone uses, plus the older square icons for old devices.
-* **All five subjects, all 35 diagrams, all 5 PDFs** — bundled in the APK, so
-  no network is needed at any point.
-* **The animated figures** play exactly as they do in a browser.
-* Printing from inside the app still opens Android's own print dialog, where
-  "Save as PDF" produces the same 60 A4 pages, in the same 12 pt type, with the
-  same 11 mm margins.
+* **True full screen.** Status and navigation bars are hidden; a swipe from the
+  edge brings them back.
+* **A toolbar that gets out of the way.** Scroll down and it slides away; scroll
+  up and it returns.
+* **Focus mode.** One tap hides every control and leaves only the answer.
+* **Pinch zoom** anywhere, and rotation in portrait and landscape without
+  losing the scroll position.
+* **A real launcher icon.** Adaptive icon plus legacy square icons.
+* **All five subjects, all 19 diagrams, all tables and programs** — bundled in
+  the APK, so the network is never used.
 
-## Icons and splash screen
+## What works in the desktop app
 
-`resources/` holds the artwork that the build turns into app icons and splash
-screens:
+* Native window with remembered size and position.
+* Menu-driven **Print (Ctrl+P)**, **Focus mode (Ctrl+Shift+F)**, zoom,
+  fullscreen and back / forward.
+* Same offline content, same design system, no browser needed.
+* Windows **installer** and **portable EXE**; Linux **AppImage**.
 
-| File | Used for |
+| Shortcut | Action |
 |---|---|
-| `icon.png` | the plain icon for Android 7 and older |
-| `icon-foreground.png` | adaptive icon artwork, kept inside the 66 % safe zone |
-| `icon-background.png` | adaptive icon background layer |
-| `splash.png` | the launch screen |
-
-Replace any of them and push a tag — CI regenerates every density and every
-round and square mask automatically.
+| `Ctrl + P` | Print the current subject |
+| `Ctrl + Shift + F` | Toggle focus mode |
+| `Ctrl + + / − / 0` | Zoom in / out / reset |
+| `F11` | Fullscreen |
+| `Alt + ← / →` | Back / forward |
+| `Ctrl + 1` | Back to the dashboard |
 
 ---
 
 ## Working on the site
 
 ```bash
-# preview locally
-python -m http.server 8899 --directory web
-# -> http://localhost:8899/index.html
+# any static server works; python is not required
+npx serve web            # or: python -m http.server 8899 --directory web
 
-# push -> CI builds a fresh APK automatically
+# prove every answer still fits its three sheets (needs Chrome or Edge)
+npm run check:pages
+
+# run the desktop shell
+cd desktop && npm install && npm start
+
+# push -> both CI workflows rebuild the APK and the desktop apps
 git add . && git commit -m "update" && git push
 ```
 
-Change anything inside `web/` and just push. The workflow rebuilds the APK with
-the new content.
+Change anything inside `web/` and push. Nothing else needs editing.
 
 ---
 
-*Internal Assignment · BCA Semester V · Submission 23-10-2026*
+## Icons and splash screen
+
+`resources/` holds the artwork that the builds turn into app icons and splash
+screens:
+
+| File | Used for |
+|---|---|
+| `icon.png` | plain icon (Android 7 and older) and desktop app icon |
+| `icon-foreground.png` | adaptive icon artwork inside the 66 % safe zone |
+| `icon-background.png` | adaptive icon background layer |
+| `splash.png` | launch screen |
+
+Replace any of them and push a tag — every density and mask is regenerated.
+
+---
+
+*Internal Assignment · BCA Semester V · Submission 18-11-2026*

@@ -46,7 +46,7 @@ body{
 a{color:var(--brass-bright);text-decoration:none;}
 
 /* ---------------- Top bar ----------------
-   Behaves like a PDF reader: it gets out of the way while you scroll
+   Behaves like a document reader: it gets out of the way while you scroll
    down, comes back the moment you scroll up, and can be dismissed
    completely with Focus mode.                                   */
 .topbar{
@@ -544,7 +544,7 @@ table.tbl td b{color:var(--bone);}
   /* ---- paper safety net -------------------------------------------------
      Whatever happens on screen, paper is always plain, white, still and
      fully visible. These overrides are deliberately blunt so that no
-     animation, scroll effect or overflow rule can ever reach the PDF.     */
+     animation, scroll effect or overflow rule can ever reach the paper.   */
   *,*::before,*::after{
     opacity:1!important;transform:none!important;animation:none!important;
     transition:none!important;visibility:visible!important;box-shadow:none!important;

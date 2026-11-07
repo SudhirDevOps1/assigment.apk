@@ -1,0 +1,54 @@
+appId: in.bca.sem5.assignment
+productName: BCA Sem V Assignment
+copyright: Internal assignment build
+
+directories:
+  output: release
+
+# Only the shell is code; the whole assignment site travels as extraResources
+# so the exact same web/ folder is used by Android, the browser and desktop.
+files:
+  - main.js
+  - preload.js
+  - package.json
+
+extraResources:
+  - from: ../web
+    to: web
+    filter:
+      - '**/*'
+  # Window icon for the Linux build (Windows/macOS embed it in the executable).
+  - from: ../resources/icon.png
+    to: icon.png
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+  icon: ../resources/icon.png
+  artifactName: BCA-Sem-V-${version}-${arch}.${ext}
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: BCA Sem V
+
+portable:
+  artifactName: BCA-Sem-V-${version}-portable.${ext}
+
+linux:
+  target: [AppImage]
+  category: Education
+  icon: ../resources/icon.png
+  artifactName: BCA-Sem-V-${version}-${arch}.${ext}
+
+mac:
+  target: [dmg]
+  category: public.app-category.education
+  icon: ../resources/icon.png
+  artifactName: BCA-Sem-V-${version}-${arch}.${ext}

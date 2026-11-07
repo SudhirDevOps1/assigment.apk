@@ -1,0 +1,20 @@
+{
+  "name": "bca-sem-v-desktop",
+  "productName": "BCA Sem V Assignment",
+  "version": "1.5.0",
+  "private": true,
+  "description": "BCA Semester V assignment suite as an offline desktop app (Electron)",
+  "license": "MIT",
+  "author": "Sudhir",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win",
+    "dist:linux": "electron-builder --linux",
+    "dist": "electron-builder --win --linux"
+  },
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0"
+  }
+}

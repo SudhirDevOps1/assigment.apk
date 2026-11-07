@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="BCA Semester V Internal Assignment — COM / DCOM (5BCA1). Two questions, each planned across exactly four A4 pages.">
+<meta name="description" content="BCA Semester V Internal Assignment — COM / DCOM (5BCA1). Two questions, each planned across exactly three A4 pages.">
 <meta name="theme-color" content="#08080a">
 <title>5BCA1 · COM / DCOM — Assignment</title>
-<link href="assets/fonts.css?v=9" rel="stylesheet">
-<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=9">
-<link rel="stylesheet" href="assets/monolith.css?v=9">
+<link href="assets/fonts.css?v=10" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=10">
+<link rel="stylesheet" href="assets/monolith.css?v=10">
 </head>
 <body id="top">
 
@@ -17,7 +17,6 @@
   <div class="code">5BCA1</div>
   <div class="spacer"></div>
   <a class="btn" href="index.html"><span class="lg">All Subjects</span><span class="sm">Menu</span></a>
-  <a class="btn" href="pdf/5BCA1_COM_DCOM.pdf" download><span class="lg">Download PDF</span><span class="sm">PDF</span></a>
   <button class="btn" id="focusBtn" aria-pressed="false" title="Hide the interface and read full screen"><span class="lg">Focus</span><span class="sm">Focus</span></button>
   <button class="btn solid" onclick="window.print()"><span class="lg">Print / Save A4</span><span class="sm">Print</span></button>
 </div>
@@ -28,345 +27,229 @@
     <div class="plinth">
       <p class="eyebrow">Internal Assignment · Semester V</p>
       <h1>COM&nbsp;/&nbsp;DCOM</h1>
-      <p class="sub">Two questions — each one is to be written on exactly four A4 pages. Under every question you will find a <b>PAGE 1 / PAGE 2 / PAGE 3 / PAGE 4</b> breakdown that tells you what to write on each sheet, so the whole paper adds up to <b>8 handwritten pages</b>. The C++ program goes on Page 4.</p>
+      <p class="sub">Two questions — each one is to be written on exactly three A4 pages. Under every question you will find a <b>PAGE 1 / PAGE 2 / PAGE 3</b> breakdown that tells you what to write on each sheet, so the whole paper adds up to <b>6 handwritten pages</b>.</p>
     </div>
     <div class="slab">
       <div class="field"><span class="k">Course</span><span class="v">Bachelor of Computer Applications</span></div>
       <div class="field"><span class="k">Semester</span><span class="v">Fifth Semester &nbsp;·&nbsp; 2026</span></div>
       <div class="field"><span class="k">Subject Code</span><span class="v">5BCA1</span></div>
-      <div class="field"><span class="k">Submission</span><span class="v">23 · 10 · 2026</span></div>
+      <div class="field"><span class="k">Submission</span><span class="v">18 · 11 · 2026</span></div>
       <div class="field"><span class="k">Your Name</span><input data-sync="name" placeholder="Write your name"></div>
       <div class="field"><span class="k">Roll Number</span><input data-sync="roll" placeholder="Write roll no."></div>
     </div>
   </section>
 
   <nav class="contents">
-    <div class="hd">Contents — 2 Questions · 8 A4 pages total</div>
+    <div class="hd">Contents — 2 Questions · 6 A4 pages total</div>
     <ol>
-      <li><a href="#q1">How clustering factor improves and helps in COM programming?</a><span class="pg">— 4 pages</span></li>
-      <li><a href="#q2">Explain the meaning of persistence in COM / DCOM.</a><span class="pg">— 4 pages</span></li>
+      <li><a href="#q3">Explain scalability of DCOM.</a><span class="pg">— 3 pages</span></li>
+      <li><a href="#q4">Describe security of COM / DCOM.</a><span class="pg">— 3 pages</span></li>
     </ol>
   </nav>
 
-  <div class="callout noprint"><p class="ct">How to save as PDF (clean 4 pages per question)</p><p>Press <b>Print / Save A4</b>, choose <b>Destination → Save as PDF</b>, set <b>Margins → Default</b> and turn <b>Background graphics ON</b>. Each question then saves as exactly <b>four A4 pages</b>, and the whole set prints as <b>60 pages</b> across the five subjects.</p></div>
+  <div class="callout noprint"><p class="ct">How to print cleanly (3 pages per question)</p><p>Press <b>Print / Save A4</b>, set <b>Margins → Default</b> and turn <b>Background graphics ON</b>. Each question then prints as exactly <b>three A4 pages</b>, and this subject prints as <b>6 pages</b>.</p></div>
 
-  <!-- ===== Q1 ===== -->
-  <article class="qblock" id="q1">
+  <!-- ===== Q3 ===== -->
+  <article class="qblock" id="q3">
     <div class="qhead">
-      <div class="qnum">01</div>
+      <div class="qnum">03</div>
       <div class="qmeta">
-        <p class="qtag">Question One · Component Clustering</p>
-        <h2 class="qtext">How clustering factor improves and helps in COM programming?</h2>
-        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>C++ program on Page 4</b></div></div>
+        <p class="qtag">Question Three · Distributed Components</p>
+        <h2 class="qtext">Explain scalability of DCOM.</h2>
+        <div class="pagemeter"><div class="big">3</div><div class="lbl">A4 Pages<b>Concept · mechanisms · limits</b></div></div>
       </div>
     </div>
     <div class="ans">
 
       <!-- PAGE 1 -->
-      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 1 Â· What is COM</span></div>
-      <h3>Introduction to COM</h3>
-      <p><b>COM (Component Object Model)</b> is a Microsoft specification, introduced in <b>1993</b>, that describes how software components should be built and how they should talk to one another. A <i>component</i> is a ready-made piece of software that performs one clear job and can be plugged into different programs without being recompiled.</p>
-      <p>Before COM, reusable code was shared through ordinary DLLs, but that method created serious trouble â€” there was no fixed way to ask a DLL what it could do, C and C++ compilers mangled function names differently, and installing a new DLL often broke an older program. This problem was so common that it was nicknamed <b>â€œDLL Hellâ€</b>.</p>
-      <p>COM solved this by defining a <b>binary standard</b>. A component written in C++, Visual Basic or Delphi can be used by a program written in a completely different language, because they agree only on the layout of a virtual table and not on the source code.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 206" role="img" aria-label="The COM call cost ladder">
-          <rect class="d-fill" x="24" y="30" width="176" height="76" rx="5"/>
-          <text class="d-tb" x="112" y="58" text-anchor="middle">In-process</text>
-          <text class="d-ts" x="112" y="80" text-anchor="middle">same process</text>
-          <text class="d-ts" x="112" y="98" text-anchor="middle">fastest, no marshalling</text>
+      <div class="page-sec"><span class="pnum">Page 1 of 3</span><span class="ptitle">Question 3 · What scalability means</span></div>
+      <h3>Scalability in a Distributed System</h3>
+      <p><b>Scalability</b> is the ability of a system to handle a growing amount of work — more users, more requests, more data — by adding resources, without rewriting the software and without a proportional fall in response time. A system that serves 200 users well and 400 users badly is not scalable.</p>
+      <p><b>DCOM (Distributed Component Object Model)</b> is Microsoft's extension of COM across machine boundaries. The client holds a <b>proxy</b>, the server hosts a <b>stub</b>, and RPC carries the marshalled call over the network. Because a component can run on any machine, capacity can be added by moving components to another server — this is exactly what makes DCOM scalable.</p>
+      <p>Capacity is added in one of three ways: <b>scale up</b> (a bigger machine), <b>scale out</b> (more machines behind a balancer) or <b>partition</b> (split the work by business area, so each server owns its own objects).</p>
+      <figure class="diagram">
+        <svg viewBox="0 0 640 196" role="img" aria-label="Three ways to scale a DCOM system">
+          <text class="d-cap" x="20" y="14">1 · Scale up</text>
+          <rect class="d-soft" x="20" y="24" width="180" height="120" rx="6"/>
+          <rect class="d-box" x="72" y="48" width="76" height="30" rx="4"/>
+          <text class="d-t" x="110" y="68" text-anchor="middle">4 CPU</text>
+          <rect class="d-box" x="72" y="86" width="76" height="30" rx="4"/>
+          <text class="d-t" x="110" y="106" text-anchor="middle">16 CPU</text>
+          <line class="d-line" x1="110" y1="80" x2="110" y2="84"/>
+          <polygon class="d-ah" points="110,88 105,79 115,79"/>
+          <text class="d-cap" x="20" y="164">one bigger server · limit reached early</text>
 
-          <rect class="d-box" x="232" y="30" width="176" height="76" rx="5"/>
-          <text class="d-tb" x="320" y="58" text-anchor="middle">Out-of-process</text>
-          <text class="d-ts" x="320" y="80" text-anchor="middle">same machine</text>
-          <text class="d-ts" x="320" y="98" text-anchor="middle">marshalling needed</text>
+          <text class="d-cap" x="230" y="14">2 · Scale out</text>
+          <rect class="d-soft" x="230" y="24" width="190" height="120" rx="6"/>
+          <rect class="d-box" x="292" y="32" width="66" height="22" rx="4"/>
+          <text class="d-ts" x="325" y="47" text-anchor="middle" font-size="11">balancer</text>
+          <rect class="d-box" x="242" y="82" width="50" height="30" rx="4"/>
+          <text class="d-t" x="267" y="101" text-anchor="middle">obj</text>
+          <rect class="d-box" x="302" y="82" width="50" height="30" rx="4"/>
+          <text class="d-t" x="327" y="101" text-anchor="middle">obj</text>
+          <rect class="d-box" x="362" y="82" width="50" height="30" rx="4"/>
+          <text class="d-t" x="387" y="101" text-anchor="middle">obj</text>
+          <line class="d-line" x1="310" y1="55" x2="270" y2="80"/>
+          <line class="d-line" x1="325" y1="55" x2="327" y2="80"/>
+          <line class="d-line" x1="340" y1="55" x2="384" y2="80"/>
+          <text class="d-cap" x="230" y="164">more machines · near linear growth</text>
 
-          <rect class="d-box" x="440" y="30" width="176" height="76" rx="5"/>
-          <text class="d-tb" x="528" y="58" text-anchor="middle">Remote (DCOM)</text>
-          <text class="d-ts" x="528" y="80" text-anchor="middle">another machine</text>
-          <text class="d-ts" x="528" y="98" text-anchor="middle">network round-trip</text>
-
-          <line class="d-line" x1="200" y1="68" x2="228" y2="68"/>
-          <polygon class="d-ah" points="232,68 222,63 222,73"/>
-          <line class="d-line" x1="408" y1="68" x2="436" y2="68"/>
-          <polygon class="d-ah" points="440,68 430,63 430,73"/>
-
-          <line class="d-line" x1="24" y1="146" x2="612" y2="146"/>
-          <polygon class="d-ah" points="616,146 606,141 606,151"/>
-          <text class="d-cap" x="24" y="166">Low cost / low latency</text>
-          <text class="d-cap" x="616" y="166" text-anchor="end">High cost / high latency</text>
-          <text class="d-cap" x="320" y="190" text-anchor="middle">Clustering keeps the chatty objects on the left</text>
+          <text class="d-cap" x="440" y="14">3 · Partition</text>
+          <rect class="d-soft" x="440" y="24" width="184" height="120" rx="6"/>
+          <rect class="d-box" x="456" y="40" width="72" height="60" rx="4"/>
+          <text class="d-ts" x="492" y="62" text-anchor="middle">Orders</text>
+          <text class="d-ts" x="492" y="80" text-anchor="middle">server</text>
+          <rect class="d-box" x="540" y="40" width="72" height="60" rx="4"/>
+          <text class="d-ts" x="576" y="62" text-anchor="middle">Accounts</text>
+          <text class="d-ts" x="576" y="80" text-anchor="middle">server</text>
+          <text class="d-cap" x="440" y="164">split by business area · independent growth</text>
         </svg>
-        <figcaption>Fig. 1 — The COM call cost ladder. A higher clustering factor keeps the chatty objects on the left, where each call is cheapest.</figcaption>
+        <figcaption>Fig. 1 — Three ways to add capacity. DCOM favours scale out and partition because location is hidden behind the proxy.</figcaption>
       </figure>
 
       <!-- PAGE 2 -->
-      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 1 Â· The clustering factor</span></div>
-      <h3>What is the Clustering Factor?</h3>
-      <p><b>Clustering</b> means keeping related things together so that they can work as one group. In COM the <b>clustering factor</b> measures how well the objects that talk most often have been kept together, in the same process or at least on the same machine, so that their calls stay <b>local</b>.</p>
-      <p>The cost of a call is not the same everywhere. A call inside one process is a direct jump through a v-table and takes nanoseconds. A call crossing an <b>apartment</b> boundary needs <b>marshalling</b> â€” a proxy packs the arguments, a stub unpacks them, the call runs and the result is packed back. A call leaving the process adds context switches, and for DCOM a full network round-trip. The cost therefore grows from nanoseconds to microseconds to milliseconds as we move outward.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 172" role="img" aria-label="Scattered objects compared with clustered objects">
-          <!-- LEFT : low factor -->
-          <text class="d-cap" x="16" y="14">Low clustering factor</text>
-          <rect class="d-soft" x="16" y="24" width="292" height="122" rx="6"/>
-          <text class="d-ts" x="28" y="46">every call crosses a boundary</text>
-          <line class="d-dash" x1="113" y1="54" x2="113" y2="102"/>
-          <line class="d-dash" x1="213" y1="54" x2="213" y2="102"/>
-          <rect class="d-box" x="28" y="64" width="70" height="28" rx="4"/>
-          <text class="d-t" x="63" y="83" text-anchor="middle">Order</text>
-          <rect class="d-box" x="128" y="64" width="70" height="28" rx="4"/>
-          <text class="d-t" x="163" y="83" text-anchor="middle">Stock</text>
-          <rect class="d-box" x="228" y="64" width="70" height="28" rx="4"/>
-          <text class="d-t" x="263" y="83" text-anchor="middle">Invoice</text>
-          <line class="d-line" x1="98" y1="78" x2="124" y2="78"/>
-          <polygon class="d-ah" points="128,78 118,73 118,83"/>
-          <line class="d-line" x1="198" y1="78" x2="224" y2="78"/>
-          <polygon class="d-ah" points="228,78 218,73 218,83"/>
-          <text class="d-mono" x="28" y="126">3 hops  ·  3 marshal + 3 unmarshal</text>
-          <text class="d-cap" x="16" y="164">slow · chatty · fragile</text>
-
-          <!-- RIGHT : high factor -->
-          <text class="d-cap" x="332" y="14">High clustering factor</text>
-          <rect class="d-fill" x="332" y="24" width="292" height="122" rx="6"/>
-          <rect class="d-dash" x="344" y="34" width="268" height="86" rx="5"/>
-          <text class="d-ts" x="356" y="48">inside one process and apartment</text>
-          <rect class="d-box" x="344" y="64" width="70" height="28" rx="4"/>
-          <text class="d-t" x="379" y="83" text-anchor="middle">Order</text>
-          <rect class="d-box" x="444" y="64" width="70" height="28" rx="4"/>
-          <text class="d-t" x="479" y="83" text-anchor="middle">Stock</text>
-          <rect class="d-box" x="544" y="64" width="70" height="28" rx="4"/>
-          <text class="d-t" x="579" y="83" text-anchor="middle">Invoice</text>
-          <line class="d-line" x1="414" y1="78" x2="440" y2="78"/>
-          <polygon class="d-ah" points="444,78 434,73 434,83"/>
-          <line class="d-line" x1="514" y1="78" x2="540" y2="78"/>
-          <polygon class="d-ah" points="544,78 534,73 534,83"/>
-          <text class="d-mono" x="356" y="136">0 marshal · direct v-table jump</text>
-          <text class="d-cap" x="332" y="164">fast · calm · thread-safe</text>
-        </svg>
-        <figcaption>Fig. 2 — The same three objects, arranged two ways. On the left every message crosses a boundary and must be marshalled; on the right the frequently-talking objects live inside one boundary, so the calls turn into ordinary local jumps.</figcaption>
-      </figure>
-
-      <!-- PAGE 3 -->
-      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 1 Â· Benefits</span></div>
-      <h3>How the Clustering Factor Improves COM</h3>
-      <p>A good clustering factor improves a COM system in four clear ways.</p>
-      <p><b>First, it removes marshalling overhead.</b> When two objects sit inside one process, no proxy and no stub have to be built, so the arguments are passed straight through the v-table. Both CPU cost and call delay then fall sharply.</p>
-      <p><b>Second, it improves throughput.</b> A business object that calls a data object a thousand times in a single transaction becomes noticeably faster when the two are clustered, because a thousand marshalled calls become a thousand direct calls.</p>
-      <p><b>Third, it improves cache locality.</b> The code and data of related objects stay close together in memory, so the processor finds them without going out to the main memory.</p>
-      <p><b>Fourth, it simplifies apartment and thread management</b> and scales reliably, because the objects that must not share a thread are exactly the ones that were never put across a boundary.</p>
+      <div class="page-sec"><span class="pnum">Page 2 of 3</span><span class="ptitle">Question 3 · What DCOM provides</span></div>
+      <h3>Mechanisms that Make DCOM Scalable</h3>
+      <p><b>Location transparency.</b> The client asks for a CLSID or ProgID; the Service Control Manager starts or finds the object and returns a proxy. The same code therefore runs in-process today and on a second server tomorrow.</p>
+      <p><b>Apartment threading.</b> Objects declare a threading model. Single-threaded apartments (STA) serialise calls, while the multithreaded apartment (MTA) lets the runtime use a thread pool, so extra CPU cores are actually used.</p>
+      <p><b>Object pooling and JIT activation (COM+).</b> Instead of creating an object for every request, the server keeps a pool of ready instances; just-in-time activation builds an instance only for the length of the call and then releases it.</p>
+      <p><b>Stateless design.</b> If the object keeps no private user state — the state lives in a database — then any server can answer the next call. This single decision makes load balancing possible.</p>
       <table class="tbl">
-        <thead><tr><th>Point of comparison</th><th>Low factor</th><th>High factor</th></tr></thead>
+        <thead><tr><th>Mechanism</th><th>What it removes</th><th>Scaling effect</th></tr></thead>
         <tbody>
-          <tr><td>Call path</td><td>Cross-process / cross-machine</td><td>In-process (direct v-table)</td></tr>
-          <tr><td>Marshalling cost</td><td>High â€” packed every call</td><td>Almost zero</td></tr>
-          <tr><td>Latency per call</td><td>Microseconds to milliseconds</td><td>A few nanoseconds</td></tr>
+          <tr><td>Object pooling</td><td>Construction cost per call</td><td>More requests per second</td></tr>
+          <tr><td>JIT activation</td><td>Idle objects holding memory</td><td>More users per server</td></tr>
+          <tr><td>Stateless objects</td><td>Server affinity</td><td>Any server can serve any call</td></tr>
+          <tr><td>Async / queued calls</td><td>Client waiting for the server</td><td>Load is smoothed over time</td></tr>
         </tbody>
       </table>
-      <p>To raise the clustering factor in practice, an application should declare every set of components that are always used together inside the <b>same apartment</b>, should avoid needless interfaces between objects of the same tier, and should think carefully before splitting a program across the network. A bank, for instance, keeps its account, ledger and validation objects together in one clustered tier, so a transaction hits the fast local path many times.</p>
+      <p><b>Asynchronous and queued calls.</b> With COM+ Queued Components the client posts the request to MSMQ and returns at once; the server drains the queue at its own speed, so a traffic spike becomes a longer queue instead of a timeout.</p>
 
-      <!-- PAGE 4 -->
-      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 1 Â· C++ program + output</span></div>
-      <div class="divider">C++ Program</div>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">cluster_demo.cpp</span></div>
-<pre><code class="language-cpp">// cluster_demo.cpp - related components, local calls
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-using namespace std;
-class IComponent {                       // COM-style interface
-public: virtual void run(string t) = 0; };
-class Account : public IComponent {       // member 1
-public: void run(string t){ cout&lt;&lt;"[Acc] "&lt;&lt;t&lt;&lt;endl; } };
-class Ledger : public IComponent {        // member 2
-public: void run(string t){ cout&lt;&lt;"[Led] "&lt;&lt;t&lt;&lt;endl; } };
-class Cluster {                           // keeps members together
-    Account a; Ledger l;
-public:
-    void process() {
-        a.run("debit Rs.2500");           // stays in-process
-        l.run("record debit entry");      // no marshalling
-        cout &lt;&lt; "Done locally." &lt;&lt; endl;
-    }
-};
-int main(){ Cluster b; b.process(); return 0; }</code></pre>
+      <!-- PAGE 3 -->
+      <div class="page-sec"><span class="pnum">Page 3 of 3</span><span class="ptitle">Question 3 · Limits and tuning</span></div>
+      <h3>What Limits DCOM Scalability</h3>
+      <p><b>Chatty interfaces.</b> Every remote call is a network round trip. An object that reads one field at a time forces hundreds of trips; a <i>chunky</i> interface that returns a whole record in one call does the same work in one trip.</p>
+      <p><b>Marshalling and security overhead.</b> Arguments must be packed, and if packet privacy is switched on they are also encrypted and decrypted on every call. Reusing a session and keeping calls few and large is faster than many small secure calls.</p>
+      <p><b>Shared state and locking.</b> A single MTA lock or a database row lock turns extra servers into a queue. Partitioning the data removes the contention.</p>
+      <p><b>No built-in clustering.</b> DCOM itself does not balance or fail over. In practice it is combined with Network Load Balancing, COM+ Application Center routing, or Windows failover clustering.</p>
+      <div class="diagram">
+        <pre class="ascii">  CHATTY  (poor scaling)                CHUNKY  (good scaling)
+  client ──▶ getName()                   client ──▶ getRecord(101)
+         ◀── "Rahul"                                    ◀── {id, name, marks}
+  client ──▶ getMarks()                  ── 1 round trip ──
+         ◀── 480
+  client ──▶ getCity()     3 round trips, 3 marshals
+         ◀── "Ara"</pre>
+        <figcaption>Fig. 2 — The same data fetched two ways. Fewer, larger calls scale; many tiny calls do not.</figcaption>
       </div>
-      <h4>Output</h4>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
-<pre><code class="language-plaintext">[Acc] debit Rs.2500
-[Led] record debit entry
-Done locally.</code></pre>
-      </div>
-      <div class="callout"><p class="ct">Conclusion</p><p>A good clustering factor keeps the objects that talk most often inside one boundary, so marshalling disappears and both speed and reliability improve.</p></div>
+      <p>A 1,000-user result system scales like this: make the result object stateless, pool it, put the database behind it, batch the marks lookup, and place a second server behind a balancer. Each step adds capacity without changing a line of client code — that is the real meaning of DCOM scalability.</p>
+      <div class="callout"><p class="ct">Conclusion</p><p>DCOM scales because location is transparent: objects can be pooled, made stateless and spread across servers. The network is the limit, so coarse interfaces, short sessions and partitioned data decide how far the system grows.</p></div>
 
     </div>
   </article>
 
-  <!-- ===== Q2 ===== -->
-  <article class="qblock" id="q2">
+  <!-- ===== Q4 ===== -->
+  <article class="qblock" id="q4">
     <div class="qhead">
-      <div class="qnum">02</div>
+      <div class="qnum">04</div>
       <div class="qmeta">
-        <p class="qtag">Question Two · Persistence</p>
-        <h2 class="qtext">Explain the meaning of persistence in COM / DCOM.</h2>
-        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>C++ program on Page 4</b></div></div>
+        <p class="qtag">Question Four · Distributed Security</p>
+        <h2 class="qtext">Describe security of COM / DCOM.</h2>
+        <div class="pagemeter"><div class="big">3</div><div class="lbl">A4 Pages<b>Goals · authentication · authorisation</b></div></div>
       </div>
     </div>
     <div class="ans">
 
       <!-- PAGE 1 -->
-      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 2 Â· Meaning of persistence</span></div>
-      <h3>Meaning of Persistence in COM / DCOM</h3>
-      <p><b>Persistence</b> is the ability of an object to save its <b>state</b> in a permanent store and restore it later, even after the program has closed or the machine been switched off. The <i>state</i> is simply the values held in its data members â€” for a bank object, the account number, the holder's name and the balance. RAM is <b>volatile</b>, so the moment the process ends everything it held is wiped out. Persistence is what lets an object survive that moment.</p>
-      <p>A COM object writes itself into a <b>stream</b> or a <b>storage</b> and reads itself back later. Turning a live object into bytes is <b>serialisation</b>; rebuilding it is <b>deserialisation</b>. A video game shows this clearly: while you play, your score and level stay only in memory, so a power cut loses everything. <i>Save Game</i> writes those values to a disk file and <i>Load Game</i> reads them back â€” which is exactly what a persistent COM object does.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 172" role="img" aria-label="Volatile memory compared with persistent disk storage">
-          <!-- LEFT -->
-          <text class="d-cap" x="24" y="18">In memory — volatile</text>
-          <rect class="d-soft" x="24" y="28" width="272" height="118" rx="6"/>
-          <rect class="d-box" x="40" y="44" width="150" height="86" rx="4"/>
-          <text class="d-tb" x="115" y="63" text-anchor="middle">Account</text>
-          <line class="d-line" x1="52" y1="74" x2="178" y2="74"/>
-          <text class="d-mono" x="52" y="90">id      = 101</text>
-          <text class="d-mono" x="52" y="106">holder  = Rahul</text>
-          <text class="d-mono" x="52" y="122">balance = 5000</text>
-          <text class="d-ts" x="204" y="76">RAM</text>
-          <text class="d-ts" x="204" y="96">wiped</text>
-          <text class="d-ts" x="204" y="116">on exit</text>
-          <text class="d-cap" x="24" y="164">state is gone when the program stops</text>
+      <div class="page-sec"><span class="pnum">Page 1 of 3</span><span class="ptitle">Question 4 · Security goals</span></div>
+      <h3>Why COM and DCOM Need Security</h3>
+      <p>COM objects inside one process are protected by the operating system's own boundary. DCOM sends the same calls across a network, where an attacker can <b>eavesdrop</b>, <b>spoof</b> a client, <b>alter</b> a message, <b>replay</b> an old request or simply <b>activate</b> a component that should never have started. Security therefore becomes part of the design, not an add-on.</p>
+      <p>Five goals are protected: <b>authentication</b> (who is calling), <b>authorisation</b> (may they call it), <b>integrity</b> (the bytes were not changed), <b>confidentiality</b> (nobody can read them) and <b>auditing</b> (the attempt is recorded).</p>
+      <p>DCOM does not invent cryptography. It delegates to <b>SSPI</b> and the RPC security provider, which use <b>Kerberos</b> in a domain or <b>NTLM</b> where Kerberos is unavailable. The level of protection is chosen per call through the authentication level.</p>
+      <figure class="diagram">
+        <svg viewBox="0 0 640 178" role="img" aria-label="The DCOM security stack">
+          <rect class="d-fill" x="24" y="22" width="592" height="26" rx="4"/>
+          <text class="d-t" x="320" y="40" text-anchor="middle">Application code — CoInitializeSecurity, per-interface settings</text>
 
-          <!-- RIGHT -->
-          <text class="d-cap" x="344" y="18">On disk — persistent</text>
-          <rect class="d-fill" x="344" y="28" width="272" height="118" rx="6"/>
-          <rect class="d-box" x="360" y="44" width="150" height="86" rx="4"/>
-          <text class="d-tb" x="435" y="63" text-anchor="middle">account.dat</text>
-          <line class="d-line" x1="372" y1="74" x2="498" y2="74"/>
-          <text class="d-mono" x="372" y="90">id      = 101</text>
-          <text class="d-mono" x="372" y="106">holder  = Rahul</text>
-          <text class="d-mono" x="372" y="122">balance = 5000</text>
-          <text class="d-ts" x="524" y="76">bytes</text>
-          <text class="d-ts" x="524" y="96">safe</text>
-          <text class="d-ts" x="524" y="116">tomorrow</text>
-          <text class="d-cap" x="344" y="164">state survives a restart</text>
+          <rect class="d-box" x="24" y="56" width="592" height="26" rx="4"/>
+          <text class="d-t" x="320" y="74" text-anchor="middle">COM runtime — launch and access permissions, security descriptors</text>
 
-          <line class="d-line" x1="296" y1="86" x2="338" y2="86"/>
-          <polygon class="d-ah" points="344,86 334,81 334,91"/>
+          <rect class="d-box" x="24" y="90" width="592" height="26" rx="4"/>
+          <text class="d-t" x="320" y="108" text-anchor="middle">DCOM / RPC — authentication level, impersonation level, cloaking</text>
+
+          <rect class="d-box" x="24" y="124" width="592" height="26" rx="4"/>
+          <text class="d-t" x="320" y="142" text-anchor="middle">SSPI — Kerberos (domain) or NTLM (workgroup) tokens</text>
+
+          <text class="d-cap" x="24" y="170">Each layer can only reduce the protection granted by the layer above it.</text>
         </svg>
-        <figcaption>Fig. 1 — The state of one object, seen twice. On the left it lives only in volatile RAM and dies with the process; on the right the same values have been written into a file, so they can be read back tomorrow and the object rebuilt as it was.</figcaption>
+        <figcaption>Fig. 1 — Security is applied in layers. The weakest setting anywhere in the chain decides the real protection of the call.</figcaption>
       </figure>
 
       <!-- PAGE 2 -->
-      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 2 Â· Why needed + COM model</span></div>
-      <h3>Why Persistence is Needed</h3>
-      <p>No program is expected to run for ever â€” the user closes it, the machine restarts, and sometimes a crash occurs. Without persistence every useful object would vanish on each shutdown. Persistence lets a document, a customer record, a user's preferences or a partly-finished transaction live safely between runs. It also allows data to be <b>shared</b>, because one program can save an object and another open it later, and it lets a system <b>recover</b> after a failure, because the last saved state is still on the disk.</p>
-      <h3>How COM Supports Persistence</h3>
-      <p>In <b>data-centric persistence</b> the component saves only its plain data and must know a fixed file layout. In <b>object-centric persistence</b> the object saves its own state through standard interfaces, so COM supports it with <code class="inl">IPersistStream</code> and <code class="inl">IPersistStorage</code>.</p>
-      <p>The store comes from <b>Structured Storage</b>, a small file system living inside one file. Inside it, <b>storages</b> work like folders and <b>streams</b> like files. A <b>moniker</b> is a name that finds the object again, so a saved object is linked rather than merely copied.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 214" role="img" aria-label="Compound file with storages and streams">
-          <rect class="d-fill" x="200" y="14" width="240" height="44" rx="5"/>
-          <text class="d-tb" x="320" y="41" text-anchor="middle">Compound File (.doc)</text>
-
-          <line class="d-line" x1="320" y1="58" x2="320" y2="84"/>
-          <line class="d-line" x1="140" y1="84" x2="500" y2="84"/>
-          <line class="d-line" x1="140" y1="84" x2="140" y2="110"/>
-          <line class="d-line" x1="500" y1="84" x2="500" y2="110"/>
-
-          <rect class="d-box" x="30" y="110" width="220" height="42" rx="4"/>
-          <text class="d-t" x="140" y="136" text-anchor="middle">Storage: WordDocument</text>
-
-          <rect class="d-box" x="390" y="110" width="220" height="42" rx="4"/>
-          <text class="d-t" x="500" y="136" text-anchor="middle">Storage: Images</text>
-
-          <line class="d-line" x1="80" y1="152" x2="80" y2="170"/>
-          <line class="d-line" x1="200" y1="152" x2="200" y2="170"/>
-          <line class="d-line" x1="440" y1="152" x2="440" y2="170"/>
-          <line class="d-line" x1="560" y1="152" x2="560" y2="170"/>
-
-          <rect class="d-soft" x="30" y="170" width="100" height="32" rx="3"/>
-          <text class="d-ts" x="80" y="191" text-anchor="middle">Stream: text</text>
-          <rect class="d-soft" x="150" y="170" width="100" height="32" rx="3"/>
-          <text class="d-ts" x="200" y="191" text-anchor="middle">Stream: table</text>
-          <rect class="d-soft" x="390" y="170" width="100" height="32" rx="3"/>
-          <text class="d-ts" x="440" y="191" text-anchor="middle">Stream: pic</text>
-          <rect class="d-soft" x="510" y="170" width="100" height="32" rx="3"/>
-          <text class="d-ts" x="560" y="191" text-anchor="middle">Stream: data</text>
+      <div class="page-sec"><span class="pnum">Page 2 of 3</span><span class="ptitle">Question 4 · Authentication and impersonation</span></div>
+      <h3>Authentication Levels</h3>
+      <p>The client states how strongly it wants each call protected. The six RPC authentication levels form a ladder, and each rung costs more CPU than the one below it.</p>
+      <figure class="diagram">
+        <svg viewBox="0 0 640 150" role="img" aria-label="The six RPC authentication levels">
+          <rect class="d-box" x="20" y="112" width="96" height="26" rx="4"/>
+          <text class="d-ts" x="68" y="129" text-anchor="middle">NONE</text>
+          <rect class="d-box" x="124" y="94" width="96" height="26" rx="4"/>
+          <text class="d-ts" x="172" y="111" text-anchor="middle">CONNECT</text>
+          <rect class="d-box" x="228" y="76" width="96" height="26" rx="4"/>
+          <text class="d-ts" x="276" y="93" text-anchor="middle">CALL</text>
+          <rect class="d-box" x="332" y="58" width="96" height="26" rx="4"/>
+          <text class="d-ts" x="380" y="75" text-anchor="middle">PKT</text>
+          <rect class="d-box" x="436" y="40" width="96" height="26" rx="4"/>
+          <text class="d-ts" x="484" y="57" text-anchor="middle">PKT_INTEGRITY</text>
+          <rect class="d-fill" x="540" y="22" width="88" height="26" rx="4"/>
+          <text class="d-ts" x="584" y="39" text-anchor="middle">PKT_PRIVACY</text>
+          <line class="d-line" x1="20" y1="146" x2="620" y2="146"/>
+          <polygon class="d-ah" points="624,146 614,141 614,151"/>
+          <text class="d-cap" x="20" y="164">no protection</text>
+          <text class="d-cap" x="624" y="164" text-anchor="end">encrypted · authenticated · verified</text>
         </svg>
-        <figcaption>Fig. 2 — Structured Storage. A compound file behaves like a small file system: storages act as folders and streams as files, all inside a single ordinary file.</figcaption>
+        <figcaption>Fig. 2 — NONE sends clear bytes; CONNECT authenticates only the first packet; CALL authenticates every call; PKT signs every packet; PKT_INTEGRITY verifies it; PKT_PRIVACY encrypts it.</figcaption>
       </figure>
-
-      <!-- PAGE 3 -->
-      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 2 Â· DCOM + table</span></div>
-      <h3>Persistence in DCOM</h3>
-      <p>In DCOM the object lives on a remote machine, so persistence also decides <b>where</b> the work resumes. The server keeps the object alive only while a client is using it; when the client disconnects the object is unloaded and its state is written back to the server's disk. The next time a client asks for that object by name, the server <b>activates</b> it again and rebuilds it from the saved state. Nothing is lost, and the client never has to know that the process died in between.</p>
+      <p><b>Impersonation</b> decides what the server may do with the client's identity. <b>Anonymous</b> hides the caller. <b>Identify</b> only lets the server check the name. <b>Impersonate</b> lets the server act as the client on the same machine. <b>Delegate</b> lets it act as the client on another machine too, and works only with Kerberos.</p>
       <table class="tbl">
-        <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+        <thead><tr><th>Level</th><th>Server may</th><th>Typical use</th></tr></thead>
         <tbody>
-          <tr><td>Storage</td><td>The place where bytes are kept</td></tr>
-          <tr><td>Serialisation</td><td>Converting an object into those bytes</td></tr>
-          <tr><td>Persistence</td><td>The promise that the state survives</td></tr>
-          <tr><td>Moniker</td><td>A name that finds the object again</td></tr>
+          <tr><td>Anonymous</td><td>Nothing useful</td><td>Testing only</td></tr>
+          <tr><td>Identify</td><td>Read the caller's name</td><td>Audit logging</td></tr>
+          <tr><td>Impersonate</td><td>Use local resources as the client</td><td>File access on the same server</td></tr>
+          <tr><td>Delegate</td><td>Use remote resources as the client</td><td>Three-tier database access</td></tr>
         </tbody>
       </table>
-      <p>A student result project shows this: the object is saved, the program closes, and reopening it activates the same object with the marks intact.</p>
-<figure class="diagram">
-        <pre class="ascii">   CLIENT                                SERVER  (DCOM)
-   ┌────────────┐                        ┌───────────────────┐
-   │  client    │  1. ask by CLSID ────▶ │  object started   │
-   │  program   │                        │  from saved state │
-   │            │  2. proxy / stub ◀───▶ │  method runs      │
-   │            │  3. idle 10 min  ────▶ │  object unloaded  │
-   └────────────┘                        └───────────────────┘
-        the state is never lost — it waits on the server's disk</pre>
-        <figcaption>Fig. 3 — Persistence in DCOM, drawn as a conversation. The client never keeps the object alive; it asks for it by name, the server rebuilds it from its saved state, and when the object falls idle it is unloaded again — its state kept safely on disk.</figcaption>
-      </figure>
 
-      <!-- PAGE 4 -->
-      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 2 Â· C++ program + output</span></div>
-      <div class="divider">C++ Program</div>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">persist_demo.cpp</span></div>
-<pre><code class="language-cpp">// persist_demo.cpp - save state, restore it later
-#include &lt;iostream&gt;
-#include &lt;fstream&gt;
-#include &lt;string&gt;
-using namespace std;
-class Account {                      // a persistent COM-style object
-    int id; string holder; double bal;
-public:
-    Account(int i,string h,double b):id(i),holder(h),bal(b){}
-    void save() {                     // serialise into a stream
-        ofstream f("account.dat");
-        f &lt;&lt; id &lt;&lt; "|" &lt;&lt; holder &lt;&lt; "|" &lt;&lt; bal;
-    }
-    void load() {                     // deserialise from the same file
-        ifstream f("account.dat");
-        f &gt;&gt; id &gt;&gt; holder &gt;&gt; bal;
-    }
-    void show(){ cout &lt;&lt; id &lt;&lt; " " &lt;&lt; holder &lt;&lt; " " &lt;&lt; bal &lt;&lt; endl; }
-};
-int main(){
-    Account a(101,"Rahul",5000); a.save(); cout &lt;&lt; "saved" &lt;&lt; endl;
-    Account b(0,"",0);          b.load(); b.show();   // rebuilt
-    return 0;
-}</code></pre>
+      <!-- PAGE 3 -->
+      <div class="page-sec"><span class="pnum">Page 3 of 3</span><span class="ptitle">Question 4 · Authorisation and configuration</span></div>
+      <h3>Authorisation and Configuration</h3>
+      <p>Authentication says <i>who</i>; authorisation says <i>whether</i>. Two access-control lists protect every DCOM server: <b>launch permissions</b> decide who may start the server, and <b>access permissions</b> decide who may connect to a running object. Both are stored as security descriptors with a DACL and are edited with <b>dcomcnfg</b> (Component Services) or by code.</p>
+      <p>Inside the server, <b>CoInitializeSecurity</b> sets the process-wide default, while <b>CoSetProxyBlanket</b> on the client adjusts the level for one interface. Per-interface security therefore lets a public read method stay open while a sensitive method demands packet privacy.</p>
+      <div class="diagram">
+        <pre class="ascii">  CLIENT                        SCM                    SERVER
+    │  1. CoCreateInstance        │                       │
+    ├───────────────────────────▶ │ 2. check LAUNCH ACL   │
+    │                             ├─────────────────────▶ │ 3. start
+    │  4. bind (auth level)       │                       │
+    ├───────────────────────────▶ │ 5. check ACCESS ACL   │
+    │                             │                       │ 6. token checked
+    │  7. method call ──────────────────────────────────▶ │    by server
+    │ ◀──────────────────────────────── return + signature │
+    Key: authentication happens at step 4, authorisation at 5 and 6</pre>
+        <figcaption>Fig. 3 — The order of checks. A caller who cannot launch never reaches the access list, and a caller who cannot access never reaches a method.</figcaption>
       </div>
-      <h4>Output</h4>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
-<pre><code class="language-plaintext">saved
-101 Rahul 5000</code></pre>
-      </div>
-      <div class="callout"><p class="ct">Conclusion</p><p>Persistence lets a COM object outlive the process that made it, so its state is available again on any later run.</p></div>
+      <p><b>Best practice.</b> Never ship a server with authentication level <i>NONE</i>; prefer <b>PKT_INTEGRITY</b> or <b>PKT_PRIVACY</b>. Grant launch rights to a role, not to <i>Everyone</i>. Keep delegation switched off unless a three-tier design truly needs it. Restrict DCOM at the firewall, and remember that a stale registry ACL can silently undo every setting made in the user interface.</p>
+      <div class="callout"><p class="ct">Conclusion</p><p>DCOM security is a chain: SSPI proves identity, the authentication level protects each packet, impersonation limits what the server may do, and the launch and access ACLs decide who gets that far. The weakest link sets the real strength.</p></div>
 
     </div>
   </article>
 
-  <p class="foot">Internal Assignment · BCA Semester V · <a href="pdf/5BCA1_COM_DCOM.pdf" download>Download the PDF of this subject</a> · <a href="index.html">All subjects</a> · Submission 23-10-2026</p>
+  <p class="foot">Internal Assignment · BCA Semester V · <a href="index.html">All subjects</a> · Submission 18-11-2026</p>
 </div>
 
 <a href="#top" class="totop" title="Back to top">&#9650;</a>
-<script src="assets/vendor/highlight.min.js?v=9"></script>
-<script src="assets/monolith.js?v=9"></script>
+<script src="assets/vendor/highlight.min.js?v=10"></script>
+<script src="assets/monolith.js?v=10"></script>
 </body>
 </html>

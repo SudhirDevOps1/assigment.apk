@@ -62,7 +62,7 @@ import com.getcapacitor.BridgeActivity;
  *   - true edge-to-edge drawing, with the status and navigation bars hidden
  *     (a swipe from the edge brings them back, and they fade out again)
  *   - pinch zoom, real screen width, text pinned at 100 %
- *   - no blue "glow" overscroll that a PDF reader never shows
+ *   - no blue "glow" overscroll that a document reader never shows
  */
 public class MainActivity extends BridgeActivity {
 

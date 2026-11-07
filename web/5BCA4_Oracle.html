@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="BCA Semester V Internal Assignment — Oracle RDBMS (5BCA4). Four questions, each planned across exactly four A4 pages.">
+<meta name="description" content="BCA Semester V Internal Assignment — Oracle RDBMS (5BCA4). Three questions, each planned across exactly three A4 pages.">
 <meta name="theme-color" content="#08080a">
 <title>5BCA4 · Oracle RDBMS — Assignment</title>
-<link href="assets/fonts.css?v=9" rel="stylesheet">
-<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=9">
-<link rel="stylesheet" href="assets/monolith.css?v=9">
+<link href="assets/fonts.css?v=10" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=10">
+<link rel="stylesheet" href="assets/monolith.css?v=10">
 </head>
 <body id="top">
 
@@ -17,7 +17,6 @@
   <div class="code">5BCA4</div>
   <div class="spacer"></div>
   <a class="btn" href="index.html"><span class="lg">All Subjects</span><span class="sm">Menu</span></a>
-  <a class="btn" href="pdf/5BCA4_Oracle.pdf" download><span class="lg">Download PDF</span><span class="sm">PDF</span></a>
   <button class="btn" id="focusBtn" aria-pressed="false" title="Hide the interface and read full screen"><span class="lg">Focus</span><span class="sm">Focus</span></button>
   <button class="btn solid" onclick="window.print()"><span class="lg">Print / Save A4</span><span class="sm">Print</span></button>
 </div>
@@ -27,682 +26,404 @@
   <section class="monument">
     <div class="plinth">
       <p class="eyebrow">Internal Assignment · Semester V</p>
-      <h1>Oracle<br>RDBMS</h1>
-      <p class="sub">Four questions — each one is to be written on exactly four A4 pages. Under every question you will find a <b>PAGE 1 / PAGE 2 / PAGE 3 / PAGE 4</b> breakdown that tells you what to write on each sheet, so the whole paper adds up to <b>16 handwritten pages</b>. Every query is written in Oracle SQL.</p>
+      <h1>Oracle RDBMS</h1>
+      <p class="sub">Three questions — each one is to be written on exactly three A4 pages. Under every question you will find a <b>PAGE 1 / PAGE 2 / PAGE 3</b> breakdown that tells you what to write on each sheet, so the whole paper adds up to <b>9 handwritten pages</b>.</p>
     </div>
     <div class="slab">
       <div class="field"><span class="k">Course</span><span class="v">Bachelor of Computer Applications</span></div>
       <div class="field"><span class="k">Semester</span><span class="v">Fifth Semester &nbsp;·&nbsp; 2026</span></div>
       <div class="field"><span class="k">Subject Code</span><span class="v">5BCA4</span></div>
-      <div class="field"><span class="k">Submission</span><span class="v">23 · 10 · 2026</span></div>
+      <div class="field"><span class="k">Submission</span><span class="v">18 · 11 · 2026</span></div>
       <div class="field"><span class="k">Your Name</span><input data-sync="name" placeholder="Write your name"></div>
       <div class="field"><span class="k">Roll Number</span><input data-sync="roll" placeholder="Write roll no."></div>
     </div>
   </section>
 
   <nav class="contents">
-    <div class="hd">Contents — 4 Questions · 16 A4 pages total</div>
+    <div class="hd">Contents — 3 Questions · 9 A4 pages total</div>
     <ol>
-      <li><a href="#q1">What do you mean by DBMS? Explain the purpose of DBMS.</a><span class="pg">— 4 pages</span></li>
-      <li><a href="#q2">Explain Normalization with Example.</a><span class="pg">— 4 pages</span></li>
-      <li><a href="#q3">Explain Primary Key, Foreign Key &amp; Unique Key with Example.</a><span class="pg">— 4 pages</span></li>
-      <li><a href="#q4">Differentiate between DBMS and RDBMS.</a><span class="pg">— 4 pages</span></li>
+      <li><a href="#q5">Explain Codd's law for RDBMS.</a><span class="pg">— 3 pages</span></li>
+      <li><a href="#q6">What do you mean by joins and explain types of join?</a><span class="pg">— 3 pages</span></li>
+      <li><a href="#q7">Draw an ER diagram of E-Learning.</a><span class="pg">— 3 pages</span></li>
     </ol>
   </nav>
 
-  <div class="callout noprint"><p class="ct">How to save as PDF (clean 4 pages per question)</p><p>Press <b>Print / Save A4</b>, choose <b>Destination → Save as PDF</b>, set <b>Margins → Default</b> and turn <b>Background graphics ON</b>. Each question then saves as exactly <b>four A4 pages</b>, and the whole set prints as <b>60 pages</b> across the five subjects.</p></div>
+  <div class="callout noprint"><p class="ct">How to print cleanly (3 pages per question)</p><p>Press <b>Print / Save A4</b>, set <b>Margins → Default</b> and turn <b>Background graphics ON</b>. Each question then prints as exactly <b>three A4 pages</b>, and this subject prints as <b>9 pages</b>.</p></div>
 
-  <!-- ===== Q1 ===== -->
-  <article class="qblock" id="q1">
+  <!-- ===== Q5 ===== -->
+  <article class="qblock" id="q5">
     <div class="qhead">
-      <div class="qnum">01</div>
+      <div class="qnum">05</div>
       <div class="qmeta">
-        <p class="qtag">Question One · DBMS</p>
-        <h2 class="qtext">What do you mean by DBMS? Explain the purpose of DBMS.</h2>
-        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>SQL program on Page 4</b></div></div>
+        <p class="qtag">Question Five · Relational Theory</p>
+        <h2 class="qtext">Explain Codd's law for RDBMS.</h2>
+        <div class="pagemeter"><div class="big">3</div><div class="lbl">A4 Pages<b>Rules 0–4 · rules 5–12 · meaning</b></div></div>
       </div>
     </div>
     <div class="ans">
 
       <!-- PAGE 1 -->
-      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 1 · What is a DBMS</span></div>
-      <h3>What is a DBMS?</h3>
-      <p>A <b>DBMS (Database Management System)</b> is a computer program that stores, retrieves and manages data in a structured way. It provides an <b>interface</b> between the user and the raw database, and it is responsible for keeping the data <b>secure</b>, <b>consistent</b> and <b>free from redundancy</b>.</p>
-      <p>Suppose a college stores student records. Without a DBMS every clerk keeps his own list, so the same student appears in several files with different marks. With a DBMS the data lives in <b>one</b> place, every user sees the same copy, and the program checks every request before it is allowed to touch a record.</p>
-      <p>The main functions of a DBMS are storing and retrieving data, defining the structure of the tables, enforcing security, allowing several users to work at the same time, and taking a <b>backup</b> so that data is never lost.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 190" role="img" aria-label="A DBMS stands between the users and the database">
-          <rect class="d-box" x="16" y="24" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="50" text-anchor="middle">DBA</text>
-          <rect class="d-box" x="16" y="74" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="100" text-anchor="middle">Programmer</text>
-          <rect class="d-box" x="16" y="124" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="150" text-anchor="middle">End-user</text>
+      <div class="page-sec"><span class="pnum">Page 1 of 3</span><span class="ptitle">Question 5 · Codd and rules 0–4</span></div>
+      <h3>Codd's Twelve Rules</h3>
+      <p><b>Dr. E. F. Codd</b> proposed the relational model in 1970. In 1985 he published thirteen rules — usually called <b>Codd's twelve rules</b>, because numbering starts at zero — as a test of whether a database product is truly relational. A system that follows them stores data in tables only, and the user never needs to know how the bytes are arranged.</p>
+      <figure class="diagram">
+        <svg viewBox="0 0 640 150" role="img" aria-label="Anatomy of a relational table">
+          <rect class="d-fill" x="40" y="18" width="560" height="26" rx="2"/>
+          <text class="d-t" x="90" y="36" text-anchor="middle">ROLL</text>
+          <text class="d-t" x="230" y="36" text-anchor="middle">NAME</text>
+          <text class="d-t" x="370" y="36" text-anchor="middle">COURSE</text>
+          <text class="d-t" x="510" y="36" text-anchor="middle">MARKS</text>
 
-          <line class="d-line" x1="156" y1="45" x2="242" y2="45"/>
-          <polygon class="d-ah" points="248,45 238,40 238,50"/>
-          <line class="d-line" x1="156" y1="95" x2="242" y2="95"/>
-          <polygon class="d-ah" points="248,95 238,90 238,100"/>
-          <line class="d-line" x1="156" y1="145" x2="242" y2="145"/>
-          <polygon class="d-ah" points="248,145 238,140 238,150"/>
+          <line class="d-line" x1="40" y1="72" x2="600" y2="72"/>
+          <line class="d-line" x1="40" y1="98" x2="600" y2="98"/>
+          <line class="d-line" x1="40" y1="124" x2="600" y2="124"/>
 
-          <rect class="d-fill" x="248" y="24" width="150" height="142" rx="5"/>
-          <text class="d-tb" x="323" y="62" text-anchor="middle">DBMS</text>
-          <text class="d-ts" x="323" y="90" text-anchor="middle">security</text>
-          <text class="d-ts" x="323" y="112" text-anchor="middle">integrity</text>
-          <text class="d-ts" x="323" y="134" text-anchor="middle">concurrency</text>
-          <text class="d-ts" x="323" y="156" text-anchor="middle">backup / recovery</text>
+          <line class="d-line" x1="130" y1="18" x2="130" y2="124"/>
+          <line class="d-line" x1="270" y1="18" x2="270" y2="124"/>
+          <line class="d-line" x1="410" y1="18" x2="410" y2="124"/>
 
-          <line class="d-line" x1="398" y1="95" x2="450" y2="95"/>
-          <polygon class="d-ah" points="456,95 446,90 446,100"/>
+          <text class="d-ts" x="90" y="60" text-anchor="middle">101</text>
+          <text class="d-ts" x="230" y="60" text-anchor="middle">Rahul</text>
+          <text class="d-ts" x="370" y="60" text-anchor="middle">BCA</text>
+          <text class="d-ts" x="510" y="60" text-anchor="middle">480</text>
 
-          <rect class="d-box" x="456" y="40" width="168" height="110" rx="5"/>
-          <text class="d-t" x="540" y="68" text-anchor="middle">Database</text>
-          <text class="d-ts" x="540" y="92" text-anchor="middle">data files</text>
-          <text class="d-ts" x="540" y="114" text-anchor="middle">data dictionary</text>
-          <text class="d-ts" x="540" y="136" text-anchor="middle">storage on disk</text>
+          <text class="d-ts" x="90" y="85" text-anchor="middle">102</text>
+          <text class="d-ts" x="230" y="85" text-anchor="middle">Aman</text>
+          <text class="d-ts" x="370" y="85" text-anchor="middle">BCA</text>
+          <text class="d-ts" x="510" y="85" text-anchor="middle">455</text>
+
+          <text class="d-ts" x="90" y="112" text-anchor="middle">103</text>
+          <text class="d-ts" x="230" y="112" text-anchor="middle">Neha</text>
+          <text class="d-ts" x="370" y="112" text-anchor="middle">BCA</text>
+          <text class="d-ts" x="510" y="112" text-anchor="middle">NULL</text>
+
+          <text class="d-cap" x="40" y="144">rows = tuples · columns = attributes · ROLL is the primary key</text>
         </svg>
-        <figcaption>Fig. 1 — A DBMS does not sit beside the data; it stands <b>between</b> the users and the data, checking every request before it is allowed to touch the records.</figcaption>
+        <figcaption>Fig. 1 — A relation in Codd's sense: one table, a fixed set of columns, a primary key, and no meaning attached to row order.</figcaption>
       </figure>
-
-      <!-- PAGE 2 -->
-      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 1 · Purpose of DBMS</span></div>
-      <h3>Purpose of DBMS</h3>
-      <p><b>1. To remove data redundancy.</b> The same fact is stored only once, so a change is made in one place and the whole system sees it.</p>
-      <p><b>2. To remove data inconsistency.</b> Because there is a single copy, two clerks can never disagree about a student's marks.</p>
-      <p><b>3. To share the data.</b> Several users and programs may read and write the same database at the same time.</p>
-      <p><b>4. To keep the data secure.</b> A password and permission list decide who may see which table, and every attempt is checked.</p>
-      <p><b>5. To allow independence of data.</b> The physical storage can be changed — from one disk to another — without changing any program, because the DBMS hides the storage details.</p>
-      <p><b>6. To take a backup.</b> The DBMS can copy the whole database to another device, so the data survives a crash, a theft or a fault.</p>
-      <p><b>7. To provide an easy interface.</b> The user does not have to understand where the bytes are kept; he only has to ask in SQL.</p>
-      <p><b>8. To keep standards.</b> One common format for data makes it easy to exchange information between different departments and programmes.</p>
-      <p><b>9. To handle large data.</b> Using an <b>index</b>, a small extra structure that lets the DBMS jump straight to the rows it needs, a question over millions of records is answered in seconds. <b>10. To enforce rules.</b> A rule such as "this roll number can never repeat" is written once into the table, and the DBMS refuses any entry that breaks it, whatever program sends it.</p>
-
-      <!-- PAGE 3 -->
-      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 1 · Components</span></div>
-      <h3>Components of a DBMS</h3>
-      <p>A DBMS works with the help of five components. <b>Hardware</b> is the computers and storage devices on which the data is kept. <b>Software</b> is the DBMS program itself, which stands between the users and the database. <b>Data</b> is the actual information stored in the database. <b>Procedures</b> are the rules that tell how the DBMS is to be used and managed. <b>Users</b> are the people who work with the system — the database administrator, the application programmers and the ordinary end-users.</p>
-      <p>Inside the DBMS sits the <b>Data Dictionary</b>, also called the system catalog. It stores <b>metadata</b> — data about data: every table name, column name, data type, constraint and user permission. Whenever a query is run, the DBMS first looks in the data dictionary to understand the shape of the table, and only then fetches the data.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 252" role="img" aria-label="The layered architecture of a DBMS">
-          <rect class="d-box" x="20" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="95" y="37" text-anchor="middle">DBA</text>
-          <rect class="d-box" x="245" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="320" y="37" text-anchor="middle">Programmers</text>
-          <rect class="d-box" x="470" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="545" y="37" text-anchor="middle">End-users</text>
-
-          <line class="d-line" x1="95" y1="46" x2="95" y2="64"/>
-          <line class="d-line" x1="320" y1="46" x2="320" y2="64"/>
-          <line class="d-line" x1="545" y1="46" x2="545" y2="64"/>
-
-          <rect class="d-soft" x="20" y="64" width="600" height="42" rx="4"/>
-          <text class="d-t" x="34" y="82">Query processor</text>
-          <text class="d-ts" x="34" y="100">DDL compiler · DML compiler · query optimiser</text>
-
-          <line class="d-line" x1="320" y1="106" x2="320" y2="122"/>
-          <polygon class="d-ah" points="320,126 315,116 325,116"/>
-
-          <rect class="d-soft" x="20" y="126" width="430" height="42" rx="4"/>
-          <text class="d-t" x="34" y="144">Storage manager</text>
-          <text class="d-ts" x="34" y="162">transaction · buffer · file manager</text>
-
-          <line class="d-line" x1="450" y1="147" x2="470" y2="147"/>
-          <rect class="d-box" x="470" y="126" width="150" height="42" rx="4"/>
-          <text class="d-t" x="484" y="144">Data</text>
-          <text class="d-t" x="484" y="162">dictionary</text>
-
-          <line class="d-line" x1="320" y1="168" x2="320" y2="184"/>
-          <polygon class="d-ah" points="320,188 315,178 325,178"/>
-
-          <rect class="d-fill" x="20" y="188" width="600" height="34" rx="4"/>
-          <text class="d-tb" x="320" y="210" text-anchor="middle">DATABASE — stored on disk</text>
-
-          <text class="d-cap" x="320" y="242" text-anchor="middle">every request is checked before it is allowed to touch the data</text>
-        </svg>
-        <figcaption>Fig. 2 — The layers of a DBMS. Users send a request to the query processor, the query processor asks the storage manager for the bytes, and the data dictionary is consulted at every step so that the system always knows the shape of its own tables.</figcaption>
-      </figure>
-
-      <!-- PAGE 4 -->
-      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 1 · SQL program + output</span></div>
-      <div class="divider">SQL Program</div>
-      <p class="codelabel">A small program that creates a table, inserts rows and reads them back.</p>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">dbms_demo.sql</span></div>
-<pre><code class="language-sql">-- create the table (DDL)
-CREATE TABLE STUDENT (
-  ROLL_NO   NUMBER(4) PRIMARY KEY,
-  NAME      VARCHAR2(20) NOT NULL,
-  CITY      VARCHAR2(15),
-  FEE       NUMBER(8)
-);
-
--- insert the rows (DML)
-INSERT INTO STUDENT VALUES (101,'Rahul','Patna',4500);
-INSERT INTO STUDENT VALUES (102,'Anjali','Patna',5100);
-INSERT INTO STUDENT VALUES (103,'Vikas','Gaya', 4800);
-
--- read the data back
-SELECT ROLL_NO, NAME, FEE FROM STUDENT WHERE FEE &gt; 4600;
-
--- change and delete
-UPDATE STUDENT SET FEE = 5000 WHERE ROLL_NO = 103;
-DELETE FROM STUDENT WHERE ROLL_NO = 102;</code></pre>
-      </div>
-      <h4>Output</h4>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
-<pre><code class="language-plaintext">ROLL_NO  NAME    FEE
--------  ------  -----
-102      Anjali  5100
-103      Vikas   4800</code></pre>
-      </div>
-      <div class="callout"><p class="ct">Conclusion</p><p>A DBMS keeps data in one place, checks every request and removes the problems of ordinary files.</p></div>
-
-    </div>
-  </article>
-
-  <!-- ===== Q2 ===== -->
-  <article class="qblock" id="q2">
-    <div class="qhead">
-      <div class="qnum">02</div>
-      <div class="qmeta">
-        <p class="qtag">Question Two · Normalization</p>
-        <h2 class="qtext">Explain Normalization with Example.</h2>
-        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>SQL example on Page 4</b></div></div>
-      </div>
-    </div>
-    <div class="ans">
-
-      <!-- PAGE 1 -->
-      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 2 · Normalization</span></div>
-      <h3>What is Normalization?</h3>
-      <p><b>Normalization</b> is the process of organising the columns and tables of a relational database so that each fact is stored exactly once. A table is said to be in a <b>normal form</b> when it obeys a stated rule.</p>
-      <p>Normalization removes three kinds of defect that make a database behave badly: <b>update anomaly</b>, where one change has to be repeated in several rows; <b>insert anomaly</b>, where a row cannot be added because some information is not yet known; and <b>delete anomaly</b>, where deleting one fact accidentally removes another.</p>
-      <p>The three forms are studied in order, and each removes a different defect: <b>1NF</b> deals with a cell holding several values, <b>2NF</b> with a column that depends on only half the key, and <b>3NF</b> with a column that depends on another non-key column. Normalisation is judged by reading the table, not by a formula, and a table reaches the next form only after obeying the earlier one.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 190" role="img" aria-label="A DBMS stands between the users and the database">
-          <rect class="d-box" x="16" y="24" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="50" text-anchor="middle">DBA</text>
-          <rect class="d-box" x="16" y="74" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="100" text-anchor="middle">Programmer</text>
-          <rect class="d-box" x="16" y="124" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="150" text-anchor="middle">End-user</text>
-
-          <line class="d-line" x1="156" y1="45" x2="242" y2="45"/>
-          <polygon class="d-ah" points="248,45 238,40 238,50"/>
-          <line class="d-line" x1="156" y1="95" x2="242" y2="95"/>
-          <polygon class="d-ah" points="248,95 238,90 238,100"/>
-          <line class="d-line" x1="156" y1="145" x2="242" y2="145"/>
-          <polygon class="d-ah" points="248,145 238,140 238,150"/>
-
-          <rect class="d-fill" x="248" y="24" width="150" height="142" rx="5"/>
-          <text class="d-tb" x="323" y="62" text-anchor="middle">DBMS</text>
-          <text class="d-ts" x="323" y="90" text-anchor="middle">security</text>
-          <text class="d-ts" x="323" y="112" text-anchor="middle">integrity</text>
-          <text class="d-ts" x="323" y="134" text-anchor="middle">concurrency</text>
-          <text class="d-ts" x="323" y="156" text-anchor="middle">backup / recovery</text>
-
-          <line class="d-line" x1="398" y1="95" x2="450" y2="95"/>
-          <polygon class="d-ah" points="456,95 446,90 446,100"/>
-
-          <rect class="d-box" x="456" y="40" width="168" height="110" rx="5"/>
-          <text class="d-t" x="540" y="68" text-anchor="middle">Database</text>
-          <text class="d-ts" x="540" y="92" text-anchor="middle">data files</text>
-          <text class="d-ts" x="540" y="114" text-anchor="middle">data dictionary</text>
-          <text class="d-ts" x="540" y="136" text-anchor="middle">storage on disk</text>
-        </svg>
-        <figcaption>Fig. 1 — A DBMS does not sit beside the data; it stands <b>between</b> the users and the data, checking every request before it is allowed to touch the records.</figcaption>
-      </figure>
-
-      <!-- PAGE 2 -->
-      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 2 · First Normal Form</span></div>
-      <h3>First Normal Form (1NF)</h3>
-      <p>A table is in <b>1NF</b> when every cell contains a <b>single atomic value</b> — one indivisible item — and there is no repeating group of columns.</p>
-      <p>Suppose a student is stored with his courses in one cell. That cell holds “BCA, BBA”, which is really two values, so the table breaks 1NF.</p>
-      <p>The cure is simple: break the cell open and give each value a row of its own. The two courses of one student then occupy two rows, both carrying the same roll number, so the student is still counted once. This is shown in the figure below.</p>
-      <p>A set of columns that all repeat together — <code class="inl">SUB1</code>, <code class="inl">SUB2</code>, <code class="inl">SUB3</code> and so on, one pair for every possible subject — is a <b>repeating group</b>, and 1NF rejects it for the same reason.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 252" role="img" aria-label="The layered architecture of a DBMS">
-          <rect class="d-box" x="20" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="95" y="37" text-anchor="middle">DBA</text>
-          <rect class="d-box" x="245" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="320" y="37" text-anchor="middle">Programmers</text>
-          <rect class="d-box" x="470" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="545" y="37" text-anchor="middle">End-users</text>
-
-          <line class="d-line" x1="95" y1="46" x2="95" y2="64"/>
-          <line class="d-line" x1="320" y1="46" x2="320" y2="64"/>
-          <line class="d-line" x1="545" y1="46" x2="545" y2="64"/>
-
-          <rect class="d-soft" x="20" y="64" width="600" height="42" rx="4"/>
-          <text class="d-t" x="34" y="82">Query processor</text>
-          <text class="d-ts" x="34" y="100">DDL compiler · DML compiler · query optimiser</text>
-
-          <line class="d-line" x1="320" y1="106" x2="320" y2="122"/>
-          <polygon class="d-ah" points="320,126 315,116 325,116"/>
-
-          <rect class="d-soft" x="20" y="126" width="430" height="42" rx="4"/>
-          <text class="d-t" x="34" y="144">Storage manager</text>
-          <text class="d-ts" x="34" y="162">transaction · buffer · file manager</text>
-
-          <line class="d-line" x1="450" y1="147" x2="470" y2="147"/>
-          <rect class="d-box" x="470" y="126" width="150" height="42" rx="4"/>
-          <text class="d-t" x="484" y="144">Data</text>
-          <text class="d-t" x="484" y="162">dictionary</text>
-
-          <line class="d-line" x1="320" y1="168" x2="320" y2="184"/>
-          <polygon class="d-ah" points="320,188 315,178 325,178"/>
-
-          <rect class="d-fill" x="20" y="188" width="600" height="34" rx="4"/>
-          <text class="d-tb" x="320" y="210" text-anchor="middle">DATABASE — stored on disk</text>
-
-          <text class="d-cap" x="320" y="242" text-anchor="middle">every request is checked before it is allowed to touch the data</text>
-        </svg>
-        <figcaption>Fig. 2 — The layers of a DBMS. Users send a request to the query processor, the query processor asks the storage manager for the bytes, and the data dictionary is consulted at every step so that the system always knows the shape of its own tables.</figcaption>
-      </figure>
-
-      <!-- PAGE 3 -->
-      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 2 · 2NF and 3NF</span></div>
-      <h3>Second Normal Form (2NF)</h3>
-      <p>A table is in <b>2NF</b> when it is already in 1NF and it has <b>no partial dependency</b>. A partial dependency occurs when a non-key column depends on only <b>part</b> of a composite primary key.</p>
-      <p>A <b>composite key</b> is built from more than one column, and the trouble appears only then. If the key is <code class="inl">(Roll_No, Subject)</code> and <code class="inl">Subject_Name</code> depends only on the subject, the table is in 1NF but not in 2NF, because the subject name is stored again for every student taking it.</p>
-      <p>The cure is to move that column into a table of its own, keyed only by the subject; after the split the dependency is no longer partial. A table whose key is a <b>single</b> column cannot fail this test at all, which is why 2NF matters most in many-to-many relationships.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 290" role="img" aria-label="The normalization ladder from un-normalised table to third normal form">
-          <rect class="d-box" x="110" y="12" width="260" height="38" rx="4"/>
-          <text class="d-ts" x="240" y="36" text-anchor="middle">Un-normalised table</text>
-
-          <line class="d-line" x1="240" y1="50" x2="240" y2="74"/>
-          <polygon class="d-ah" points="240,80 235,70 245,70"/>
-          <text class="d-cap" x="288" y="72">1NF : every value atomic</text>
-
-          <rect class="d-box" x="110" y="90" width="260" height="38" rx="4"/>
-          <text class="d-ts" x="240" y="114" text-anchor="middle">First Normal Form (1NF)</text>
-
-          <line class="d-line" x1="240" y1="128" x2="240" y2="152"/>
-          <polygon class="d-ah" points="240,158 235,148 245,148"/>
-          <text class="d-cap" x="288" y="150">2NF : no partial dependency</text>
-
-          <rect class="d-box" x="110" y="168" width="260" height="38" rx="4"/>
-          <text class="d-ts" x="240" y="192" text-anchor="middle">Second Normal Form (2NF)</text>
-
-          <line class="d-line" x1="240" y1="206" x2="240" y2="230"/>
-          <polygon class="d-ah" points="240,236 235,226 245,226"/>
-          <text class="d-cap" x="288" y="228">3NF : no transitive dependency</text>
-
-          <rect class="d-fill" x="110" y="246" width="260" height="38" rx="4"/>
-          <text class="d-ts" x="240" y="270" text-anchor="middle">Third Normal Form (3NF)</text>
-        </svg>
-        <figcaption>Fig. 1 — The normalization ladder. Each step removes one kind of dependency, so the table becomes smaller, cleaner and free of anomalies.</figcaption>
-      </figure>
-
-      <!-- PAGE 4 -->
-      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 2 · SQL program + output</span></div>
-      <h3>Third Normal Form (3NF)</h3>
-      <p>A table is in <b>3NF</b> when no non-key column depends on another non-key column — a <b>transitive</b> dependency.</p>
-      <div class="divider">SQL Program</div>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">normal_demo.sql</span></div>
-<pre><code class="language-sql">-- STUDENT is NOT in 3NF: DEPT_NAME depends on DEPT_ID
-CREATE TABLE STUDENT (
-  ROLL_NO NUMBER(4) PRIMARY KEY,
-  NAME    VARCHAR2(20),
-  DEPT_ID NUMBER(3),
-  DEPT_NAME VARCHAR2(20)
-);
-CREATE TABLE DEPARTMENT (
-  DEPT_ID   NUMBER(3) PRIMARY KEY,
-  DEPT_NAME VARCHAR2(20)
-);
-
-CREATE TABLE STUDENT (
-  ROLL_NO NUMBER(4) PRIMARY KEY,
-  NAME    VARCHAR2(20),
-  DEPT_ID NUMBER(3),
-  FOREIGN KEY (DEPT_ID) REFERENCES DEPARTMENT(DEPT_ID)
-);
-
-SELECT S.NAME, D.DEPT_NAME
-FROM   STUDENT S, DEPARTMENT D
-WHERE  S.DEPT_ID = D.DEPT_ID;</code></pre>
-      </div>
-      <h4>Output</h4>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
-<pre><code class="language-plaintext">NAME     DEPT_NAME
--------  ---------
-Rahul    Computer
-Anjali   Commerce</code></pre>
-      </div>
-
-    </div>
-  </article>
-
-  <!-- ===== Q3 ===== -->
-  <article class="qblock" id="q3">
-    <div class="qhead">
-      <div class="qnum">03</div>
-      <div class="qmeta">
-        <p class="qtag">Question Three · Keys</p>
-        <h2 class="qtext">Explain Primary Key, Foreign Key &amp; Unique Key with Example.</h2>
-        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>SQL example on Page 4</b></div></div>
-      </div>
-    </div>
-    <div class="ans">
-
-      <!-- PAGE 1 -->
-      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 3 · Keys + primary key</span></div>
-      <h3>What is a Key? What is a Primary Key?</h3>
-      <p>In a database table it is essential to identify every record uniquely. A <b>key</b> is that identifying column or set of columns. A <b>primary key</b> is a column, or a group of columns, that identifies each row <b>uniquely and completely</b>, and no row may repeat its value.</p>
-      <p>For example, in a student table <code class="inl">Roll_No</code> can be the primary key, because every student has a different roll number and it never changes. A primary key can never contain <code class="inl">NULL</code> or a duplicate, and it must be unique — that is the property called <b>entity integrity</b>.</p>
-      <p>A key may also be built from several columns; then it is called a <b>composite key</b>.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 190" role="img" aria-label="A DBMS stands between the users and the database">
-          <rect class="d-box" x="16" y="24" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="50" text-anchor="middle">DBA</text>
-          <rect class="d-box" x="16" y="74" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="100" text-anchor="middle">Programmer</text>
-          <rect class="d-box" x="16" y="124" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="150" text-anchor="middle">End-user</text>
-
-          <line class="d-line" x1="156" y1="45" x2="242" y2="45"/>
-          <polygon class="d-ah" points="248,45 238,40 238,50"/>
-          <line class="d-line" x1="156" y1="95" x2="242" y2="95"/>
-          <polygon class="d-ah" points="248,95 238,90 238,100"/>
-          <line class="d-line" x1="156" y1="145" x2="242" y2="145"/>
-          <polygon class="d-ah" points="248,145 238,140 238,150"/>
-
-          <rect class="d-fill" x="248" y="24" width="150" height="142" rx="5"/>
-          <text class="d-tb" x="323" y="62" text-anchor="middle">DBMS</text>
-          <text class="d-ts" x="323" y="90" text-anchor="middle">security</text>
-          <text class="d-ts" x="323" y="112" text-anchor="middle">integrity</text>
-          <text class="d-ts" x="323" y="134" text-anchor="middle">concurrency</text>
-          <text class="d-ts" x="323" y="156" text-anchor="middle">backup / recovery</text>
-
-          <line class="d-line" x1="398" y1="95" x2="450" y2="95"/>
-          <polygon class="d-ah" points="456,95 446,90 446,100"/>
-
-          <rect class="d-box" x="456" y="40" width="168" height="110" rx="5"/>
-          <text class="d-t" x="540" y="68" text-anchor="middle">Database</text>
-          <text class="d-ts" x="540" y="92" text-anchor="middle">data files</text>
-          <text class="d-ts" x="540" y="114" text-anchor="middle">data dictionary</text>
-          <text class="d-ts" x="540" y="136" text-anchor="middle">storage on disk</text>
-        </svg>
-        <figcaption>Fig. 1 — A DBMS does not sit beside the data; it stands <b>between</b> the users and the data, checking every request before it is allowed to touch the records.</figcaption>
-      </figure>
-
-      <!-- PAGE 2 -->
-      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 3 · Foreign + unique key</span></div>
-      <h3>2. Foreign Key</h3>
-      <p>A <b>Foreign Key</b> is a column in one table that refers to the <b>primary key of another table</b>. Its job is to create a <b>relationship</b> between two tables and to enforce <b>referential integrity</b> — a value may exist in one table only if it already exists in the other. An order from an unknown customer simply cannot be entered.</p>
-      <h3>3. Unique Key</h3>
-      <p>A <b>Unique Key</b> is a column, or group of columns, whose values must never repeat. It guarantees that no two rows carry the same value, but unlike a primary key it may allow <code class="inl">NULL</code>. A table may have <b>only one</b> primary key but <b>many</b> unique keys.</p>
-      <p><b>4. Candidate and Composite Keys.</b> A <b>candidate key</b> is any column, or set of columns, that could serve as the primary key because no value repeats; one is finally chosen as the primary key and the rest become unique keys. A <b>composite key</b> is made from two or more columns together.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 252" role="img" aria-label="The layered architecture of a DBMS">
-          <rect class="d-box" x="20" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="95" y="37" text-anchor="middle">DBA</text>
-          <rect class="d-box" x="245" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="320" y="37" text-anchor="middle">Programmers</text>
-          <rect class="d-box" x="470" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="545" y="37" text-anchor="middle">End-users</text>
-
-          <line class="d-line" x1="95" y1="46" x2="95" y2="64"/>
-          <line class="d-line" x1="320" y1="46" x2="320" y2="64"/>
-          <line class="d-line" x1="545" y1="46" x2="545" y2="64"/>
-
-          <rect class="d-soft" x="20" y="64" width="600" height="42" rx="4"/>
-          <text class="d-t" x="34" y="82">Query processor</text>
-          <text class="d-ts" x="34" y="100">DDL compiler · DML compiler · query optimiser</text>
-
-          <line class="d-line" x1="320" y1="106" x2="320" y2="122"/>
-          <polygon class="d-ah" points="320,126 315,116 325,116"/>
-
-          <rect class="d-soft" x="20" y="126" width="430" height="42" rx="4"/>
-          <text class="d-t" x="34" y="144">Storage manager</text>
-          <text class="d-ts" x="34" y="162">transaction · buffer · file manager</text>
-
-          <line class="d-line" x1="450" y1="147" x2="470" y2="147"/>
-          <rect class="d-box" x="470" y="126" width="150" height="42" rx="4"/>
-          <text class="d-t" x="484" y="144">Data</text>
-          <text class="d-t" x="484" y="162">dictionary</text>
-
-          <line class="d-line" x1="320" y1="168" x2="320" y2="184"/>
-          <polygon class="d-ah" points="320,188 315,178 325,178"/>
-
-          <rect class="d-fill" x="20" y="188" width="600" height="34" rx="4"/>
-          <text class="d-tb" x="320" y="210" text-anchor="middle">DATABASE — stored on disk</text>
-
-          <text class="d-cap" x="320" y="242" text-anchor="middle">every request is checked before it is allowed to touch the data</text>
-        </svg>
-        <figcaption>Fig. 2 — The layers of a DBMS. Users send a request to the query processor, the query processor asks the storage manager for the bytes, and the data dictionary is consulted at every step so that the system always knows the shape of its own tables.</figcaption>
-      </figure>
-
-      <!-- PAGE 3 -->
-      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 3 · Comparison</span></div>
-      <h3>Differences Between Primary, Foreign and Unique Keys</h3>
       <table class="tbl">
-        <thead><tr><th>Point</th><th>Primary key</th><th>Foreign key</th><th>Unique key</th></tr></thead>
+        <thead><tr><th>Rule</th><th>Name</th><th>What it demands</th></tr></thead>
         <tbody>
-          <tr><td>Purpose</td><td>Identifies each row</td><td>Links two tables</td><td>Stops duplicates</td></tr>
-          <tr><td>How many</td><td>Only one per table</td><td>Any number</td><td>Any number</td></tr>
-          <tr><td>NULL</td><td>Never allowed</td><td>May be allowed</td><td>May be allowed</td></tr>
-          <tr><td>Refers to</td><td>Itself</td><td>Another table's key</td><td>Itself</td></tr>
+          <tr><td>0</td><td>Foundation</td><td>The system must qualify as relational, as a database and as a DBMS</td></tr>
+          <tr><td>1</td><td>Information</td><td>All data is stored as values in tables — nothing else</td></tr>
+          <tr><td>2</td><td>Guaranteed access</td><td>Every value is reachable by table name, primary key and column name</td></tr>
+          <tr><td>3</td><td>Systematic nulls</td><td>A null means "unknown", not zero or blank, and is handled consistently</td></tr>
+          <tr><td>4</td><td>Dynamic catalog</td><td>The description of the database is itself stored in tables and can be queried</td></tr>
         </tbody>
       </table>
-      <p>One more case completes the picture. When one customer places many orders <i>and</i> one order contains many products, neither table can carry the other \u2014s foreign key cleanly. The usual answer is a <b>junction table</b> that holds only the two keys, each as a <b>composite key</b> of the pair, with a row for every link.</p>
-      <h4>How the Keys Are Used Together</h4>
-      <p>Consider a small shop with two tables.</p>
-      <p><code class="inl">CUSTOMER</code> holds <code class="inl">Cust_Id</code> as its <b>primary key</b> and <code class="inl">Email</code> as a <b>unique key</b>, so no customer can be stored twice and no two customers can share one address.</p>
-      <p><code class="inl">ORDERS</code> holds <code class="inl">Order_Id</code> as its <b>primary key</b>, and its <code class="inl">Cust_Id</code> is a <b>foreign key</b> that points at <code class="inl">CUSTOMER.Cust_Id</code>.</p>
-      <p>The three keys then work as a team: the <b>primary key</b> gives every row an identity that never changes, the <b>unique key</b> stops the same person appearing twice under different ids, and the <b>foreign key</b> stops a fact existing where its own reason has vanished.</p>
 
-      <!-- PAGE 4 -->
-      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 3 · SQL program + output</span></div>
-      <div class="divider">SQL Program</div>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">keys_demo.sql</span></div>
-<pre><code class="language-sql">CREATE TABLE CUSTOMER (
-  CUST_ID  NUMBER(4) PRIMARY KEY,        -- primary key
-  NAME     VARCHAR2(20) NOT NULL,
-  EMAIL    VARCHAR2(30) UNIQUE           -- unique key
-);
-
-CREATE TABLE ORDERS (
-  ORDER_ID NUMBER(4) PRIMARY KEY,
-  CUST_ID  NUMBER(4),                     -- foreign key
-  AMOUNT   NUMBER(8),
-  FOREIGN KEY (CUST_ID) REFERENCES CUSTOMER(CUST_ID)
-);
-
-INSERT INTO CUSTOMER VALUES (101,'Rahul','rahul@mail.com');
-INSERT INTO CUSTOMER VALUES (102,'Anjali','anjali@mail.com');
-INSERT INTO ORDERS VALUES (1,101,2500);
-INSERT INTO ORDERS VALUES (2,101,900);
-
-SELECT C.NAME, O.AMOUNT
-FROM   ORDERS O, CUSTOMER C
-WHERE  O.CUST_ID = C.CUST_ID;</code></pre>
+      <!-- PAGE 2 -->
+      <div class="page-sec"><span class="pnum">Page 2 of 3</span><span class="ptitle">Question 5 · Rules 5–12</span></div>
+      <h3>The Remaining Rules</h3>
+      <p>Rules 5 to 12 protect the user from the physical details of storage and from any back door that would let a program bypass the relational model.</p>
+      <table class="tbl">
+        <thead><tr><th>Rule</th><th>Name</th><th>What it demands</th></tr></thead>
+        <tbody>
+          <tr><td>5</td><td>Comprehensive sublanguage</td><td>One language (SQL) must handle definition, query, update and security</td></tr>
+          <tr><td>6</td><td>View updating</td><td>Views can be updated where the change maps back to base tables</td></tr>
+          <tr><td>7</td><td>High-level insert, update, delete</td><td>Operations work on whole sets of rows, not one record at a time</td></tr>
+          <tr><td>8</td><td>Physical data independence</td><td>Changing files, indexes or disks must not change the application</td></tr>
+          <tr><td>9</td><td>Logical data independence</td><td>Adding a column or splitting a table must not break existing queries</td></tr>
+          <tr><td>10</td><td>Integrity independence</td><td>Constraints are stored in the catalog and checked by the DBMS</td></tr>
+          <tr><td>11</td><td>Distribution independence</td><td>Data may be spread over several locations without changing SQL</td></tr>
+          <tr><td>12</td><td>Non-subversion</td><td>No low-level tool may bypass the rules of the relational model</td></tr>
+        </tbody>
+      </table>
+      <p>Rules 8, 9 and 11 are the most valuable in practice: they are what allow a DBA to add an index in the morning and have the evening reports run faster, without any programmer touching a line of code.</p>
+      <div class="diagram">
+        <pre class="ascii">  APPLICATION  ── logical view ──▶  <b>views, tables, constraints</b>
+                                         │  logical independence (rule 9)
+                                         ▼
+  STORAGE     ── physical view ─▶  <b>files, indexes, tablespaces</b>
+                                         │  physical independence (rule 8)
+                                         ▼
+  LOCATION    ── distribution ──▶  <b>server A + server B</b>
+                                            distribution independence (rule 11)</pre>
+        <figcaption>Fig. 2 — The three independence rules as a stack. Each layer may change without disturbing the layer above it.</figcaption>
       </div>
-      <h4>Output</h4>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
-<pre><code class="language-plaintext">NAME    AMOUNT
-------  ------
-Rahul   2500
-Rahul   900</code></pre>
-      </div>
-      <div class="callout"><p class="ct">Conclusion</p><p>An order for Cust_ID 999 would be refused, because that customer does not exist.</p></div>
+
+      <!-- PAGE 3 -->
+      <div class="page-sec"><span class="pnum">Page 3 of 3</span><span class="ptitle">Question 5 · Why the rules matter</span></div>
+      <h3>Meaning and Use in Oracle</h3>
+      <p>Codd's rules are a <b>checklist</b>, not a law of physics. Oracle, SQL Server, PostgreSQL and MySQL satisfy most of them, and each one shows up as a familiar feature:</p>
+      <p><b>Rule 4</b> is the data dictionary — <code class="inl">USER_TABLES</code>, <code class="inl">USER_TAB_COLUMNS</code> and <code class="inl">USER_CONSTRAINTS</code> are ordinary views that describe the database. <b>Rule 6</b> is a view created with <code class="inl">CREATE VIEW</code>. <b>Rule 10</b> is a <code class="inl">CHECK</code>, <code class="inl">NOT NULL</code>, <code class="inl">PRIMARY KEY</code> or <code class="inl">FOREIGN KEY</code> constraint. <b>Rule 11</b> appears as a database link or a distributed query.</p>
+      <p>The rules also explain why the model is trusted. Because every value sits in a known cell of a known table, any row can be found without scanning a file by hand. Because constraints live in the catalog, the same rule protects every program. Because rows have no fixed order, the optimiser is free to read them in the cheapest way.</p>
+      <table class="tbl">
+        <thead><tr><th>Violation</th><th>Why it breaks the model</th></tr></thead>
+        <tbody>
+          <tr><td>Storing a list in one column</td><td>Repeating groups make a value unreachable by key</td></tr>
+          <tr><td>Hiding data in files outside the catalog</td><td>Rule 1 and rule 4 both fail</td></tr>
+          <tr><td>Letting a program read the data file directly</td><td>Rule 12 (non-subversion) fails</td></tr>
+          <tr><td>Using blank instead of null</td><td>Rule 3 fails — "unknown" becomes "empty"</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><p class="ct">Conclusion</p><p>Codd's twelve rules (thirteen with rule 0) describe a database in which all data is tabular, reachable by key, described by its own catalog, queried by one language, and independent of storage, structure and location.</p></div>
 
     </div>
   </article>
 
-  <!-- ===== Q4 ===== -->
-  <article class="qblock" id="q4">
+  <!-- ===== Q6 ===== -->
+  <article class="qblock" id="q6">
     <div class="qhead">
-      <div class="qnum">04</div>
+      <div class="qnum">06</div>
       <div class="qmeta">
-        <p class="qtag">Question Four · DBMS vs RDBMS</p>
-        <h2 class="qtext">Differentiate between DBMS and RDBMS.</h2>
-        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>SQL JOIN example on Page 4</b></div></div>
+        <p class="qtag">Question Six · Query Processing</p>
+        <h2 class="qtext">What do you mean by joins and explain types of join?</h2>
+        <div class="pagemeter"><div class="big">3</div><div class="lbl">A4 Pages<b>Inner · outer · comparison</b></div></div>
       </div>
     </div>
     <div class="ans">
 
       <!-- PAGE 1 -->
-      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 4 · DBMS vs RDBMS</span></div>
-      <h3>Difference Between DBMS and RDBMS</h3>
-      <p>An ordinary DBMS keeps data in separate files, and the links between those files — a customer with his orders, a student with his marks — are written by the programmer by hand. An RDBMS keeps data in <b>related tables</b> and lets the keys do the linking, so the same questions can be asked across many tables at once. This is the single change that turns a collection of files into a database.</p>
-      <table class="tbl">
-        <thead><tr><th>Point</th><th>DBMS</th><th>RDBMS</th></tr></thead>
-        <tbody>
-          <tr><td>Storage</td><td>Files, one flat list</td><td>Related tables</td></tr>
-          <tr><td>Links</td><td>Written by the programmer</td><td>Through keys</td></tr>
-          <tr><td>Redundancy</td><td>Often repeats data</td><td>Each fact stored once</td></tr>
-          <tr><td>Query</td><td>Full scan of the file</td><td>SQL over many tables</td></tr>
-          <tr><td>Example</td><td>FoxPro, dBase</td><td>Oracle, MySQL, SQLite</td></tr>
-        </tbody>
-      </table>
-<figure class="diagram">
-        <svg viewBox="0 0 640 190" role="img" aria-label="A DBMS stands between the users and the database">
-          <rect class="d-box" x="16" y="24" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="50" text-anchor="middle">DBA</text>
-          <rect class="d-box" x="16" y="74" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="100" text-anchor="middle">Programmer</text>
-          <rect class="d-box" x="16" y="124" width="140" height="42" rx="4"/>
-          <text class="d-ts" x="86" y="150" text-anchor="middle">End-user</text>
+      <div class="page-sec"><span class="pnum">Page 1 of 3</span><span class="ptitle">Question 6 · Inner joins</span></div>
+      <h3>What a Join Does</h3>
+      <p>A <b>join</b> combines rows from two or more tables using a related column. The database first forms the <b>Cartesian product</b> — every row of the first table paired with every row of the second — and then keeps only the pairs that satisfy the join condition. Without that condition the product is meaningless and grows very fast.</p>
+      <p>Our example uses two small tables. <b>EMP</b> stores empno, name and deptno; <b>DEPT</b> stores deptno and dname. Note that Neha has no department, and Admin has no employee.</p>
+      <div class="diagram">
+        <pre class="ascii">  EMP                          DEPT
+  ┌───────┬────────┬────────┐  ┌────────┬────────┐
+  │ empno │ name   │ deptno │  │ deptno │ dname  │
+  ├───────┼────────┼────────┤  ├────────┼────────┤
+  │  101  │ Rahul  │   10   │  │   10   │ Sales  │
+  │  102  │ Aman   │   20   │  │   20   │ HR     │
+  │  103  │ Neha   │  NULL  │  │   30   │ Admin  │
+  └───────┴────────┴────────┘  └────────┴────────┘
+        join condition:  EMP.deptno = DEPT.deptno</pre>
+        <figcaption>Fig. 1 — Two tables joined on deptno. Neha (null) and Admin (30) have no partner, which is exactly what the outer joins later recover.</figcaption>
+      </div>
+      <h4>Equi join and natural join</h4>
+      <p>An <b>equi join</b> compares columns with <code class="inl">=</code>; a <b>natural join</b> does the same automatically on every column that has the same name, and prints the shared column once. A <b>theta join</b> uses any other comparison, such as <code class="inl">&lt;</code> or <code class="inl">BETWEEN</code>.</p>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">inner_join.sql</span></div>
+<pre><code class="language-sql">SELECT e.name, d.dname
+FROM   emp e INNER JOIN dept d
+ON     e.deptno = d.deptno;
 
-          <line class="d-line" x1="156" y1="45" x2="242" y2="45"/>
-          <polygon class="d-ah" points="248,45 238,40 238,50"/>
-          <line class="d-line" x1="156" y1="95" x2="242" y2="95"/>
-          <polygon class="d-ah" points="248,95 238,90 238,100"/>
-          <line class="d-line" x1="156" y1="145" x2="242" y2="145"/>
-          <polygon class="d-ah" points="248,145 238,140 238,150"/>
-
-          <rect class="d-fill" x="248" y="24" width="150" height="142" rx="5"/>
-          <text class="d-tb" x="323" y="62" text-anchor="middle">DBMS</text>
-          <text class="d-ts" x="323" y="90" text-anchor="middle">security</text>
-          <text class="d-ts" x="323" y="112" text-anchor="middle">integrity</text>
-          <text class="d-ts" x="323" y="134" text-anchor="middle">concurrency</text>
-          <text class="d-ts" x="323" y="156" text-anchor="middle">backup / recovery</text>
-
-          <line class="d-line" x1="398" y1="95" x2="450" y2="95"/>
-          <polygon class="d-ah" points="456,95 446,90 446,100"/>
-
-          <rect class="d-box" x="456" y="40" width="168" height="110" rx="5"/>
-          <text class="d-t" x="540" y="68" text-anchor="middle">Database</text>
-          <text class="d-ts" x="540" y="92" text-anchor="middle">data files</text>
-          <text class="d-ts" x="540" y="114" text-anchor="middle">data dictionary</text>
-          <text class="d-ts" x="540" y="136" text-anchor="middle">storage on disk</text>
-        </svg>
-        <figcaption>Fig. 1 — A DBMS does not sit beside the data; it stands <b>between</b> the users and the data, checking every request before it is allowed to touch the records.</figcaption>
-      </figure>
+-- natural join writes the same thing without the condition
+SELECT name, dname FROM emp NATURAL JOIN dept;</code></pre>
+      </div>
+      <p>The inner join returns only <b>Rahul–Sales</b> and <b>Aman–HR</b>. Neha and Admin disappear because they have no matching value.</p>
 
       <!-- PAGE 2 -->
-      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 4 · What is an RDBMS</span></div>
-      <h3>What is an RDBMS?</h3>
-      <p>An <b>RDBMS (Relational Database Management System)</b> is a special form of DBMS in which the data is stored in <b>relations</b> — structured tables of rows and columns — and the tables are connected through common keys. It is based on the <b>relational model</b> of <b>E. F. Codd</b> and is queried using <b>SQL</b>.</p>
-      <p>Its greatest feature is <b>JOIN</b>, which combines related tables and returns the result as one answer, so information spread across many tables can be read together.</p>
-      <p>In a relation the rows are called <b>tuples</b> and the columns <b>attributes</b>. Two <b>integrity rules</b> hold in every relation: <b>entity integrity</b>, meaning no key may be <code class="inl">NULL</code>, and <b>referential integrity</b>, meaning a foreign key value must already exist as a key somewhere else.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 252" role="img" aria-label="The layered architecture of a DBMS">
-          <rect class="d-box" x="20" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="95" y="37" text-anchor="middle">DBA</text>
-          <rect class="d-box" x="245" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="320" y="37" text-anchor="middle">Programmers</text>
-          <rect class="d-box" x="470" y="18" width="150" height="28" rx="4"/>
-          <text class="d-ts" x="545" y="37" text-anchor="middle">End-users</text>
+      <div class="page-sec"><span class="pnum">Page 2 of 3</span><span class="ptitle">Question 6 · Outer, self and cross joins</span></div>
+      <h3>Outer Joins</h3>
+      <p>An <b>outer join</b> keeps the unmatched rows and fills the missing side with <b>NULL</b>. This is how a report shows "every employee, with a department if one exists".</p>
+      <table class="tbl">
+        <thead><tr><th>Join</th><th>Keeps</th><th>Rows in our example</th></tr></thead>
+        <tbody>
+          <tr><td>LEFT OUTER JOIN</td><td>All left rows + matches</td><td>Rahul-Sales, Aman-HR, Neha-NULL</td></tr>
+          <tr><td>RIGHT OUTER JOIN</td><td>All right rows + matches</td><td>Rahul-Sales, Aman-HR, NULL-Admin</td></tr>
+          <tr><td>FULL OUTER JOIN</td><td>All rows from both sides</td><td>All five combinations</td></tr>
+        </tbody>
+      </table>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">outer_join.sql</span></div>
+<pre><code class="language-sql">SELECT e.name, d.dname
+FROM   emp e LEFT OUTER JOIN dept d
+ON     e.deptno = d.deptno;
 
-          <line class="d-line" x1="95" y1="46" x2="95" y2="64"/>
-          <line class="d-line" x1="320" y1="46" x2="320" y2="64"/>
-          <line class="d-line" x1="545" y1="46" x2="545" y2="64"/>
+SELECT e.name, d.dname
+FROM   emp e FULL OUTER JOIN dept d
+ON     e.deptno = d.deptno;</code></pre>
+      </div>
+      <h4>Self join and cross join</h4>
+      <p>A <b>self join</b> joins a table to itself, which is how a manager column is resolved: the same EMP table appears twice, once as employee and once as manager. A <b>cross join</b> deliberately returns the full Cartesian product and is used for combinations such as every size with every colour.</p>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">self_cross.sql</span></div>
+<pre><code class="language-sql">SELECT e.name AS employee, m.name AS manager
+FROM   emp e LEFT JOIN emp m ON e.mgr = m.empno;
 
-          <rect class="d-soft" x="20" y="64" width="600" height="42" rx="4"/>
-          <text class="d-t" x="34" y="82">Query processor</text>
-          <text class="d-ts" x="34" y="100">DDL compiler · DML compiler · query optimiser</text>
-
-          <line class="d-line" x1="320" y1="106" x2="320" y2="122"/>
-          <polygon class="d-ah" points="320,126 315,116 325,116"/>
-
-          <rect class="d-soft" x="20" y="126" width="430" height="42" rx="4"/>
-          <text class="d-t" x="34" y="144">Storage manager</text>
-          <text class="d-ts" x="34" y="162">transaction · buffer · file manager</text>
-
-          <line class="d-line" x1="450" y1="147" x2="470" y2="147"/>
-          <rect class="d-box" x="470" y="126" width="150" height="42" rx="4"/>
-          <text class="d-t" x="484" y="144">Data</text>
-          <text class="d-t" x="484" y="162">dictionary</text>
-
-          <line class="d-line" x1="320" y1="168" x2="320" y2="184"/>
-          <polygon class="d-ah" points="320,188 315,178 325,178"/>
-
-          <rect class="d-fill" x="20" y="188" width="600" height="34" rx="4"/>
-          <text class="d-tb" x="320" y="210" text-anchor="middle">DATABASE — stored on disk</text>
-
-          <text class="d-cap" x="320" y="242" text-anchor="middle">every request is checked before it is allowed to touch the data</text>
-        </svg>
-        <figcaption>Fig. 2 — The layers of a DBMS. Users send a request to the query processor, the query processor asks the storage manager for the bytes, and the data dictionary is consulted at every step so that the system always knows the shape of its own tables.</figcaption>
-      </figure>
+SELECT e.name, d.dname FROM emp e CROSS JOIN dept d;
+-- 3 employees x 3 departments = 9 rows</code></pre>
+      </div>
 
       <!-- PAGE 3 -->
-      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 4 · Benefits</span></div>
-      <h3>Advantages of an RDBMS</h3>
-      <p><b>Less redundancy:</b> a fact is stored once, so the data stays consistent and the file becomes smaller.</p>
-      <p><b>Easy to update:</b> one change is made in one place and every part of the system sees it immediately.</p>
-      <p><b>Easy to query:</b> a question such as “name and phone of every customer with an order above 5000” is one SQL statement, though the answer is spread over three tables.</p>
-      <p><b>Reliability:</b> an RDBMS supports the <b>ACID properties</b> — <b>Atomicity</b> (a transaction is all or nothing), <b>Consistency</b>, <b>Isolation</b> and <b>Durability</b> — so data remains safe even if the machine stops halfway through a change.</p>
-      <p><b>Security:</b> permissions are given table by table, so every user sees exactly what he should see.</p>
-      <p>Examples are <b>Oracle, MySQL, Microsoft SQL Server, PostgreSQL</b> and <b>SQLite</b>. An RDBMS is best where the data is large and complex and where the relationships between tables really matter, which is why banks and large organisations insist on one.</p>
-      <p><b>Shared use:</b> many users may work on the same data at once, each seeing a consistent view even while another is changing it. <b>Standard language:</b> almost every RDBMS understands <b>SQL</b>, so a query written for one runs on another with little change. <b>Recovery:</b> if the machine stops halfway through a transaction, the log on disk returns the system to the last completed state rather than a half-written one.</p>
-      <p>An RDBMS is best where the data is large and complex and where the relationships between tables really matter, which is why banks, airlines and large organisations insist on one.</p>
+      <div class="page-sec"><span class="pnum">Page 3 of 3</span><span class="ptitle">Question 6 · Visual summary</span></div>
+      <h3>The Four Common Joins at a Glance</h3>
+      <figure class="diagram">
+        <svg viewBox="0 0 640 168" role="img" aria-label="Venn diagram of inner and outer joins">
+          <defs>
+            <clipPath id="lens1"><ellipse cx="63" cy="46" rx="26" ry="21"/></clipPath>
+            <clipPath id="lens2"><ellipse cx="63" cy="46" rx="26" ry="21"/></clipPath>
+            <clipPath id="lens3"><ellipse cx="77" cy="46" rx="26" ry="21"/></clipPath>
+            <clipPath id="lens4"><ellipse cx="63" cy="46" rx="26" ry="21"/></clipPath>
+          </defs>
 
-      <!-- PAGE 4 -->
-      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 4 · SQL program + output</span></div>
-      <div class="divider">SQL Program</div>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">join_demo.sql</span></div>
-<pre><code class="language-sql">-- three related tables
-CREATE TABLE DEPT  (DEPT_ID NUMBER(2) PRIMARY KEY, DEPT_NAME VARCHAR2(15));
-CREATE TABLE EMP   (EMP_ID  NUMBER(3) PRIMARY KEY,
-                    NAME     VARCHAR2(15),
-                    DEPT_ID  NUMBER(2),
-                    SALARY   NUMBER(8),
-                    FOREIGN KEY (DEPT_ID) REFERENCES DEPT(DEPT_ID));
-CREATE TABLE BONUS (EMP_ID NUMBER(3) PRIMARY KEY, AMOUNT NUMBER(8));
+          <g transform="translate(14,10)">
+            <ellipse class="d-soft" cx="48" cy="46" rx="26" ry="21"/>
+            <ellipse class="d-soft" cx="78" cy="46" rx="26" ry="21"/>
+            <ellipse class="d-fill" cx="78" cy="46" rx="26" ry="21" clip-path="url(#lens1)"/>
+            <text class="d-cap" x="63" y="96" text-anchor="middle">INNER</text>
+          </g>
 
-INSERT INTO DEPT  VALUES (1,'Sales');
-INSERT INTO DEPT  VALUES (2,'IT');
-INSERT INTO EMP   VALUES (10,'Rahul', 1, 30000);
-INSERT INTO EMP   VALUES (11,'Anjali',1, 35000);
-INSERT INTO EMP   VALUES (12,'Vikas', 2, 40000);
-INSERT INTO BONUS VALUES (10, 5000);
-INSERT INTO BONUS VALUES (12, 7000);
+          <g transform="translate(174,10)">
+            <ellipse class="d-fill" cx="48" cy="46" rx="26" ry="21"/>
+            <ellipse class="d-soft" cx="78" cy="46" rx="26" ry="21"/>
+            <text class="d-cap" x="63" y="96" text-anchor="middle">LEFT</text>
+          </g>
 
--- JOIN across all three tables
-SELECT D.DEPT_NAME, E.NAME, E.SALARY + B.AMOUNT AS TOTAL
-FROM   EMP E
-JOIN   DEPT  D ON E.DEPT_ID = D.DEPT_ID
-JOIN   BONUS B ON E.EMP_ID  = B.EMP_ID;</code></pre>
-      </div>
-      <h4>Output</h4>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
-<pre><code class="language-plaintext">DEPT_NAME  NAME     TOTAL
----------  ------  -----
-Sales       Rahul   35000
-IT          Vikas   47000</code></pre>
-      </div>
-      <div class="callout"><p class="ct">Conclusion</p><p>The JOIN is the real strength of an RDBMS: three tables, one answer.</p></div>
+          <g transform="translate(334,10)">
+            <ellipse class="d-soft" cx="48" cy="46" rx="26" ry="21"/>
+            <ellipse class="d-fill" cx="78" cy="46" rx="26" ry="21"/>
+            <text class="d-cap" x="63" y="96" text-anchor="middle">RIGHT</text>
+          </g>
+
+          <g transform="translate(494,10)">
+            <ellipse class="d-fill" cx="48" cy="46" rx="26" ry="21"/>
+            <ellipse class="d-fill" cx="78" cy="46" rx="26" ry="21"/>
+            <text class="d-cap" x="63" y="96" text-anchor="middle">FULL</text>
+          </g>
+
+          <text class="d-cap" x="320" y="152" text-anchor="middle">shaded area = rows returned by that join</text>
+        </svg>
+        <figcaption>Fig. 2 — Which rows survive each join. INNER keeps the overlap; LEFT and RIGHT keep one whole side; FULL keeps everything.</figcaption>
+      </figure>
+      <h3>Choosing the Right Join</h3>
+      <table class="tbl">
+        <thead><tr><th>Need</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>Only matched records</td><td>INNER JOIN</td></tr>
+          <tr><td>All records of the main table, matched or not</td><td>LEFT OUTER JOIN</td></tr>
+          <tr><td>All records of the lookup table</td><td>RIGHT OUTER JOIN</td></tr>
+          <tr><td>Every record from both sides</td><td>FULL OUTER JOIN</td></tr>
+          <tr><td>Hierarchy within one table</td><td>SELF JOIN</td></tr>
+          <tr><td>Every combination</td><td>CROSS JOIN</td></tr>
+        </tbody>
+      </table>
+      <p>A join is written in the <code class="inl">FROM</code> clause and its condition in <code class="inl">ON</code>; a filter on the result belongs in <code class="inl">WHERE</code>. Putting a filter on the outer-joined table inside <code class="inl">WHERE</code> silently turns a LEFT join back into an INNER join — a very common exam and interview trap.</p>
+      <div class="callout"><p class="ct">Conclusion</p><p>A join pairs rows of two tables through a related column. INNER keeps matches, LEFT/RIGHT/FULL keep unmatched rows with NULLs, SELF joins a table to itself and CROSS returns every combination.</p></div>
 
     </div>
   </article>
 
-  <p class="foot">Internal Assignment · BCA Semester V · <a href="pdf/5BCA4_Oracle.pdf" download>Download the PDF of this subject</a> · <a href="index.html">All subjects</a> · Submission 23-10-2026</p>
+  <!-- ===== Q7 ===== -->
+  <article class="qblock" id="q7">
+    <div class="qhead">
+      <div class="qnum">07</div>
+      <div class="qmeta">
+        <p class="qtag">Question Seven · Data Modelling</p>
+        <h2 class="qtext">Draw an ER diagram of E-Learning.</h2>
+        <div class="pagemeter"><div class="big">3</div><div class="lbl">A4 Pages<b>Model · diagram · tables</b></div></div>
+      </div>
+    </div>
+    <div class="ans">
+
+      <!-- PAGE 1 -->
+      <div class="page-sec"><span class="pnum">Page 1 of 3</span><span class="ptitle">Question 7 · Entities and attributes</span></div>
+      <h3>The E-Learning Model</h3>
+      <p>An <b>ER (Entity–Relationship) diagram</b> shows the things a system stores and how those things relate. An <b>entity</b> becomes a table, an <b>attribute</b> becomes a column, a <b>relationship</b> becomes a foreign key, and <b>cardinality</b> (1:1, 1:N, M:N) decides where that key is placed.</p>
+      <p>Our e-learning system needs six entities. <b>STUDENT</b> (student_id, name, email) is the learner. <b>TEACHER</b> (teacher_id, name, department) creates the course. <b>COURSE</b> (course_id, title, credits) is the subject offered. <b>MODULE</b> (module_id, title, duration) is one unit inside a course. <b>ENROLLMENT</b> (enroll_id, date, grade) records that a student joined a course. <b>ASSESSMENT</b> (assessment_id, type, max_marks) is a quiz or assignment inside the course.</p>
+      <table class="tbl">
+        <thead><tr><th>Entity</th><th>Primary key</th><th>Important attributes</th></tr></thead>
+        <tbody>
+          <tr><td>STUDENT</td><td>student_id</td><td>name, email, phone</td></tr>
+          <tr><td>TEACHER</td><td>teacher_id</td><td>name, department</td></tr>
+          <tr><td>COURSE</td><td>course_id</td><td>title, credits, teacher_id</td></tr>
+          <tr><td>MODULE</td><td>module_id</td><td>title, duration, course_id</td></tr>
+          <tr><td>ENROLLMENT</td><td>enroll_id</td><td>date, grade, student_id, course_id</td></tr>
+          <tr><td>ASSESSMENT</td><td>assessment_id</td><td>type, max_marks, course_id</td></tr>
+        </tbody>
+      </table>
+      <p>ENROLLMENT exists only because a student and a course have an M:N relationship. A relational table cannot hold a list of courses inside a student row, so the pair is stored once per enrolment — a <b>bridge</b> (associative) entity.</p>
+
+      <!-- PAGE 2 -->
+      <div class="page-sec"><span class="pnum">Page 2 of 3</span><span class="ptitle">Question 7 · The ER diagram</span></div>
+      <h3>Diagram: E-Learning ER Model</h3>
+      <figure class="diagram">
+        <svg viewBox="0 0 640 212" role="img" aria-label="ER diagram of an e-learning system">
+          <!-- row 1 -->
+          <rect class="d-box" x="20" y="14" width="150" height="66" rx="4"/>
+          <text class="d-tb" x="95" y="34" text-anchor="middle">TEACHER</text>
+          <text class="d-ts" x="30" y="52">teacher_id (PK)</text>
+          <text class="d-ts" x="30" y="68">name · department</text>
+
+          <rect class="d-fill" x="245" y="14" width="150" height="66" rx="4"/>
+          <text class="d-tb" x="320" y="34" text-anchor="middle">COURSE</text>
+          <text class="d-ts" x="255" y="52">course_id (PK)</text>
+          <text class="d-ts" x="255" y="68">title · credits</text>
+
+          <rect class="d-box" x="470" y="14" width="150" height="66" rx="4"/>
+          <text class="d-tb" x="545" y="34" text-anchor="middle">MODULE</text>
+          <text class="d-ts" x="480" y="52">module_id (PK)</text>
+          <text class="d-ts" x="480" y="68">title · duration</text>
+
+          <!-- row 2 -->
+          <rect class="d-box" x="20" y="136" width="150" height="66" rx="4"/>
+          <text class="d-tb" x="95" y="156" text-anchor="middle">STUDENT</text>
+          <text class="d-ts" x="30" y="174">student_id (PK)</text>
+          <text class="d-ts" x="30" y="190">name · email</text>
+
+          <rect class="d-box" x="245" y="136" width="150" height="66" rx="4"/>
+          <text class="d-tb" x="320" y="156" text-anchor="middle">ENROLLMENT</text>
+          <text class="d-ts" x="255" y="174">enroll_id (PK)</text>
+          <text class="d-ts" x="255" y="190">date · grade</text>
+
+          <rect class="d-box" x="470" y="136" width="150" height="66" rx="4"/>
+          <text class="d-tb" x="545" y="156" text-anchor="middle">ASSESSMENT</text>
+          <text class="d-ts" x="480" y="174">assessment_id (PK)</text>
+          <text class="d-ts" x="480" y="190">type · max_marks</text>
+
+          <!-- relationships -->
+          <line class="d-line" x1="170" y1="47" x2="245" y2="47"/>
+          <text class="d-ts" x="180" y="40">1</text><text class="d-ts" x="228" y="40">N</text>
+          <text class="d-cap" x="176" y="62">teaches</text>
+
+          <line class="d-line" x1="395" y1="47" x2="470" y2="47"/>
+          <text class="d-ts" x="404" y="40">1</text><text class="d-ts" x="454" y="40">N</text>
+          <text class="d-cap" x="400" y="62">contains</text>
+
+          <line class="d-line" x1="320" y1="80" x2="320" y2="136"/>
+          <text class="d-ts" x="326" y="92">1</text><text class="d-ts" x="326" y="130">N</text>
+          <text class="d-cap" x="334" y="112">has enrolments</text>
+
+          <line class="d-line" x1="170" y1="169" x2="245" y2="169"/>
+          <text class="d-ts" x="180" y="162">1</text><text class="d-ts" x="228" y="162">N</text>
+          <text class="d-cap" x="176" y="184">enrols</text>
+
+          <polyline class="d-line" points="395,60 425,60 425,169 470,169" fill="none"/>
+          <text class="d-ts" x="402" y="54">1</text><text class="d-ts" x="454" y="162">N</text>
+          <text class="d-cap" x="428" y="120">has assessments</text>
+
+          <text class="d-cap" x="20" y="208">1 : N = one row relates to many rows · M : N is resolved by the ENROLLMENT bridge</text>
+        </svg>
+        <figcaption>Fig. 1 — Complete ER diagram. Every foreign key sits on the "many" side: course.teacher_id, module.course_id, enrollment.student_id, enrollment.course_id and assessment.course_id.</figcaption>
+      </figure>
+
+      <!-- PAGE 3 -->
+      <div class="page-sec"><span class="pnum">Page 3 of 3</span><span class="ptitle">Question 7 · From diagram to tables</span></div>
+      <h3>Mapping the Diagram to Tables</h3>
+      <p>Each entity becomes a table with its primary key. Each <b>1:N</b> relationship is implemented by copying the parent key into the child table as a foreign key. The <b>M:N</b> relationship between STUDENT and COURSE becomes the ENROLLMENT table, whose primary key is its own id and whose two foreign keys point at the two parents.</p>
+      <table class="tbl">
+        <thead><tr><th>Table</th><th>Primary key</th><th>Foreign key(s)</th></tr></thead>
+        <tbody>
+          <tr><td>teacher</td><td>teacher_id</td><td>—</td></tr>
+          <tr><td>course</td><td>course_id</td><td>teacher_id → teacher</td></tr>
+          <tr><td>module</td><td>module_id</td><td>course_id → course</td></tr>
+          <tr><td>student</td><td>student_id</td><td>—</td></tr>
+          <tr><td>enrollment</td><td>enroll_id</td><td>student_id → student, course_id → course</td></tr>
+          <tr><td>assessment</td><td>assessment_id</td><td>course_id → course</td></tr>
+        </tbody>
+      </table>
+      <p>A useful query follows the diagram directly: list every student with the courses they joined. It starts at STUDENT, passes through ENROLLMENT and ends at COURSE — the same path the diagram draws.</p>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">e_learning.sql</span></div>
+<pre><code class="language-sql">SELECT s.name, c.title, e.grade
+FROM   student s
+JOIN   enrollment e ON e.student_id = s.student_id
+JOIN   course c     ON c.course_id  = e.course_id
+ORDER BY s.name, c.title;</code></pre>
+      </div>
+      <p>Two rules keep the model correct. Every foreign key must point at an existing primary key (referential integrity), and a student must not be enrolled twice in the same course — enforced with a <b>UNIQUE (student_id, course_id)</b> constraint on ENROLLMENT.</p>
+      <div class="callout"><p class="ct">Conclusion</p><p>The e-learning ER model has six entities: student, teacher, course, module, enrollment and assessment. The M:N link between student and course is resolved by ENROLLMENT, and every 1:N link becomes a foreign key on the many side.</p></div>
+
+    </div>
+  </article>
+
+  <p class="foot">Internal Assignment · BCA Semester V · <a href="index.html">All subjects</a> · Submission 18-11-2026</p>
 </div>
 
 <a href="#top" class="totop" title="Back to top">&#9650;</a>
-<script src="assets/vendor/highlight.min.js?v=9"></script>
-<script src="assets/monolith.js?v=9"></script>
+<script src="assets/vendor/highlight.min.js?v=10"></script>
+<script src="assets/monolith.js?v=10"></script>
 </body>
 </html>

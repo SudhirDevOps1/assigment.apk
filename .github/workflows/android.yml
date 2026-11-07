@@ -42,6 +42,12 @@ jobs:
       - name: Install Capacitor
         run: npm install --no-audit --no-fund
 
+      # ------------------------------------------------------- content guard
+      # Proves every answer still fits exactly three A4 sheets. The runner has
+      # Chrome preinstalled; the check prints to OS temp and deletes the file.
+      - name: Verify three A4 pages per answer
+        run: npm run check:pages
+
       # ------------------------------------------------- generate the project
       # The android/ folder is NOT committed - CI creates it on every build, so
       # the repository stays tiny and can never drift out of date.
@@ -147,23 +153,22 @@ jobs:
           NOTES=$(cat <<'MD'
           ### BCA Semester V — Assignment Suite (offline Android app)
 
-          Five subjects · fifteen questions · **60 A4 pages** · 35 diagrams.
-          Every PDF and every font is bundled inside the app, so the network is
-          never needed.
+          Five subjects · thirteen questions · **39 A4 pages** (3 per question) ·
+          19 diagrams. Every font and every diagram is bundled inside the app,
+          so the network is never needed.
 
           | | |
           |---|---|
           | Install | download `app-debug.apk`, allow "install unknown apps", tap it |
           | Zoom | pinch in and out anywhere on the page |
           | Rotate | portrait and landscape, scroll position is kept |
-          | Print | Android print dialog → Save as PDF gives the same 60 A4 pages |
+          | Print | Android print dialog gives the same 39 A4 pages |
 
-          **Printed type is sized for handwriting.** Each printed A4 page now
-          carries about 250 words — roughly what one sheet of A4 holds when
-          written by hand — in 12 pt type with 11 mm margins, so copying one
-          printed page needs one sheet, not one and a half. All 60 pages still
-          fit their sheet exactly: nothing is cut off and nothing spills onto a
-          61st page.
+          **Printed type is sized for handwriting.** Each answer is planned across
+          exactly three A4 pages at about 260 words per sheet — roughly what one
+          sheet holds when written by hand — in 12 pt type with 11 mm margins.
+          Every page fits its sheet: nothing is cut off and nothing spills onto a
+          fourth page.
 
           > This is a debug-signed build. Add the four signing secrets
           > (ANDROID_KEYSTORE_BASE64, STORE_PASSWORD, KEY_ALIAS, KEY_PASSWORD)
@@ -175,15 +180,20 @@ jobs:
           # repository to work on explicitly instead of guessing from git.
           REPO="${GITHUB_REPOSITORY}"
 
-          if gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1; then
-            echo "Release $TAG already exists - replacing the assets"
-            gh release upload "$TAG" dist/*.apk --repo "$REPO" --clobber
-            gh release edit "$TAG" --repo "$REPO" \
-              --title "BCA Sem V — $TAG" --notes "$NOTES"
-          else
+          # The desktop workflow publishes to the same tag, so the release may
+          # already exist, may be created at the same moment, or not exist yet.
+          for attempt in 1 2 3 4 5; do
+            if gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1; then
+              break
+            fi
             gh release create "$TAG" --repo "$REPO" \
-              --title "BCA Sem V — $TAG" --notes "$NOTES" dist/*.apk
-          fi
+              --title "BCA Sem V — $TAG" --notes "$NOTES" || true
+            sleep 4
+          done
+
+          gh release upload "$TAG" dist/*.apk --repo "$REPO" --clobber
+          gh release edit "$TAG" --repo "$REPO" \
+            --title "BCA Sem V — $TAG" --notes "$NOTES"
 
           gh release view "$TAG" --repo "$REPO" --json url,assets \
             --jq '"release: \(.url)  assets: \([.assets[].name] | join(", "))"'

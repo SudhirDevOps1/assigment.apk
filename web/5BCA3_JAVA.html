@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="BCA Semester V Internal Assignment — Programming in JAVA (5BCA3). Three questions, each planned across exactly four A4 pages.">
+<meta name="description" content="BCA Semester V Internal Assignment — Java Programming (5BCA3). Three questions, each planned across exactly three A4 pages.">
 <meta name="theme-color" content="#08080a">
-<title>5BCA3 · Programming in JAVA — Assignment</title>
-<link href="assets/fonts.css?v=9" rel="stylesheet">
-<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=9">
-<link rel="stylesheet" href="assets/monolith.css?v=9">
+<title>5BCA3 · Java Programming — Assignment</title>
+<link href="assets/fonts.css?v=10" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/atom-one-dark.min.css?v=10">
+<link rel="stylesheet" href="assets/monolith.css?v=10">
 </head>
 <body id="top">
 
@@ -17,7 +17,6 @@
   <div class="code">5BCA3</div>
   <div class="spacer"></div>
   <a class="btn" href="index.html"><span class="lg">All Subjects</span><span class="sm">Menu</span></a>
-  <a class="btn" href="pdf/5BCA3_JAVA.pdf" download><span class="lg">Download PDF</span><span class="sm">PDF</span></a>
   <button class="btn" id="focusBtn" aria-pressed="false" title="Hide the interface and read full screen"><span class="lg">Focus</span><span class="sm">Focus</span></button>
   <button class="btn solid" onclick="window.print()"><span class="lg">Print / Save A4</span><span class="sm">Print</span></button>
 </div>
@@ -27,461 +26,367 @@
   <section class="monument">
     <div class="plinth">
       <p class="eyebrow">Internal Assignment · Semester V</p>
-      <h1>Programming<br>in JAVA</h1>
-      <p class="sub">Three questions — each one is to be written on exactly four A4 pages. Under every question you will find a <b>PAGE 1 / PAGE 2 / PAGE 3 / PAGE 4</b> breakdown that tells you what to write on each sheet, so the whole paper adds up to <b>12 handwritten pages</b>. Every program is written in Java itself.</p>
+      <h1>Java Programming</h1>
+      <p class="sub">Three questions — each one is to be written on exactly three A4 pages. Under every question you will find a <b>PAGE 1 / PAGE 2 / PAGE 3</b> breakdown that tells you what to write on each sheet, so the whole paper adds up to <b>9 handwritten pages</b>.</p>
     </div>
     <div class="slab">
       <div class="field"><span class="k">Course</span><span class="v">Bachelor of Computer Applications</span></div>
       <div class="field"><span class="k">Semester</span><span class="v">Fifth Semester &nbsp;·&nbsp; 2026</span></div>
       <div class="field"><span class="k">Subject Code</span><span class="v">5BCA3</span></div>
-      <div class="field"><span class="k">Submission</span><span class="v">23 · 10 · 2026</span></div>
+      <div class="field"><span class="k">Submission</span><span class="v">18 · 11 · 2026</span></div>
       <div class="field"><span class="k">Your Name</span><input data-sync="name" placeholder="Write your name"></div>
       <div class="field"><span class="k">Roll Number</span><input data-sync="roll" placeholder="Write roll no."></div>
     </div>
   </section>
 
   <nav class="contents">
-    <div class="hd">Contents — 3 Questions · 12 A4 pages total</div>
+    <div class="hd">Contents — 3 Questions · 9 A4 pages total</div>
     <ol>
-      <li><a href="#q1">What is Java? Write concepts of OOPS which used in Java.</a><span class="pg">— 4 pages</span></li>
-      <li><a href="#q2">Write one example for encapsulation and define each function.</a><span class="pg">— 4 pages</span></li>
-      <li><a href="#q3">What is the difference between private and public class?</a><span class="pg">— 4 pages</span></li>
+      <li><a href="#q4">What do you understand by AWT?</a><span class="pg">— 3 pages</span></li>
+      <li><a href="#q5">Write one program for inheritance.</a><span class="pg">— 3 pages</span></li>
+      <li><a href="#q6">Write a program in Java using init, start and stop (Applet).</a><span class="pg">— 3 pages</span></li>
     </ol>
   </nav>
 
-  <div class="callout noprint"><p class="ct">How to save as PDF (clean 4 pages per question)</p><p>Press <b>Print / Save A4</b>, choose <b>Destination → Save as PDF</b>, set <b>Margins → Default</b> and turn <b>Background graphics ON</b>. Each question then saves as exactly <b>four A4 pages</b>, and the whole set prints as <b>60 pages</b> across the five subjects.</p></div>
+  <div class="callout noprint"><p class="ct">How to print cleanly (3 pages per question)</p><p>Press <b>Print / Save A4</b>, set <b>Margins → Default</b> and turn <b>Background graphics ON</b>. Each question then prints as exactly <b>three A4 pages</b>, and this subject prints as <b>9 pages</b>.</p></div>
 
-  <!-- ===== Q1 ===== -->
-  <article class="qblock" id="q1">
+  <!-- ===== Q4 ===== -->
+  <article class="qblock" id="q4">
     <div class="qhead">
-      <div class="qnum">01</div>
+      <div class="qnum">04</div>
       <div class="qmeta">
-        <p class="qtag">Question One · Java &amp; OOPs</p>
-        <h2 class="qtext">What is Java? Write concepts of OOPS which used in Java.</h2>
-        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>Java program on Page 4</b></div></div>
+        <p class="qtag">Question Four · Java GUI</p>
+        <h2 class="qtext">What do you understand by AWT?</h2>
+        <div class="pagemeter"><div class="big">3</div><div class="lbl">A4 Pages<b>Architecture · events · limits</b></div></div>
       </div>
     </div>
     <div class="ans">
 
       <!-- PAGE 1 -->
-      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 1 · Java + features</span></div>
-      <h3>What is Java?</h3>
-      <p><b>Java</b> is a high-level, object-oriented and platform-independent programming language used to build everything from small desktop tools to large enterprise systems. It was developed by <b>James Gosling</b> and first released by <b>Sun Microsystems in 1995</b>. Gosling wanted a language that could be written once and run on any machine, and that idea became Java's famous motto — <b>“Write Once, Run Anywhere”</b> (WORA). The project was originally named <b>“Oak”</b> after the tree outside his office, and was renamed Java after a popular brand of coffee.</p>
-      <p>The most important thing about Java is what happens after compilation. Java source is not compiled straight into machine language; the compiler produces a special file called <b>bytecode</b>, which any Java environment can run.</p>
-<figure class="diagram">
-        <pre class="ascii">   ┌─────────────────┬─────────────────┬─────────────────┐
-   │ Simple          │ Object-Oriented │ Platform-       │
-   │                 │                 │ Independent     │
-   ├─────────────────┼─────────────────┼─────────────────┤
-   │ Robust          │ Secure          │ Multithreaded   │
-   │                 │                 │                 │
-   ├─────────────────┼─────────────────┼─────────────────┤
-   │ Portable        │ High            │ Distributed     │
-   │                 │ Performance     │                 │
-   └─────────────────┴─────────────────┴─────────────────┘</pre>
-        <figcaption>Fig. 1 — The qualities Java is known for, set out as a grid. The middle row holds the ones a programmer feels every day: the program does not crash, the bytecode is verified before it runs, and several tasks can run together.</figcaption>
+      <div class="page-sec"><span class="pnum">Page 1 of 3</span><span class="ptitle">Question 4 · What AWT is</span></div>
+      <h3>Abstract Window Toolkit</h3>
+      <p><b>AWT (Abstract Window Toolkit)</b> is Java's first graphical user interface library. It is shipped in the <code class="inl">java.awt</code> package and provides windows, buttons, text fields, menus, layout managers, images, fonts and event handling. It was designed for Java 1.0 so that one program could run on Windows, Linux and Macintosh.</p>
+      <p>The word <i>abstract</i> is the key. AWT does not draw a button itself; it asks the operating system to draw one. Each AWT component therefore owns a native <b>peer</b> — a real OS widget behind the Java object. This is why AWT components are called <b>heavyweight</b>: they carry the weight of a native window resource.</p>
+      <p>The class hierarchy starts at <code class="inl">Component</code>. <code class="inl">Container</code> extends it and can hold other components; <code class="inl">Window</code>, <code class="inl">Panel</code> and <code class="inl">Frame</code> extend Container. A <b>Frame</b> is a full window with a title bar, a <b>Panel</b> is a plain rectangular area used to group components, and a <b>Canvas</b> gives a drawing surface.</p>
+      <figure class="diagram">
+        <svg viewBox="0 0 640 186" role="img" aria-label="The AWT class hierarchy">
+          <rect class="d-fill" x="250" y="14" width="140" height="30" rx="4"/>
+          <text class="d-t" x="320" y="34" text-anchor="middle">Component</text>
+
+          <rect class="d-box" x="236" y="68" width="168" height="30" rx="4"/>
+          <text class="d-t" x="320" y="88" text-anchor="middle">Container</text>
+          <line class="d-line" x1="320" y1="44" x2="320" y2="64"/>
+          <polygon class="d-ah" points="320,68 315,58 325,58"/>
+
+          <rect class="d-box" x="56" y="126" width="112" height="30" rx="4"/>
+          <text class="d-t" x="112" y="146" text-anchor="middle">Panel</text>
+          <rect class="d-box" x="196" y="126" width="112" height="30" rx="4"/>
+          <text class="d-t" x="252" y="146" text-anchor="middle">Window</text>
+          <rect class="d-box" x="336" y="126" width="112" height="30" rx="4"/>
+          <text class="d-t" x="392" y="146" text-anchor="middle">Frame</text>
+          <rect class="d-soft" x="476" y="126" width="112" height="30" rx="4"/>
+          <text class="d-t" x="532" y="146" text-anchor="middle">Button…</text>
+
+          <line class="d-line" x1="290" y1="98" x2="140" y2="122"/>
+          <line class="d-line" x1="310" y1="98" x2="262" y2="122"/>
+          <line class="d-line" x1="336" y1="98" x2="382" y2="122"/>
+          <line class="d-line" x1="352" y1="98" x2="512" y2="122"/>
+          <text class="d-cap" x="56" y="176">Container holds children · Component is the root of every widget</text>
+        </svg>
+        <figcaption>Fig. 1 — AWT hierarchy. A Frame is a Window, a Window is a Container, and every Container is a Component, so layout and events are inherited by every widget.</figcaption>
       </figure>
 
       <!-- PAGE 2 -->
-      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 1 · JVM, JRE, JDK</span></div>
-      <h3>JVM, JRE and JDK</h3>
-      <p>The three names are nested inside one another.</p>
-      <p><b>JVM — Java Virtual Machine.</b> It loads the <code class="inl">.class</code> file, checks the bytecode for safety and executes it. Because the bytecode is the same everywhere, the program behaves identically on every operating system.</p>
-      <p><b>JRE — Java Runtime Environment.</b> It is the JVM plus the class libraries a running program needs. It is enough to <i>run</i> a Java program, but not to build one.</p>
-      <p><b>JDK — Java Development Kit.</b> It is the JRE plus the compiler <code class="inl">javac</code>, the debugger and the documentation tool. It is needed to <i>write</i> a Java program.</p>
-      <p>So a student uses the <b>JDK</b>, the compiler produces bytecode, and the <b>JRE</b> on any machine runs it through the <b>JVM</b>.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 192" role="img" aria-label="Java source compiled to bytecode and run by the JVM on every platform">
-          <text class="d-cap" x="320" y="18" text-anchor="middle">Write once, run anywhere</text>
-
-          <rect class="d-fill" x="20" y="34" width="150" height="60" rx="5"/>
-          <text class="d-t" x="95" y="60" text-anchor="middle">MyProg.java</text>
-          <text class="d-ts" x="95" y="80" text-anchor="middle">source code</text>
-
-          <line class="d-line" x1="170" y1="64" x2="206" y2="64"/>
-          <polygon class="d-ah" points="210,64 200,59 200,69"/>
-
-          <rect class="d-box" x="210" y="34" width="140" height="60" rx="5"/>
-          <text class="d-t" x="280" y="60" text-anchor="middle">javac</text>
-          <text class="d-ts" x="280" y="80" text-anchor="middle">compiler</text>
-
-          <line class="d-line" x1="350" y1="64" x2="386" y2="64"/>
-          <polygon class="d-ah" points="390,64 380,59 380,69"/>
-
-          <rect class="d-fill" x="390" y="34" width="210" height="60" rx="5"/>
-          <text class="d-t" x="495" y="60" text-anchor="middle">MyProg.class</text>
-          <text class="d-ts" x="495" y="80" text-anchor="middle">bytecode (platform-neutral)</text>
-
-          <line class="d-line" x1="490" y1="94" x2="490" y2="116"/>
-          <line class="d-line" x1="150" y1="116" x2="490" y2="116"/>
-          <line class="d-line" x1="150" y1="116" x2="150" y2="140"/>
-          <line class="d-line" x1="320" y1="116" x2="320" y2="140"/>
-          <line class="d-line" x1="490" y1="116" x2="490" y2="140"/>
-
-          <rect class="d-box" x="90" y="140" width="120" height="42" rx="4"/>
-          <text class="d-ts" x="150" y="166" text-anchor="middle">Windows JVM</text>
-          <rect class="d-box" x="260" y="140" width="120" height="42" rx="4"/>
-          <text class="d-ts" x="320" y="166" text-anchor="middle">Linux JVM</text>
-          <rect class="d-box" x="430" y="140" width="120" height="42" rx="4"/>
-          <text class="d-ts" x="490" y="166" text-anchor="middle">macOS JVM</text>
-        </svg>
-        <figcaption>Fig. 2 — The life of a Java program. The same <b>.class</b> bytecode is taken by the JVM of any operating system, so the source has to be written only once.</figcaption>
-      </figure>
+      <div class="page-sec"><span class="pnum">Page 2 of 3</span><span class="ptitle">Question 4 · Layout and events</span></div>
+      <h3>Layout Managers and Event Handling</h3>
+      <p>AWT never uses fixed pixel positions; a <b>layout manager</b> decides where each child goes and recalculates the arrangement when the window is resized. That is what keeps one program usable on screens of different sizes.</p>
+      <table class="tbl">
+        <thead><tr><th>Layout</th><th>Arrangement</th><th>Typical use</th></tr></thead>
+        <tbody>
+          <tr><td>FlowLayout</td><td>Left to right, wraps like text</td><td>Small toolbars and button rows</td></tr>
+          <tr><td>BorderLayout</td><td>Five regions: N, S, E, W, Center</td><td>Main frame with a centre area</td></tr>
+          <tr><td>GridLayout</td><td>Equal rows and columns</td><td>Keypad, calculator, forms</td></tr>
+          <tr><td>CardLayout</td><td>One panel visible at a time</td><td>Wizard and tab-like screens</td></tr>
+          <tr><td>GridBagLayout</td><td>Weighted, flexible grid</td><td>Complex professional forms</td></tr>
+        </tbody>
+      </table>
+      <p>Interaction uses the <b>delegation event model</b> introduced in JDK 1.1. An event <i>source</i> (a button) keeps a list of <i>listeners</i>; when the user clicks, the source creates an <code class="inl">ActionEvent</code> and calls <code class="inl">actionPerformed</code> on every registered listener. The program therefore writes one small class instead of subclassing the button.</p>
+      <div class="diagram">
+        <pre class="ascii">  Button  ──registers──▶  ActionListener
+     │                          ▲
+     │ user clicks              │ actionPerformed(ActionEvent e)
+     ▼                          │
+  creates ActionEvent ──────────┘
+     │
+     └──▶ other listeners (audit log, counter, …)
+  <b>Source → Event object → Listener</b>   (no polling loop needed)</pre>
+        <figcaption>Fig. 2 — The delegation model. The component only announces what happened; the listener decides what to do about it.</figcaption>
+      </div>
 
       <!-- PAGE 3 -->
-      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 1 · The four OOPs pillars</span></div>
-      <h3>Concepts of OOPS Used in Java</h3>
-      <p><b>1. Encapsulation</b> means wrapping data and the methods that work on it inside one class and hiding the data behind <code class="inl">private</code>. Outside code must use the public methods, where the values can be checked before they are accepted.</p>
-      <p><b>2. Inheritance</b> lets a new class take the data and methods of an existing class. The old class is the parent or superclass and the new one is the child or subclass, written with the <code class="inl">extends</code> keyword. This removes repeated code.</p>
-      <p><b>3. Polymorphism</b> means “many forms”. In <b>overloading</b> the same method name is used with different parameter types; in <b>overriding</b> a child class gives its own body to a method it has inherited.</p>
-      <p><b>4. Abstraction</b> means showing only the essential details. It is written through <b>abstract classes</b> and <b>interfaces</b>, where only the declaration is given and the real code is supplied later.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 190" role="img" aria-label="The four pillars of object-oriented programming">
-          <polygon class="d-fill" points="20,62 320,14 620,62"/>
-          <text class="d-tb" x="320" y="54" text-anchor="middle">OBJECT-ORIENTED PROGRAMMING</text>
+      <div class="page-sec"><span class="pnum">Page 3 of 3</span><span class="ptitle">Question 4 · Limits and comparison</span></div>
+      <h3>Strengths and Limitations of AWT</h3>
+      <p>The great strength of AWT is <b>portability of behaviour</b>: because the operating system draws the widget, a button looks and feels native on every platform, and keyboard navigation follows the platform's own rules. The price is that the same program can look different everywhere, and pixel-perfect design is impossible.</p>
+      <p>The heavier problems are technical. A native peer per component consumes OS resources, so thousands of components become slow. AWT offers only a basic set of widgets and no true transparency, no anti-aliased text, no look-and-feel switching and no light-weight components. Some features (such as applets) are now deprecated.</p>
+      <table class="tbl">
+        <thead><tr><th>Point</th><th>AWT</th><th>Swing</th></tr></thead>
+        <tbody>
+          <tr><td>Package</td><td>java.awt</td><td>javax.swing</td></tr>
+          <tr><td>Component type</td><td>Heavyweight (native peer)</td><td>Lightweight (drawn in Java)</td></tr>
+          <tr><td>Look and feel</td><td>Native only</td><td>Pluggable, can imitate any OS</td></tr>
+          <tr><td>Widget range</td><td>Basic</td><td>Rich (tables, trees, tabs)</td></tr>
+          <tr><td>Speed on many widgets</td><td>Slower</td><td>Faster</td></tr>
+          <tr><td>Status</td><td>Legacy, still supported</td><td>Recommended for desktop GUI</td></tr>
+        </tbody>
+      </table>
+      <p>Swing reuses the AWT event model and layout managers, so AWT knowledge is not wasted: <code class="inl">JFrame</code> is a Frame, <code class="inl">JButton</code> is a button, and an <code class="inl">ActionListener</code> works unchanged. AWT also still supplies fonts, colours, images, printing and the clipboard.</p>
+      <div class="callout"><p class="ct">Conclusion</p><p>AWT is Java's original, native-peer GUI toolkit: components, containers, layout managers and a delegation event model. It made portable GUIs possible; Swing later replaced its widgets while keeping its ideas.</p></div>
 
-          <rect class="d-soft" x="28" y="68" width="138" height="88" rx="4"/>
-          <text class="d-tb" x="97" y="98" text-anchor="middle">Encapsulation</text>
-          <text class="d-ts" x="97" y="124" text-anchor="middle">private data</text>
-          <text class="d-ts" x="97" y="144" text-anchor="middle">public methods</text>
+    </div>
+  </article>
 
-          <rect class="d-soft" x="174" y="68" width="138" height="88" rx="4"/>
-          <text class="d-tb" x="243" y="98" text-anchor="middle">Inheritance</text>
-          <text class="d-ts" x="243" y="124" text-anchor="middle">parent class</text>
-          <text class="d-ts" x="243" y="144" text-anchor="middle">child extends</text>
+  <!-- ===== Q5 ===== -->
+  <article class="qblock" id="q5">
+    <div class="qhead">
+      <div class="qnum">05</div>
+      <div class="qmeta">
+        <p class="qtag">Question Five · Object Orientation</p>
+        <h2 class="qtext">Write one program for inheritance.</h2>
+        <div class="pagemeter"><div class="big">3</div><div class="lbl">A4 Pages<b>Concept · program · output</b></div></div>
+      </div>
+    </div>
+    <div class="ans">
 
-          <rect class="d-soft" x="320" y="68" width="138" height="88" rx="4"/>
-          <text class="d-tb" x="389" y="98" text-anchor="middle">Polymorphism</text>
-          <text class="d-ts" x="389" y="124" text-anchor="middle">overloading</text>
-          <text class="d-ts" x="389" y="144" text-anchor="middle">overriding</text>
+      <!-- PAGE 1 -->
+      <div class="page-sec"><span class="pnum">Page 1 of 3</span><span class="ptitle">Question 5 · Inheritance in Java</span></div>
+      <h3>What Inheritance Means</h3>
+      <p><b>Inheritance</b> is the mechanism by which one class acquires the fields and methods of another. The class that is reused is the <b>superclass</b> (parent), and the class that reuses it is the <b>subclass</b> (child). Java writes this with the keyword <code class="inl">extends</code>.</p>
+      <p>Inheritance gives three benefits. It removes duplicate code, because common data and behaviour are written once in the parent. It creates an <b>is-a</b> relationship, so a Student <i>is a</i> Person and can be used wherever a Person is expected. And it enables <b>polymorphism</b>: a parent reference can hold a child object, and the child's overridden method runs.</p>
+      <p>Java supports <b>single inheritance of classes</b> — one parent only — but a class may implement any number of interfaces. The keyword <code class="inl">super</code> calls the parent constructor or a parent method, and <code class="inl">this</code> refers to the current object.</p>
+      <figure class="diagram">
+        <svg viewBox="0 0 640 176" role="img" aria-label="Person and Student inheritance">
+          <rect class="d-fill" x="212" y="18" width="216" height="56" rx="5"/>
+          <text class="d-tb" x="320" y="40" text-anchor="middle">Person  (superclass)</text>
+          <text class="d-ts" x="320" y="60" text-anchor="middle">name · age · show()</text>
 
-          <rect class="d-soft" x="466" y="68" width="138" height="88" rx="4"/>
-          <text class="d-tb" x="535" y="98" text-anchor="middle">Abstraction</text>
-          <text class="d-ts" x="535" y="124" text-anchor="middle">abstract class</text>
-          <text class="d-ts" x="535" y="144" text-anchor="middle">interface</text>
+          <rect class="d-box" x="212" y="104" width="216" height="56" rx="5"/>
+          <text class="d-tb" x="320" y="126" text-anchor="middle">Student  (subclass)</text>
+          <text class="d-ts" x="320" y="146" text-anchor="middle">course · marks · show()</text>
 
-          <rect class="d-fill" x="20" y="156" width="584" height="14" rx="2"/>
-          <text class="d-cap" x="320" y="184" text-anchor="middle">all four together make a Java program object-oriented</text>
+          <line class="d-line" x1="320" y1="104" x2="320" y2="78"/>
+          <polygon class="d-ah" points="320,74 315,84 325,84"/>
+          <text class="d-cap" x="336" y="96">extends</text>
+          <text class="d-cap" x="470" y="130">inherits name, age</text>
+          <text class="d-cap" x="470" y="148">overrides show()</text>
         </svg>
-        <figcaption>Fig. 3 — The four pillars, drawn as four pillars. Each one solves a different problem, and a well-written Java class usually shows all four at work at the same time.</figcaption>
+        <figcaption>Fig. 1 — Student extends Person. The subclass inherits name, age and show(), then adds course and marks and overrides show() with its own version.</figcaption>
       </figure>
 
-      <!-- PAGE 4 -->
-      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 1 · Java program + output</span></div>
-      <div class="divider">Java Program</div>
-      <p class="codelabel">One program that uses all four OOP concepts together.</p>
-      <p class="codelabel"><code class="inl">Animal</code> shows abstraction, because it declares <code class="inl">sound()</code> without giving it a body. <code class="inl">Dog</code> shows inheritance with <code class="inl">extends</code>, and it shows polymorphism because <code class="inl">@Override</code> gives the inherited method its own body. The variable <code class="inl">ref</code> is declared as an <code class="inl">Animal</code> yet holds a <code class="inl">Dog</code>, and Java calls the right version at run time. The private field <code class="inl">name</code> is the encapsulated data, reached only through <code class="inl">getName()</code>.</p>
+      <!-- PAGE 2 -->
+      <div class="page-sec"><span class="pnum">Page 2 of 3</span><span class="ptitle">Question 5 · The program</span></div>
+      <h3>Program: Inheritance and Method Overriding</h3>
       <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">OopsDemo.java</span></div>
-<pre><code class="language-java">class Animal {                    // abstraction
-    void sound() { System.out.println("..."); }
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">InheritanceDemo.java</span></div>
+<pre><code class="language-java">class Person {
+    String name;
+    int age;
+
+    Person(String n, int a) {          // parent constructor
+        name = n;
+        age = a;
+    }
+
+    void show() {
+        System.out.println("Name   : " + name);
+        System.out.println("Age    : " + age);
+    }
 }
-class Dog extends Animal {         // inheritance
-    @Override void sound() { System.out.println("Bhau Bhau"); }
+
+class Student extends Person {         // inherits Person
+    String course;
+    int marks;
+
+    Student(String n, int a, String c, int m) {
+        super(n, a);                   // call parent constructor
+        course = c;
+        marks = m;
+    }
+
+    @Override
+    void show() {                      // override parent method
+        super.show();                  // reuse parent output
+        System.out.println("Course : " + course);
+        System.out.println("Marks  : " + marks);
+    }
 }
-public class OopsDemo {             // encapsulation + polymorphism
-    private String name = "Rex";   // data hidden
-    public String getName() { return name; }
-    public static void main(String[] a) {
-        Animal ref = new Dog();     // ref is Animal, object is Dog
-        ref.sound();               // polymorphism at work
-        OopsDemo d = new OopsDemo();
-        System.out.println(d.getName());
+
+class InheritanceDemo {
+    public static void main(String[] args) {
+        Person p = new Person("Rahul", 20);
+        Student s = new Student("Aman", 21, "BCA", 480);
+
+        p.show();                      // parent version
+        s.show();                      // Student version
     }
 }</code></pre>
       </div>
-      <h4>Output</h4>
+      <p>The constructor of Student calls <code class="inl">super(n, a)</code> first, so the inherited fields are initialised before the subclass fields. The annotation <code class="inl">@Override</code> asks the compiler to confirm that a parent method really is being replaced.</p>
+
+      <!-- PAGE 3 -->
+      <div class="page-sec"><span class="pnum">Page 3 of 3</span><span class="ptitle">Question 5 · Output and explanation</span></div>
+      <div class="divider">Output</div>
       <div class="codeframe">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
-<pre><code class="language-plaintext">Bhau Bhau
-Rex</code></pre>
+<pre><code class="language-plaintext">Name   : Rahul
+Age    : 20
+Name   : Aman
+Age    : 21
+Course : BCA
+Marks  : 480</code></pre>
       </div>
-      <div class="callout"><p class="ct">Conclusion</p><p>Java combines all four OOP ideas, and its bytecode is what makes the language platform independent.</p></div>
+      <p>The first block is printed by <code class="inl">Person.show()</code>. The second block is printed by <code class="inl">Student.show()</code>, which first calls the parent version through <code class="inl">super.show()</code> and then adds its own two lines. Nothing was copied: the name and age printing exists only once, in Person.</p>
+      <table class="tbl">
+        <thead><tr><th>Keyword / rule</th><th>Meaning in this program</th></tr></thead>
+        <tbody>
+          <tr><td>extends</td><td>Student reuses the fields and methods of Person</td></tr>
+          <tr><td>super(n, a)</td><td>Calls the parent constructor before subclass fields are set</td></tr>
+          <tr><td>super.show()</td><td>Runs the parent method, then adds extra output</td></tr>
+          <tr><td>@Override</td><td>Tells the compiler the method replaces a parent method</td></tr>
+          <tr><td>Polymorphism</td><td><code class="inl">Person p = new Student(...)</code> would call the Student version</td></tr>
+        </tbody>
+      </table>
+      <p>Inheritance is used whenever one thing is a special kind of another: a SavingsAccount is an Account, a Car is a Vehicle, a Manager is an Employee. The rule of thumb is simple — if the relationship cannot be spoken as <b>"is-a"</b>, prefer composition (a field) instead of inheritance.</p>
+      <div class="callout"><p class="ct">Conclusion</p><p>Inheritance lets a subclass reuse a superclass through <code class="inl">extends</code>, extend it with new fields, and refine its behaviour with overriding. One copy of the common code serves every subclass.</p></div>
 
     </div>
   </article>
 
-  <!-- ===== Q2 ===== -->
-  <article class="qblock" id="q2">
+  <!-- ===== Q6 ===== -->
+  <article class="qblock" id="q6">
     <div class="qhead">
-      <div class="qnum">02</div>
+      <div class="qnum">06</div>
       <div class="qmeta">
-        <p class="qtag">Question Two · Encapsulation</p>
-        <h2 class="qtext">Write one example for encapsulation and define each function.</h2>
-        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>Program on Page 3, functions on Page 4</b></div></div>
+        <p class="qtag">Question Six · Applet Life Cycle</p>
+        <h2 class="qtext">Write a program in Java using init, start and stop (Applet).</h2>
+        <div class="pagemeter"><div class="big">3</div><div class="lbl">A4 Pages<b>Life cycle · program · output</b></div></div>
       </div>
     </div>
     <div class="ans">
 
       <!-- PAGE 1 -->
-      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 2 · Encapsulation explained</span></div>
-      <h3>What is Encapsulation?</h3>
-      <p><b>Encapsulation</b> is the process of wrapping data and the code that works on it together in a single unit called a <b>class</b>, and then keeping the data <b>private</b> so that no outside code can change it directly. The only way in is through the <b>public methods</b> of the class, and each of those methods can check the value first. This is also called <b>data hiding</b>.</p>
-      <p>In Java the private data members are written with <code class="inl">private</code>, and the methods that open the class to the outside world with <code class="inl">public</code>.</p>
-      <h4>Advantages of Encapsulation</h4>
-      <p><b>Protection:</b> the data cannot be spoiled, because no outside code may touch it. <b>Validation:</b> a setter can refuse a wrong value, for example a negative balance. <b>Loose coupling:</b> the class can change its internal design later without breaking anybody, because everyone uses only the public methods. <b>Reuse:</b> a correct, tested class can be used again and again in different programs.</p>
-<figure class="diagram">
-        <pre class="ascii">   ┌─────────────────┬─────────────────┬─────────────────┐
-   │ Simple          │ Object-Oriented │ Platform-       │
-   │                 │                 │ Independent     │
-   ├─────────────────┼─────────────────┼─────────────────┤
-   │ Robust          │ Secure          │ Multithreaded   │
-   │                 │                 │                 │
-   ├─────────────────┼─────────────────┼─────────────────┤
-   │ Portable        │ High            │ Distributed     │
-   │                 │ Performance     │                 │
-   └─────────────────┴─────────────────┴─────────────────┘</pre>
-        <figcaption>Fig. 1 — The qualities Java is known for, set out as a grid. The middle row holds the ones a programmer feels every day: the program does not crash, the bytecode is verified before it runs, and several tasks can run together.</figcaption>
+      <div class="page-sec"><span class="pnum">Page 1 of 3</span><span class="ptitle">Question 6 · Applet life cycle</span></div>
+      <h3>What an Applet Is</h3>
+      <p>An <b>applet</b> is a small Java program that runs inside a host application — usually a web browser or the <code class="inl">appletviewer</code> tool. It does not have a <code class="inl">main()</code> method; the browser creates the object and calls a fixed sequence of methods. A class becomes an applet by extending <code class="inl">java.applet.Applet</code>.</p>
+      <p>The browser controls the life cycle through four methods. <b>init()</b> runs once, after the applet is loaded, and is used for one-time setup. <b>start()</b> runs after init and again every time the page becomes visible. <b>stop()</b> runs when the user leaves the page, and <b>destroy()</b> runs once before the applet is removed. <b>paint(Graphics g)</b> is called whenever the applet must be redrawn.</p>
+      <figure class="diagram">
+        <svg viewBox="0 0 640 176" role="img" aria-label="Applet life cycle">
+          <rect class="d-soft" x="24" y="64" width="120" height="40" rx="5"/>
+          <text class="d-t" x="84" y="89" text-anchor="middle">loaded</text>
+
+          <rect class="d-fill" x="188" y="64" width="110" height="40" rx="5"/>
+          <text class="d-tb" x="243" y="89" text-anchor="middle">init()</text>
+
+          <rect class="d-box" x="342" y="64" width="110" height="40" rx="5"/>
+          <text class="d-tb" x="397" y="89" text-anchor="middle">start()</text>
+
+          <rect class="d-box" x="342" y="132" width="110" height="34" rx="5"/>
+          <text class="d-t" x="397" y="154" text-anchor="middle">stop()</text>
+
+          <rect class="d-soft" x="504" y="64" width="112" height="40" rx="5"/>
+          <text class="d-t" x="560" y="89" text-anchor="middle">destroy()</text>
+
+          <line class="d-line" x1="144" y1="84" x2="184" y2="84"/>
+          <polygon class="d-ah" points="188,84 178,79 178,89"/>
+          <line class="d-line" x1="298" y1="84" x2="338" y2="84"/>
+          <polygon class="d-ah" points="342,84 332,79 332,89"/>
+          <line class="d-line" x1="452" y1="84" x2="500" y2="84"/>
+          <polygon class="d-ah" points="504,84 494,79 494,89"/>
+          <line class="d-line" x1="397" y1="104" x2="397" y2="128"/>
+          <polygon class="d-ah" points="397,132 392,122 402,122"/>
+          <line class="d-line" x1="368" y1="132" x2="330" y2="108"/>
+          <polygon class="d-ah" points="327,106 338,108 333,116"/>
+          <text class="d-cap" x="470" y="120">leave page</text>
+          <text class="d-cap" x="210" y="128">return to page</text>
+          <text class="d-cap" x="24" y="164">init once · start/stop may repeat many times · destroy once</text>
+        </svg>
+        <figcaption>Fig. 1 — The applet life cycle. The browser calls each method; the programmer only fills in what that stage should do.</figcaption>
       </figure>
 
       <!-- PAGE 2 -->
-      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 2 · The BankAccount design</span></div>
-      <h3>Example — the BankAccount Class</h3>
-      <p>To see encapsulation in practice we take a <b>BankAccount</b>. The <b>balance</b> is important and sensitive data; if anybody could change it directly the whole banking system could be damaged. So the balance is made <b>private</b>, and it is reached only through public methods.</p>
-      <table class="tbl">
-        <thead><tr><th>Member</th><th>Purpose</th></tr></thead>
-        <tbody>
-          <tr><td>private String owner</td><td>Name of the holder (hidden)</td></tr>
-          <tr><td>private double balance</td><td>Money in the account (hidden)</td></tr>
-          <tr><td>getBalance()</td><td>Returns the balance for reading</td></tr>
-          <tr><td>deposit(a)</td><td>Adds money, refusing a negative amount</td></tr>
-          <tr><td>withdraw(a)</td><td>Removes money only if it is available</td></tr>
-        </tbody>
-      </table>
-      <p>The two data members are private while every function that touches them is public. That single line is encapsulation: <b>private data, public methods</b>.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 192" role="img" aria-label="Java source compiled to bytecode and run by the JVM on every platform">
-          <text class="d-cap" x="320" y="18" text-anchor="middle">Write once, run anywhere</text>
+      <div class="page-sec"><span class="pnum">Page 2 of 3</span><span class="ptitle">Question 6 · The program</span></div>
+      <h3>Program: init(), start() and stop()</h3>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">LifeCycleDemo.java</span></div>
+<pre><code class="language-java">import java.applet.Applet;
+import java.awt.Graphics;
 
-          <rect class="d-fill" x="20" y="34" width="150" height="60" rx="5"/>
-          <text class="d-t" x="95" y="60" text-anchor="middle">MyProg.java</text>
-          <text class="d-ts" x="95" y="80" text-anchor="middle">source code</text>
+public class LifeCycleDemo extends Applet {
+    String message = "Applet created";
+    int starts = 0;
 
-          <line class="d-line" x1="170" y1="64" x2="206" y2="64"/>
-          <polygon class="d-ah" points="210,64 200,59 200,69"/>
+    public void init() {                  // once, after loading
+        message = "init(): applet loaded";
+        setBackground(java.awt.Color.white);
+    }
 
-          <rect class="d-box" x="210" y="34" width="140" height="60" rx="5"/>
-          <text class="d-t" x="280" y="60" text-anchor="middle">javac</text>
-          <text class="d-ts" x="280" y="80" text-anchor="middle">compiler</text>
+    public void start() {                 // each time it is shown
+        starts++;
+        message = "start(): shown " + starts + " time(s)";
+        repaint();                        // ask for paint()
+    }
 
-          <line class="d-line" x1="350" y1="64" x2="386" y2="64"/>
-          <polygon class="d-ah" points="390,64 380,59 380,69"/>
+    public void stop() {                  // page left / minimised
+        System.out.println("stop(): paused");
+    }
 
-          <rect class="d-fill" x="390" y="34" width="210" height="60" rx="5"/>
-          <text class="d-t" x="495" y="60" text-anchor="middle">MyProg.class</text>
-          <text class="d-ts" x="495" y="80" text-anchor="middle">bytecode (platform-neutral)</text>
+    public void destroy() {               // before removal
+        System.out.println("destroy(): removed");
+    }
 
-          <line class="d-line" x1="490" y1="94" x2="490" y2="116"/>
-          <line class="d-line" x1="150" y1="116" x2="490" y2="116"/>
-          <line class="d-line" x1="150" y1="116" x2="150" y2="140"/>
-          <line class="d-line" x1="320" y1="116" x2="320" y2="140"/>
-          <line class="d-line" x1="490" y1="116" x2="490" y2="140"/>
-
-          <rect class="d-box" x="90" y="140" width="120" height="42" rx="4"/>
-          <text class="d-ts" x="150" y="166" text-anchor="middle">Windows JVM</text>
-          <rect class="d-box" x="260" y="140" width="120" height="42" rx="4"/>
-          <text class="d-ts" x="320" y="166" text-anchor="middle">Linux JVM</text>
-          <rect class="d-box" x="430" y="140" width="120" height="42" rx="4"/>
-          <text class="d-ts" x="490" y="166" text-anchor="middle">macOS JVM</text>
-        </svg>
-        <figcaption>Fig. 2 — The life of a Java program. The same <b>.class</b> bytecode is taken by the JVM of any operating system, so the source has to be written only once.</figcaption>
-      </figure>
+    public void paint(Graphics g) {       // redraw the applet area
+        g.drawString(message, 40, 60);
+        g.drawString("init once, start/stop repeat", 40, 90);
+    }
+}</code></pre>
+      </div>
+      <p>The applet is embedded in a page with the <code class="inl">&lt;applet code="LifeCycleDemo.class" width="350" height="150"&gt;&lt;/applet&gt;</code> tag (or run with <code class="inl">appletviewer</code>). The browser creates the object, then calls init, start and paint in that order.</p>
 
       <!-- PAGE 3 -->
-      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 2 · Java program</span></div>
-      <div class="divider">Java Program</div>
-      <p class="codelabel">The balance is private and can be reached only through public methods.</p>
-      <p class="codelabel">Notice that no class outside this one can write to <code class="inl">balance</code> directly, even from the same file, because it is declared <code class="inl">private</code>. Every change must pass through a method, and each method checks its own argument first, so an impossible value can never reach the data.</p>
+      <div class="page-sec"><span class="pnum">Page 3 of 3</span><span class="ptitle">Question 6 · Output and notes</span></div>
+      <div class="divider">Output</div>
       <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">BankAccount.java</span></div>
-<pre><code class="language-java">class BankAccount {
-    private String owner;        // hidden data
-    private double balance;
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Applet window</span></div>
+<pre><code class="language-plaintext">start(): shown 1 time(s)
+init once, start/stop repeat
 
-    BankAccount(String o, double b) { owner = o; balance = b; }
+Console (on leaving the page):
+stop(): paused
 
-    public double getBalance() { return balance; }
-
-    public void setBalance(double b) {
-        if (b &gt;= 0) balance = b;   // validated
-    }
-    public void deposit(double a) {
-        if (a &gt; 0) balance += a;
-    }
-    public void withdraw(double a) {
-        if (a &gt; 0 &amp;&amp; a &lt;= balance) balance -= a;
-        else System.out.println("Not enough money");
-    }
-    public void show() {
-        System.out.println(owner + " : " + balance);
-    }
-}</code></pre>
+Console (on closing the page):
+destroy(): removed</code></pre>
       </div>
-
-      <!-- PAGE 4 -->
-      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 2 · Output</span></div>
-      <h4>Definition of Each Function</h4>
-      <p><b>getBalance()</b> returns the hidden balance so it can be read.<br>
-      <b>setBalance(b)</b> accepts a new balance only if it is not negative.<br>
-      <b>deposit(a)</b> adds money only when the amount is positive.<br>
-      <b>withdraw(a)</b> removes money only when it is available, otherwise it prints a warning.</p>
-      <p><b>show()</b> prints the holder — name and the balance together, and is the only method allowed to display them.</p>
-      <p>Running the program shows encapsulation doing its job. A deposit of 1500 is accepted and a withdrawal of 2000 succeeds, but the attempt to take out 9000 is refused with a printed warning, because 9000 is more than the balance. If the balance had been a public field, any line of code could have set it to a wrong or negative value, and nothing would have complained.</p>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">main</span></div>
-<pre><code class="language-java">public static void main(String[] args) {
-    BankAccount acc = new BankAccount("Rahul", 5000);
-    acc.deposit(1500);
-    acc.withdraw(9000);     // refused
-    acc.withdraw(2000);
-    acc.show();
-}</code></pre>
-      </div>
-      <h4>Output</h4>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
-<pre><code class="language-plaintext">Not enough money
-Rahul : 4500</code></pre>
-      </div>
-      <div class="callout"><p class="ct">Conclusion</p><p>Encapsulation keeps the data safe and forces every change to pass through a method that can check it.</p></div>
+      <p>On the first load the order is <b>init → start → paint</b>. If the user switches to another tab and comes back, only <b>stop</b> and then <b>start</b> run again, so the counter becomes 2. Closing the page finally calls <b>destroy</b>. This is why a clock or an animation is stopped in <b>stop()</b>: the applet may be invisible but still running.</p>
+      <table class="tbl">
+        <thead><tr><th>Method</th><th>Called when</th><th>Typical work</th></tr></thead>
+        <tbody>
+          <tr><td>init()</td><td>Once, after loading</td><td>Read parameters, create components</td></tr>
+          <tr><td>start()</td><td>Page becomes visible</td><td>Start a thread, timer or animation</td></tr>
+          <tr><td>stop()</td><td>Page hidden or left</td><td>Pause the thread, release the screen</td></tr>
+          <tr><td>destroy()</td><td>Before unload</td><td>Free resources</td></tr>
+          <tr><td>paint(Graphics g)</td><td>Whenever redraw is needed</td><td>Draw text, shapes and images</td></tr>
+        </tbody>
+      </table>
+      <p><b>Note.</b> Applets are legacy technology: the <code class="inl">applet</code> tag is obsolete, browser plug-ins no longer run them, and the API is deprecated since JDK 9. The life-cycle concept is still examinable and still useful, because servlets, Android activities and JavaFX applications use the same idea of separate setup, start, pause and teardown stages.</p>
+      <div class="callout"><p class="ct">Conclusion</p><p>The browser drives an applet through init, start, stop and destroy. init prepares, start runs whenever the applet is visible, stop pauses it when it is not, and destroy releases it for good.</p></div>
 
     </div>
   </article>
 
-  <!-- ===== Q3 ===== -->
-  <article class="qblock" id="q3">
-    <div class="qhead">
-      <div class="qnum">03</div>
-      <div class="qmeta">
-        <p class="qtag">Question Three · Class Access</p>
-        <h2 class="qtext">What is the difference between private and public class?</h2>
-        <div class="pagemeter"><div class="big">4</div><div class="lbl">A4 Pages<b>Table + program on Page 4</b></div></div>
-      </div>
-    </div>
-    <div class="ans">
-
-      <!-- PAGE 1 -->
-      <div class="page-sec"><span class="pnum">Page 1 of 4</span><span class="ptitle">Question 3 · Class and access modifiers</span></div>
-      <h3>What is a Class and what is an Access Modifier?</h3>
-      <p>A <b>class</b> is a blueprint for objects. It describes what the object will hold (its <i>data members</i>) and what it will be able to do (its <i>methods</i>). An <b>access modifier</b> is the keyword written before a class or a member to decide <b>who is allowed to use it</b>.</p>
-      <p>Java provides four access modifiers.</p>
-      <table class="tbl">
-        <thead><tr><th>Modifier</th><th>Visible inside the class</th><th>Visible in the package</th><th>Visible outside</th></tr></thead>
-        <tbody>
-          <tr><td>private</td><td>Yes</td><td>No</td><td>No</td></tr>
-          <tr><td>default</td><td>Yes</td><td>Yes</td><td>No</td></tr>
-          <tr><td>protected</td><td>Yes</td><td>Yes</td><td>Only by a subclass</td></tr>
-          <tr><td>public</td><td>Yes</td><td>Yes</td><td>Yes, everywhere</td></tr>
-        </tbody>
-      </table>
-      <p><b>Why the difference matters:</b> a public class can be used by any program that has the file, while a private class is locked inside its own file. The modifier decides how far a class can travel.</p>
-      <p>The keywords also control what a <b>subclass</b> may do. A <code class="inl">protected</code> member is open to the class that declares it, to every class in the same package, and to any subclass living anywhere, but to nobody else. This is why a protected field is usually the one a parent class wants its children to use and its children alone.</p>
-      <p>Two rules complete the picture. A member declared <code class="inl">public</code> in one class is certainly usable from another. But a member with <i>no</i> keyword is not automatically public; it is <b>package-private</b>, which is why the words <i>public member</i> must be used carefully.</p>
-
-      <!-- PAGE 2 -->
-      <div class="page-sec"><span class="pnum">Page 2 of 4</span><span class="ptitle">Question 3 · Public class</span></div>
-      <h3>Public Class</h3>
-      <p>A class declared <code class="inl">public</code> may be used by <b>any other class</b>, anywhere in the whole project, and a Java file may be imported by other files through <code class="inl">import</code>.</p>
-      <h4>Characteristics of a Public Class</h4>
-      <p>It must be saved in a file whose <b>name is exactly the same</b> as the class name, including the capital letters — <code class="inl">public class Student</code> must live in <code class="inl">Student.java</code>. Only <b>one public class</b> is allowed in one file, although that file may contain any number of non-public classes beside it. Because everybody can reach it, its methods must also be declared <code class="inl">public</code> for the outside code to use them.</p>
-      <h4>Other Access Modifiers for Reference</h4>
-      <p><b>protected</b> is like public but opens only to the classes that lie in the same package or that extend this class. <b>default</b>, used when no keyword is written, opens only inside the same package. <b>private</b> opens to nothing outside the class itself.</p>
-<figure class="diagram">
-        <pre class="ascii">   ┌─────────────────┬─────────────────┬─────────────────┐
-   │ Simple          │ Object-Oriented │ Platform-       │
-   │                 │                 │ Independent     │
-   ├─────────────────┼─────────────────┼─────────────────┤
-   │ Robust          │ Secure          │ Multithreaded   │
-   │                 │                 │                 │
-   ├─────────────────┼─────────────────┼─────────────────┤
-   │ Portable        │ High            │ Distributed     │
-   │                 │ Performance     │                 │
-   └─────────────────┴─────────────────┴─────────────────┘</pre>
-        <figcaption>Fig. 1 — The qualities Java is known for, set out as a grid. The middle row holds the ones a programmer feels every day: the program does not crash, the bytecode is verified before it runs, and several tasks can run together.</figcaption>
-      </figure>
-
-      <!-- PAGE 3 -->
-      <div class="page-sec"><span class="pnum">Page 3 of 4</span><span class="ptitle">Question 3 · Private class</span></div>
-      <h3>Private Class</h3>
-      <p>A class declared <code class="inl">private</code> is accessible <b>only inside the class in which it is defined</b>, and not from outside at all. In Java such a class works as a <b>nested class</b>, also called an inner class, so it is used only inside its <b>enclosing (outer) class</b> and no outside class can create an object of it.</p>
-      <h4>Characteristics of a Private Class</h4>
-      <p>We use a private class when we want the whole implementation of some part of the program to stay hidden. If <code class="inl">Outer</code> contains a <code class="inl">private class Helper</code>, then only <code class="inl">Outer</code> may use it; nothing outside it can even name it. Because it is locked away, the helper can be changed at any time without breaking the rest of the program. It also keeps the public face of a class small, which makes the class easier to use, to test and to improve.</p>
-<figure class="diagram">
-        <svg viewBox="0 0 640 192" role="img" aria-label="Java source compiled to bytecode and run by the JVM on every platform">
-          <text class="d-cap" x="320" y="18" text-anchor="middle">Write once, run anywhere</text>
-
-          <rect class="d-fill" x="20" y="34" width="150" height="60" rx="5"/>
-          <text class="d-t" x="95" y="60" text-anchor="middle">MyProg.java</text>
-          <text class="d-ts" x="95" y="80" text-anchor="middle">source code</text>
-
-          <line class="d-line" x1="170" y1="64" x2="206" y2="64"/>
-          <polygon class="d-ah" points="210,64 200,59 200,69"/>
-
-          <rect class="d-box" x="210" y="34" width="140" height="60" rx="5"/>
-          <text class="d-t" x="280" y="60" text-anchor="middle">javac</text>
-          <text class="d-ts" x="280" y="80" text-anchor="middle">compiler</text>
-
-          <line class="d-line" x1="350" y1="64" x2="386" y2="64"/>
-          <polygon class="d-ah" points="390,64 380,59 380,69"/>
-
-          <rect class="d-fill" x="390" y="34" width="210" height="60" rx="5"/>
-          <text class="d-t" x="495" y="60" text-anchor="middle">MyProg.class</text>
-          <text class="d-ts" x="495" y="80" text-anchor="middle">bytecode (platform-neutral)</text>
-
-          <line class="d-line" x1="490" y1="94" x2="490" y2="116"/>
-          <line class="d-line" x1="150" y1="116" x2="490" y2="116"/>
-          <line class="d-line" x1="150" y1="116" x2="150" y2="140"/>
-          <line class="d-line" x1="320" y1="116" x2="320" y2="140"/>
-          <line class="d-line" x1="490" y1="116" x2="490" y2="140"/>
-
-          <rect class="d-box" x="90" y="140" width="120" height="42" rx="4"/>
-          <text class="d-ts" x="150" y="166" text-anchor="middle">Windows JVM</text>
-          <rect class="d-box" x="260" y="140" width="120" height="42" rx="4"/>
-          <text class="d-ts" x="320" y="166" text-anchor="middle">Linux JVM</text>
-          <rect class="d-box" x="430" y="140" width="120" height="42" rx="4"/>
-          <text class="d-ts" x="490" y="166" text-anchor="middle">macOS JVM</text>
-        </svg>
-        <figcaption>Fig. 2 — The life of a Java program. The same <b>.class</b> bytecode is taken by the JVM of any operating system, so the source has to be written only once.</figcaption>
-      </figure>
-
-      <!-- PAGE 4 -->
-      <div class="page-sec"><span class="pnum">Page 4 of 4</span><span class="ptitle">Question 3 · Difference + program</span></div>
-      <table class="tbl">
-        <thead><tr><th>Point</th><th>Public class</th><th>Private class</th></tr></thead>
-        <tbody>
-          <tr><td>Visibility</td><td>Everywhere in the project</td><td>Only inside the outer class</td></tr>
-          <tr><td>Use</td><td>Reused by many programs</td><td>Hidden helper of one class</td></tr>
-        </tbody>
-      </table>
-      <div class="divider">Java Program</div>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Demo.java</span></div>
-      <p>The table above shows the whole difference in two lines: a public class is reached from anywhere, and a private class is reached from nowhere except the class that holds it.</p>
-<pre><code class="language-java">public class Demo {                 // public class
-    private class Helper {          // private, locked inside
-        void work() { System.out.println("helping"); }
-    }
-    public static void main(String[] a) {
-        Demo d = new Demo();
-        d.new Helper().work();       // only Demo can do this
-    }
-}</code></pre>
-      </div>
-      <h4>Output</h4>
-      <div class="codeframe">
-        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">Output</span></div>
-<pre><code class="language-plaintext">helping</code></pre>
-      </div>
-      <p class="codelabel">The outer class is declared <code class="inl">public</code>, so <code class="inl">Demo</code> may be used by any other program. The inner class is declared <code class="inl">private</code>, so <code class="inl">Helper</code> cannot be named, let alone created, by anything outside <code class="inl">Demo</code>. Because an inner class is tied to one object of the outer class, it is reached as <code class="inl">d.new Helper()</code> — the instance <code class="inl">d</code> first, and then a new <code class="inl">Helper</code> belonging to it.</p>
-
-    </div>
-  </article>
-
-  <p class="foot">Internal Assignment · BCA Semester V · <a href="pdf/5BCA3_JAVA.pdf" download>Download the PDF of this subject</a> · <a href="index.html">All subjects</a> · Submission 23-10-2026</p>
+  <p class="foot">Internal Assignment · BCA Semester V · <a href="index.html">All subjects</a> · Submission 18-11-2026</p>
 </div>
 
 <a href="#top" class="totop" title="Back to top">&#9650;</a>
-<script src="assets/vendor/highlight.min.js?v=9"></script>
-<script src="assets/monolith.js?v=9"></script>
+<script src="assets/vendor/highlight.min.js?v=10"></script>
+<script src="assets/monolith.js?v=10"></script>
 </body>
 </html>

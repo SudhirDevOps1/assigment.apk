@@ -1,14 +1,15 @@
 {
   "name": "assigment-apk",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "private": true,
-  "description": "BCA Semester V assignment suite as an offline Android app (Capacitor)",
+  "description": "BCA Semester V assignment suite as offline Android (Capacitor) and desktop (Electron) apps",
   "license": "MIT",
   "scripts": {
     "add:android": "cap add android",
     "assets": "capacitor-assets generate --android --assetPath resources",
     "sync": "cap sync android",
     "patch": "node scripts/patch-android.mjs",
+    "check:pages": "node scripts/check-pages.mjs",
     "apk:debug": "npm run assets && cap sync android && npm run patch && cd android && ./gradlew assembleDebug",
     "apk:release": "npm run assets && cap sync android && npm run patch && cd android && ./gradlew assembleRelease"
   },
