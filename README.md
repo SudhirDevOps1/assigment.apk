@@ -17,9 +17,9 @@ BCA Semester V internal assignment — one offline content set, shipped as an
 
 ---
 
-## The paper this follows
+## Paper Syllabus Structure
 
-S.V.P. College Bhabua (Kaimur), V.K.S.U. Ara — Internal Assignment, All Subjects.
+BCA Semester V — Internal Assignment, All Subjects.
 
 | Subject | Q | Question | Pages |
 |---|---|---|---|
@@ -117,8 +117,8 @@ A push triggers both builds:
 Push a **tag**:
 
 ```bash
-git tag v1.6.0
-git push origin v1.6.0
+git tag v1.6.1
+git push origin v1.6.1
 ```
 
 Both workflows attach their files to the same release, so the front page then

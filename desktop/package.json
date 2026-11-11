@@ -1,7 +1,7 @@
 {
   "name": "bca-sem-v-desktop",
   "productName": "BCA Sem V Assignment",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "private": true,
   "description": "BCA Semester V assignment suite as an offline desktop app (Electron)",
   "license": "MIT",

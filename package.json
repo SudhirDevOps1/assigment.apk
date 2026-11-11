@@ -1,6 +1,6 @@
 {
   "name": "assigment-apk",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "private": true,
   "description": "BCA Semester V assignment suite as offline Android (Capacitor) and desktop (Electron) apps",
   "license": "MIT",
