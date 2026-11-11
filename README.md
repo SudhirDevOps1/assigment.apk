@@ -117,8 +117,8 @@ A push triggers both builds:
 Push a **tag**:
 
 ```bash
-git tag v1.5.0
-git push origin v1.5.0
+git tag v1.6.0
+git push origin v1.6.0
 ```
 
 Both workflows attach their files to the same release, so the front page then

@@ -111,6 +111,13 @@
       <p><b>Displays.</b> A monitor may be LCD, LED-backlit LCD or OLED. The important figures are resolution (1920 × 1080), colour depth (24-bit true colour), refresh rate (60–144 Hz) and response time. A projector uses the same idea on a large screen, and an OLED panel can switch pixels off completely for true black.</p>
       <p><b>Printers.</b> <b>Impact</b> printers strike a ribbon: dot-matrix is slow but cheap, and can print carbon copies. <b>Non-impact</b> printers — inkjet, laser and thermal — are quieter and sharper. A laser printer works with a drum, toner and heat; an inkjet sprays droplets. A <b>plotter</b> draws continuous lines and is used for maps and engineering drawings.</p>
       <p><b>Sound and touch.</b> Speakers and headphones convert a digital signal back through a <b>DAC</b>, while haptic devices output vibration or force as another feedback channel.</p>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">MediaCapture.js</span></div>
+<pre><code class="language-javascript">// Capture real-time camera video &amp; audio input stream from hardware
+navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+  .then(stream => { document.querySelector('video').srcObject = stream; })
+  .catch(err => { console.error("Hardware capture error: " + err); });</code></pre>
+      </div>
       <table class="tbl">
         <thead><tr><th>Output device</th><th>Media</th><th>Key measure</th></tr></thead>
         <tbody>
@@ -215,6 +222,14 @@
         </tbody>
       </table>
       <p><b>Interaction and access.</b> Audio and video become multimedia rather than plain recordings when the user can pause, seek, caption or annotate them. Captions and transcripts also make the material usable without sound, and a poster frame gives the user something to recognise before playback starts.</p>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">MultimediaPlayer.html</span></div>
+<pre><code class="language-html">&lt;!-- Synchronised video stream, multi-codec audio, and timed subtitle track --&gt;
+&lt;video controls poster="preview.jpg" width="600" height="340"&gt;
+  &lt;source src="lecture.mp4" type="video/mp4; codecs=avc1.42E01E, mp4a.40.2"&gt;
+  &lt;track src="subtitles.vtt" kind="subtitles" srclang="en" label="English"&gt;
+&lt;/video&gt;</code></pre>
+      </div>
       <div class="callout"><p class="ct">Conclusion</p><p>Audio carries explanation and emotion; video carries demonstration and motion. Both are sampled, compressed and time-stamped, and a multimedia product succeeds when the two stay in sync and fit the bandwidth of its audience.</p></div>
 
     </div>
@@ -305,6 +320,14 @@
         </tbody>
       </table>
       <p>So hypertext is a <b>subset</b> of hypermedia. Every hypermedia system is also hypertext, but a hypertext system need not carry a single picture. In practice the web blurred the line: a modern HTML page usually mixes both, and the term <i>hypermedia</i> is used when the non-text media are essential to understanding rather than decoration.</p>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">HypermediaNode.html</span></div>
+<pre><code class="language-html">&lt;!-- Hypermedia node: links interactive graphics and audio directly --&gt;
+&lt;a href="topic_details.html"&gt;
+  &lt;figure&gt;&lt;img src="model.svg" alt="Model"&gt;&lt;figcaption&gt;Interactive Diagram&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/a&gt;
+&lt;audio controls src="narration.mp3"&gt;&lt;/audio&gt;</code></pre>
+      </div>
       <div class="callout"><p class="ct">Conclusion</p><p>Hypertext links text to text and keeps reading fast and light. Hypermedia links every medium to every other and makes the material richer but heavier. The structure is identical — only the range of media changes.</p></div>
 
     </div>

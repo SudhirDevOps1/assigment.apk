@@ -110,17 +110,26 @@
           <tr><td>GridBagLayout</td><td>Weighted, flexible grid</td><td>Complex professional forms</td></tr>
         </tbody>
       </table>
-      <p>Interaction uses the <b>delegation event model</b> introduced in JDK 1.1. An event <i>source</i> (a button) keeps a list of <i>listeners</i>; when the user clicks, the source creates an <code class="inl">ActionEvent</code> and calls <code class="inl">actionPerformed</code> on every registered listener. The program therefore writes one small class instead of subclassing the button.</p>
-      <div class="diagram">
-        <pre class="ascii">  Button  ──registers──▶  ActionListener
-     │                          ▲
-     │ user clicks              │ actionPerformed(ActionEvent e)
-     ▼                          │
-  creates ActionEvent ──────────┘
-     │
-     └──▶ other listeners (audit log, counter, …)
-  <b>Source → Event object → Listener</b>   (no polling loop needed)</pre>
-        <figcaption>Fig. 2 — The delegation model. The component only announces what happened; the listener decides what to do about it.</figcaption>
+      <p>Interaction uses the <b>delegation event model</b> (JDK 1.1). An event <i>source</i> (e.g. Button) registers <i>listeners</i>; user clicks dispatch an <code class="inl">ActionEvent</code> calling <code class="inl">actionPerformed</code>.</p>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">AwtDemo.java</span></div>
+<pre><code class="language-java">import java.awt.*;
+import java.awt.event.*;
+
+public class AwtDemo extends Frame implements ActionListener {
+    Button btn = new Button("Click Me");
+    TextField txt = new TextField(12);
+
+    public AwtDemo() {
+        setLayout(new FlowLayout());
+        btn.addActionListener(this);       // register listener
+        add(btn); add(txt);
+        setSize(280, 100); setVisible(true);
+    }
+    public void actionPerformed(ActionEvent e) {
+        txt.setText("AWT Event Fired!");
+    }
+}</code></pre>
       </div>
 
       <!-- PAGE 3 -->

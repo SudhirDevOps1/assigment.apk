@@ -146,7 +146,19 @@
       <div class="page-sec"><span class="pnum">Page 3 of 3</span><span class="ptitle">Question 5 · Why the rules matter</span></div>
       <h3>Meaning and Use in Oracle</h3>
       <p>Codd's rules are a <b>checklist</b>, not a law of physics. Oracle, SQL Server, PostgreSQL and MySQL satisfy most of them, and each one shows up as a familiar feature:</p>
-      <p><b>Rule 4</b> is the data dictionary — <code class="inl">USER_TABLES</code>, <code class="inl">USER_TAB_COLUMNS</code> and <code class="inl">USER_CONSTRAINTS</code> are ordinary views that describe the database. <b>Rule 6</b> is a view created with <code class="inl">CREATE VIEW</code>. <b>Rule 10</b> is a <code class="inl">CHECK</code>, <code class="inl">NOT NULL</code>, <code class="inl">PRIMARY KEY</code> or <code class="inl">FOREIGN KEY</code> constraint. <b>Rule 11</b> appears as a database link or a distributed query.</p>
+      <p><b>Rule 4</b> is the data dictionary — <code class="inl">USER_TABLES</code> and <code class="inl">USER_CONSTRAINTS</code> describe the system. <b>Rule 6</b> is <code class="inl">CREATE VIEW</code>. <b>Rule 10</b> is <code class="inl">PRIMARY KEY</code>, <code class="inl">CHECK</code> and <code class="inl">FOREIGN KEY</code> constraints.</p>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">codd_oracle.sql</span></div>
+<pre><code class="language-sql">-- Rule 1, 2 & 10: Table storage, primary key access & declarative integrity
+CREATE TABLE student (
+    roll_no NUMBER PRIMARY KEY,              -- Rule 2: unique key access
+    name    VARCHAR2(50) NOT NULL,
+    marks   NUMBER CHECK (marks >= 0)        -- Rule 10: catalog integrity
+);
+-- Rule 3 & 4: Systematic NULL query & active dynamic catalog inspection
+SELECT name FROM student WHERE marks IS NULL; -- Rule 3: 3-valued logic
+SELECT table_name FROM user_tables;          -- Rule 4: queryable dictionary</code></pre>
+      </div>
       <p>The rules also explain why the model is trusted. Because every value sits in a known cell of a known table, any row can be found without scanning a file by hand. Because constraints live in the catalog, the same rule protects every program. Because rows have no fixed order, the optimiser is free to read them in the cheapest way.</p>
       <table class="tbl">
         <thead><tr><th>Violation</th><th>Why it breaks the model</th></tr></thead>

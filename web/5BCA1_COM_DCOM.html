@@ -133,14 +133,20 @@
       <p><b>Shared state and locking.</b> A single MTA lock or a database row lock turns extra servers into a queue. Partitioning the data removes the contention.</p>
       <p><b>No built-in clustering.</b> DCOM itself does not balance or fail over. In practice it is combined with Network Load Balancing, COM+ Application Center routing, or Windows failover clustering.</p>
       <div class="diagram">
-        <pre class="ascii">  CHATTY  (poor scaling)                CHUNKY  (good scaling)
-  client ──▶ getName()                   client ──▶ getRecord(101)
-         ◀── "Rahul"                                    ◀── {id, name, marks}
-  client ──▶ getMarks()                  ── 1 round trip ──
-         ◀── 480
-  client ──▶ getCity()     3 round trips, 3 marshals
-         ◀── "Ara"</pre>
-        <figcaption>Fig. 2 — The same data fetched two ways. Fewer, larger calls scale; many tiny calls do not.</figcaption>
+        <pre class="ascii">  CHATTY (3 round trips, high latency)    CHUNKY (1 round trip, scalable)
+  client ──▶ getName() ──▶ "Rahul"         client ──▶ getStudentRecord(101)
+  client ──▶ getMarks() ──▶ 480                   ◀── {name:"Rahul", marks:480,
+  client ──▶ getCity() ──▶ "Ara"                       city:"Ara"}</pre>
+        <figcaption>Fig. 2 — Chatty vs Chunky RPC calls. Single chunky round trip scales horizontally across WAN/LAN.</figcaption>
+      </div>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">StudentDcom.idl</span></div>
+<pre><code class="language-c">// Microsoft IDL: Chunky interface design for high-throughput DCOM
+[object, uuid(8A12B430-14D0-11D0-9118-00C04FD7BA7B)]
+interface IStudentReport : IUnknown {
+    typedef struct { long roll; BSTR name; int marks; } StudentData;
+    HRESULT GetStudentRecord([in] long roll, [out] StudentData *pData);
+};</code></pre>
       </div>
       <p>A 1,000-user result system scales like this: make the result object stateless, pool it, put the database behind it, batch the marks lookup, and place a second server behind a balancer. Each step adds capacity without changing a line of client code — that is the real meaning of DCOM scalability.</p>
       <div class="callout"><p class="ct">Conclusion</p><p>DCOM scales because location is transparent: objects can be pooled, made stateless and spread across servers. The network is the limit, so coarse interfaces, short sessions and partitioned data decide how far the system grows.</p></div>
@@ -226,6 +232,15 @@
       <h3>Authorisation and Configuration</h3>
       <p>Authentication says <i>who</i>; authorisation says <i>whether</i>. Two access-control lists protect every DCOM server: <b>launch permissions</b> decide who may start the server, and <b>access permissions</b> decide who may connect to a running object. Both are stored as security descriptors with a DACL and are edited with <b>dcomcnfg</b> (Component Services) or by code.</p>
       <p>Inside the server, <b>CoInitializeSecurity</b> sets the process-wide default, while <b>CoSetProxyBlanket</b> on the client adjusts the level for one interface. Per-interface security therefore lets a public read method stay open while a sensitive method demands packet privacy.</p>
+      <div class="codeframe">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="name">DcomSecurityInit.cpp</span></div>
+<pre><code class="language-cpp">// Configure process-wide DCOM security with encryption and authentication
+HRESULT hr = CoInitializeSecurity(
+    NULL, -1, NULL, NULL,
+    RPC_C_AUTHN_LEVEL_PKT_PRIVACY,  // Encrypt arguments & authenticate calls
+    RPC_C_IMP_LEVEL_IMPERSONATE,    // Server can impersonate caller locally
+    NULL, EOAC_NONE, NULL);</code></pre>
+      </div>
       <div class="diagram">
         <pre class="ascii">  CLIENT                        SCM                    SERVER
     │  1. CoCreateInstance        │                       │
